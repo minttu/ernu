@@ -1,0 +1,20 @@
+factorial = function (n)
+  if n == 0 do
+    return 0
+  else
+    return n * factorial(n - 1)
+  end
+end
+
+c = 20
+
+main = function (args)
+  i = 0
+  while i < c do
+    print("factorial of {} is {}", i, factorial(i))
+    i = i + 1
+    if i >= 15 do
+      print("starting to slow down? get a better language!")
+    end
+  end
+end

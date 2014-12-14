@@ -1,0 +1,5 @@
+main = function ()
+  a = 3 + 2 * 1
+  print("hello world")
+end
+a = b + c * d ^ e - f / g
