@@ -1,14 +1,6 @@
 Ernu
 ====
 
-will be a programming language. Examples in `examples/`. The name means the opposite of this language.
+Programming language project for [Joululabra 2014][0]. Examples in `examples/`, required documentation in `doc/`.
 
-Inspired by:
-* Lua
-* Python
-* Java
-* C
-* JS
-
-Goals:
-* Make it work!
+[0]: http://javalabra.github.io/Joululabra-2014/
