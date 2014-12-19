@@ -10,4 +10,6 @@ public interface Math<T> {
     public Node div(T other);
 
     public Node mul(T other);
+
+    public Node mod(T other);
 }

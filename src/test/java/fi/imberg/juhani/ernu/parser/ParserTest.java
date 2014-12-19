@@ -38,7 +38,7 @@ public class ParserTest {
 
     @Test
     public void groupingWorks() {
-        doTest("a ^ (b + c)", "(^ a (+ b c))");
+        doTest("a % (b + c)", "(% a (+ b c))");
     }
 
     @Test
@@ -49,7 +49,7 @@ public class ParserTest {
 
     @Test
     public void operatorPrecedenceWorks() {
-        doTest("a = b + c * d ^ e - f / g", "(= a (- (+ b (* c (^ d e))) (/ f g)))");
+        doTest("a = b + c * d % e - f / g", "(= a (- (+ b (% (* c d) e)) (/ f g)))");
     }
 
     @Test

@@ -76,11 +76,24 @@ public class Tokenizer {
                     line++;
                     column = 0;
                     continue;
+                case '&':
+                case '|':
+                    if(!isEmpty()) {
+                        if (this.tokens.getLast().getLength() == 1) {
+                            String last = this.tokens.getLast().getContent();
+                            if (last.matches("" + c)) {
+                                addToLast(c);
+                            }
+                        }
+                    } else {
+                        createNew(c);
+                    }
+                    break;
                 case '=':
                     if (!isEmpty()) {
                         if (this.tokens.getLast().getLength() == 1) {
                             String last = this.tokens.getLast().getContent();
-                            if (last.matches("[\\+-/\\*\\^=><!]")) {
+                            if (last.matches("[\\+-/\\*%=><!]")) {
                                 addToLast(c);
                                 break;
                             }
@@ -90,7 +103,7 @@ public class Tokenizer {
                 case '-':
                 case '/':
                 case '*':
-                case '^':
+                case '%':
                 case '>':
                 case '<':
                 case '!':

@@ -45,6 +45,11 @@ public class IntegerNode implements Node, Comparable<IntegerNode>, Math<IntegerN
     }
 
     @Override
+    public IntegerNode mod(IntegerNode other) {
+        return new IntegerNode(getInteger() % other.getInteger());
+    }
+
+    @Override
     public Node getValue(Environment environment) {
         return this;
     }

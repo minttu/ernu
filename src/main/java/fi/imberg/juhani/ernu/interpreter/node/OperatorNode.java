@@ -3,6 +3,7 @@ package fi.imberg.juhani.ernu.interpreter.node;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Math;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
 public class OperatorNode implements Node {
@@ -41,28 +42,13 @@ public class OperatorNode implements Node {
                 return leftMath.div(rightMath);
             case MUL:
                 return leftMath.mul(rightMath);
+            case MOD:
+                return leftMath.mod(rightMath);
         }
         return new NullNode();
     }
 
-    @Override
-    public Node getValue(Environment environment) throws RuntimeException {
-        Node left = this.left.getValue(environment);
-        Node right = this.right.getValue(environment);
-        if (!(left.getClass().equals(right.getClass()))) {
-            System.out.println(left.getClass() + " " + right.getClass());
-            System.out.println(left + " " + right);
-            System.out.println(this.left + " " + this.right);
-            System.out.println(left.getClass().equals(right.getClass()));
-            throw new RuntimeException("left and right don't share a class");
-        }
-        if (operator == TokenType.ADD ||
-                operator == TokenType.SUB ||
-                operator == TokenType.MUL ||
-                operator == TokenType.DIV) {
-            return getMathValue(left, right);
-        }
-
+    private Node getCompareValue(Node left, Node right) throws RuntimeException {
         if (!(left instanceof Comparable)) {
             throw new RuntimeException("left and right can't be compared");
         }
@@ -92,5 +78,38 @@ public class OperatorNode implements Node {
         }
 
         return new BooleanNode(truth);
+    }
+
+    @Override
+    public Node getValue(Environment environment) throws RuntimeException {
+        Node left = this.left.getValue(environment);
+        Node right = this.right.getValue(environment);
+        if (!(left.getClass().equals(right.getClass()))) {
+            throw new RuntimeException("left and right don't share a class");
+        }
+        if (operator == TokenType.ADD ||
+                operator == TokenType.SUB ||
+                operator == TokenType.MUL ||
+                operator == TokenType.DIV ||
+                operator == TokenType.MOD) {
+            return getMathValue(left, right);
+        } else if (operator == TokenType.EQ ||
+                operator == TokenType.NOTEQ ||
+                operator == TokenType.GT ||
+                operator == TokenType.GTOE ||
+                operator == TokenType.LT ||
+                operator == TokenType.LTOE) {
+            return getCompareValue(left, right);
+        }
+        if(left instanceof BooleanNode) {
+            BooleanNode leftBoolean = (BooleanNode) left;
+            BooleanNode rightBoolean = (BooleanNode) right;
+            if(operator == TokenType.AND) {
+                return new BooleanNode(leftBoolean.isTrue() && rightBoolean.isTrue());
+            } else if(operator == TokenType.OR) {
+                return new BooleanNode(leftBoolean.isTrue() || rightBoolean.isTrue());
+            }
+        }
+        return new NullNode();
     }
 }

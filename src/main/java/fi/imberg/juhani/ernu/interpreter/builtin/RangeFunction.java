@@ -18,7 +18,14 @@ public class RangeFunction extends FunctionNode {
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
         List<Node> values = new ArrayList<>();
         int to = ((IntegerNode) arguments.get(0)).getInteger();
-        for (int i = 0; i < to; i++) {
+        int from = 0;
+        if(arguments.size() == 2) {
+            from = ((IntegerNode) arguments.get(1)).getInteger();
+            int asd = to;
+            to = from;
+            from = asd;
+        }
+        for (int i = from; i < to; i++) {
             values.add(new IntegerNode(i));
         }
         return new ArrayNode(values);

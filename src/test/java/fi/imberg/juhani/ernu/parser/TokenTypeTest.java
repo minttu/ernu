@@ -19,11 +19,11 @@ public class TokenTypeTest {
 
     @Test
     public void testSymbols() {
-        String[] symbols = "== = > < >= <= != ^ + - / * ^= += -= /= *= , ( )".split(" ");
+        String[] symbols = "== = > < >= <= != % + - / * %= += -= /= *= , ( )".split(" ");
         TokenType[] expected = new TokenType[]{
                 TokenType.EQ, TokenType.SET, TokenType.GT, TokenType.LT, TokenType.GTOE, TokenType.LTOE,
-                TokenType.NOTEQ, TokenType.POW, TokenType.ADD, TokenType.SUB, TokenType.DIV, TokenType.MUL,
-                TokenType.POWSET, TokenType.ADDSET, TokenType.SUBSET, TokenType.DIVSET, TokenType.MULSET,
+                TokenType.NOTEQ, TokenType.MOD, TokenType.ADD, TokenType.SUB, TokenType.DIV, TokenType.MUL,
+                TokenType.MODSET, TokenType.ADDSET, TokenType.SUBSET, TokenType.DIVSET, TokenType.MULSET,
                 TokenType.COMMA, TokenType.LPAREN, TokenType.RPAREN};
         doTest(symbols, expected);
     }

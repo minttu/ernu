@@ -31,6 +31,8 @@ public class Parser {
         prefixParsers.put(TokenType.FOR, new ForParser());
         prefixParsers.put(TokenType.RETURN, new ReturnParser());
         prefixParsers.put(TokenType.LBRACKET, new ArrayParser());
+        prefixParsers.put(TokenType.TRUE, new BooleanParser());
+        prefixParsers.put(TokenType.FALSE, new BooleanParser());
 
         infixParsers.put(TokenType.LPAREN, new CallParser());
         infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());
@@ -40,18 +42,24 @@ public class Parser {
         infixParsers.put(TokenType.SUBSET, new AssignmentParser());
         infixParsers.put(TokenType.MULSET, new AssignmentParser());
         infixParsers.put(TokenType.DIVSET, new AssignmentParser());
-        infixParsers.put(TokenType.POWSET, new AssignmentParser());
+        infixParsers.put(TokenType.MODSET, new AssignmentParser());
+
+        infixParsers.put(TokenType.OR, new OperatorParser(2, false));
+        infixParsers.put(TokenType.AND, new OperatorParser(3, false));
 
         infixParsers.put(TokenType.EQ, new OperatorParser(4, false));
-        infixParsers.put(TokenType.GT, new OperatorParser(4, false));
-        infixParsers.put(TokenType.LT, new OperatorParser(4, false));
-        infixParsers.put(TokenType.GTOE, new OperatorParser(4, false));
-        infixParsers.put(TokenType.LTOE, new OperatorParser(4, false));
-        infixParsers.put(TokenType.ADD, new OperatorParser(5, false));
-        infixParsers.put(TokenType.SUB, new OperatorParser(5, false));
-        infixParsers.put(TokenType.DIV, new OperatorParser(6, false));
-        infixParsers.put(TokenType.MUL, new OperatorParser(6, false));
-        infixParsers.put(TokenType.POW, new OperatorParser(7, true));
+        infixParsers.put(TokenType.NOTEQ, new OperatorParser(4, false));
+
+        infixParsers.put(TokenType.GT, new OperatorParser(5, false));
+        infixParsers.put(TokenType.LT, new OperatorParser(5, false));
+        infixParsers.put(TokenType.GTOE, new OperatorParser(5, false));
+        infixParsers.put(TokenType.LTOE, new OperatorParser(5, false));
+
+        infixParsers.put(TokenType.ADD, new OperatorParser(6, false));
+        infixParsers.put(TokenType.SUB, new OperatorParser(6, false));
+        infixParsers.put(TokenType.DIV, new OperatorParser(7, false));
+        infixParsers.put(TokenType.MUL, new OperatorParser(7, false));
+        infixParsers.put(TokenType.MOD, new OperatorParser(7, false));
 
     }
 
