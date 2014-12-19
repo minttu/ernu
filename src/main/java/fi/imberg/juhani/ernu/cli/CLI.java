@@ -1,10 +1,7 @@
 package fi.imberg.juhani.ernu.cli;
 
 import fi.imberg.juhani.ernu.ErnuException;
-import fi.imberg.juhani.ernu.cli.command.Command;
-import fi.imberg.juhani.ernu.cli.command.ParseCommand;
-import fi.imberg.juhani.ernu.cli.command.RunCommand;
-import fi.imberg.juhani.ernu.cli.command.TokenCommand;
+import fi.imberg.juhani.ernu.cli.command.*;
 import fi.imberg.juhani.ernu.cli.exceptions.CLIException;
 import fi.imberg.juhani.ernu.cli.exceptions.NotEnoughArgumentsException;
 
@@ -18,6 +15,7 @@ public class CLI {
         addCommand(new ParseCommand());
         addCommand(new TokenCommand());
         addCommand(new RunCommand());
+        addCommand(new REPLCommand());
     }
 
     public void addCommand(Command command) {

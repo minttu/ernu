@@ -7,4 +7,9 @@ public class NullNode implements Node {
     public Node getValue(Environment environment) throws RuntimeException {
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "null";
+    }
 }
