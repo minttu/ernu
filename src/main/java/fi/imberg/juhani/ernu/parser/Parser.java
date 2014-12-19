@@ -55,7 +55,7 @@ public class Parser {
 
     public Node parseNode(int precedence) throws LangException {
         Token current = consume();
-        if(current.getType() == TokenType.EOL) {
+        if (current.getType() == TokenType.EOL) {
             return null;
         }
         PrefixParser prefixParser = prefixParsers.get(current.getType());
@@ -71,13 +71,13 @@ public class Parser {
         return left;
     }
 
-    public Node parseNode() throws LangException{
+    public Node parseNode() throws LangException {
         return parseNode(0);
     }
 
     public boolean match(TokenType type) {
         Token token = lookAhead(0);
-        if(token.getType() != type) {
+        if (token.getType() != type) {
             return false;
         }
         consume();
@@ -86,15 +86,15 @@ public class Parser {
 
     public boolean isNext(TokenType type) {
         Token token = lookAhead(0);
-        if(token.getType() != type) {
+        if (token.getType() != type) {
             return false;
         }
         return true;
     }
 
-    public Token consume(TokenType type) throws UnexpectedTokenException{
+    public Token consume(TokenType type) throws UnexpectedTokenException {
         Token token = lookAhead(0);
-        if(token.getType() != type) {
+        if (token.getType() != type) {
             throw new UnexpectedTokenException(type, token);
         }
         return consume();

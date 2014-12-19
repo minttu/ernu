@@ -21,23 +21,23 @@ public class IfParser implements PrefixParser {
         parser.consume(TokenType.DO);
         parser.consume(TokenType.EOL);
 
-        if(!parser.match(TokenType.END)) {
+        if (!parser.match(TokenType.END)) {
             do {
-                if(parser.isNext(TokenType.ELSE)) {
+                if (parser.isNext(TokenType.ELSE)) {
                     break;
                 }
                 branch1.add(parser.parseNode());
                 parser.consume(TokenType.EOL);
-            } while(!parser.match(TokenType.END));
+            } while (!parser.match(TokenType.END));
         }
 
-        if(parser.match(TokenType.ELSE)) {
+        if (parser.match(TokenType.ELSE)) {
             parser.consume(TokenType.EOL);
-            if(!parser.match(TokenType.END)) {
+            if (!parser.match(TokenType.END)) {
                 do {
                     branch2.add(parser.parseNode());
                     parser.consume(TokenType.EOL);
-                } while(!parser.match(TokenType.END));
+                } while (!parser.match(TokenType.END));
             }
         }
 

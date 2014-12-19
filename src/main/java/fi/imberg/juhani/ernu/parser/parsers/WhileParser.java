@@ -18,11 +18,11 @@ public class WhileParser implements PrefixParser {
         List<Node> body = new ArrayList<>();
         parser.consume(TokenType.DO);
         parser.consume(TokenType.EOL);
-        if(!parser.match(TokenType.END)) {
+        if (!parser.match(TokenType.END)) {
             do {
                 body.add(parser.parseNode());
                 parser.consume(TokenType.EOL);
-            } while(!parser.match(TokenType.END));
+            } while (!parser.match(TokenType.END));
         }
         return new WhileNode(condition, new BlockNode(body));
     }

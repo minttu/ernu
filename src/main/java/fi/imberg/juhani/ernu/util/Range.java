@@ -18,7 +18,7 @@ public class Range {
     }
 
     public boolean inRange(int value) {
-        if(end == -1) {
+        if (end == -1) {
             return start <= value;
         }
         return (start <= value && value <= end);

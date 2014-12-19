@@ -11,16 +11,16 @@ public class ParseCommand extends FileCommand {
     public void call(String[] args) throws ErnuException {
         Tokenizer tokenizer = new Tokenizer();
         Parser parser = new Parser(tokenizer);
-        for(String fileName : args) {
+        for (String fileName : args) {
             handleFile(parser, tokenizer, fileName);
         }
     }
 
     public void handleFile(Parser parser, Tokenizer tokenizer, String fileName) throws ErnuException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
-        while(!tokenizer.isEmpty()) {
+        while (!tokenizer.isEmpty()) {
             Node node = parser.parseNode();
-            if(node != null) {
+            if (node != null) {
                 System.out.println(node);
             }
         }

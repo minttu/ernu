@@ -5,7 +5,10 @@ import fi.imberg.juhani.ernu.util.Range;
 
 public interface Command {
     public void call(String[] args) throws ErnuException;
+
     public Range getRange();
+
     public String getCommand();
+
     public String getDescription();
 }

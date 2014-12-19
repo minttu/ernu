@@ -8,18 +8,18 @@ import fi.imberg.juhani.ernu.util.Range;
 
 public class TokenCommand extends FileCommand {
     @Override
-    public void call(String[] args) throws CLIException{
+    public void call(String[] args) throws CLIException {
         Tokenizer tokenizer = new Tokenizer();
-        for(String fileName : args) {
+        for (String fileName : args) {
             handleFile(tokenizer, fileName);
         }
     }
 
     public void handleFile(Tokenizer tokenizer, String fileName) throws FileNotFoundException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
-        while(!tokenizer.isEmpty()) {
+        while (!tokenizer.isEmpty()) {
             Token token = tokenizer.nextToken();
-            if(token != null) {
+            if (token != null) {
                 System.out.println(token);
             }
         }

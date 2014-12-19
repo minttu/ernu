@@ -20,25 +20,25 @@ public class FunctionParser implements PrefixParser {
         String doc = "";
 
         parser.consume(TokenType.LPAREN);
-        if(!parser.match(TokenType.RPAREN)) {
+        if (!parser.match(TokenType.RPAREN)) {
             do {
                 args.add(parser.parseNode());
-            } while(parser.match(TokenType.COMMA));
+            } while (parser.match(TokenType.COMMA));
             parser.consume(TokenType.RPAREN);
         }
 
         parser.consume(TokenType.EOL);
 
-        if(parser.isNext(TokenType.STRING)) {
-            doc = ((StringNode)parser.parseNode()).getStringLiteral();
+        if (parser.isNext(TokenType.STRING)) {
+            doc = ((StringNode) parser.parseNode()).getStringLiteral();
             parser.consume(TokenType.EOL);
         }
 
-        if(!parser.match(TokenType.END)) {
+        if (!parser.match(TokenType.END)) {
             do {
                 nodes.add(parser.parseNode());
                 parser.consume(TokenType.EOL);
-            } while(!parser.match(TokenType.END));
+            } while (!parser.match(TokenType.END));
         }
 
         return new FunctionNode(args, doc, new BlockNode(nodes));

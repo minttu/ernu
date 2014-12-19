@@ -13,7 +13,7 @@ public class AssignmentNode implements Node {
         this.right = right;
         this.type = type;
         display = type.getMatch();
-        if(display.charAt(0) == '\\') {
+        if (display.charAt(0) == '\\') {
             display = display.substring(1);
         }
     }

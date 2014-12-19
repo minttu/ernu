@@ -15,7 +15,7 @@ public class Tokenizer {
 
     public Tokenizer() {
         this.source = "".toCharArray();
-        this.tokens = new ArrayDeque<Token>();
+        this.tokens = new ArrayDeque<>();
     }
 
     private void createNew(String initial) {
@@ -79,9 +79,8 @@ public class Tokenizer {
                     continue;
                 case '=':
                     if (!isEmpty()) {
-                        String last = "";
                         if (this.tokens.getLast().getLength() == 1) {
-                            last = this.tokens.getLast().getContent();
+                            String last = this.tokens.getLast().getContent();
                             if (last.matches("[\\+-/\\*\\^=><!]")) {
                                 addToLast(c);
                                 break;
@@ -104,9 +103,9 @@ public class Tokenizer {
                 default:
                     if (!isEmpty()) {
                         Token token = tokens.getLast();
-                        if (token.getContent().matches(TokenType.IDENTIFIER.getMatch())
-                                || token.getContent().matches(TokenType.NUMBER.getMatch())
-                                || (token.getContent().equals("-") && c >= 48 && c <= 57)) {
+                        if (token.getContent().matches(TokenType.IDENTIFIER.getMatch()) ||
+                                token.getContent().matches(TokenType.NUMBER.getMatch()) ||
+                                (token.getContent().equals("-") && c >= 48 && c <= 57)) {
                             addToLast(c);
                         } else {
                             createNew(c);

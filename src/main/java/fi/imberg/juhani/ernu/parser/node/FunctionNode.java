@@ -25,7 +25,7 @@ public class FunctionNode implements Node {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("(fn");
-        if(doc.length() > 0) {
+        if (doc.length() > 0) {
             sb.append(" \"");
             sb.append(doc);
             sb.append("\"");

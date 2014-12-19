@@ -14,10 +14,10 @@ public class CallParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {
         List<Node> args = new ArrayList<>();
-        if(!parser.match(TokenType.RPAREN)) {
+        if (!parser.match(TokenType.RPAREN)) {
             do {
                 args.add(parser.parseNode());
-            } while(parser.match(TokenType.COMMA));
+            } while (parser.match(TokenType.COMMA));
             parser.consume(TokenType.RPAREN);
         }
         return new CallNode(left, args);

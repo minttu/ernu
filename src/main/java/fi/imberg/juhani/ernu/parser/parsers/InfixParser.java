@@ -7,5 +7,6 @@ import fi.imberg.juhani.ernu.parser.node.Node;
 
 public interface InfixParser {
     Node parse(Parser parser, Node left, Token token) throws LangException;
+
     int getPrecedence();
 }

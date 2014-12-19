@@ -52,7 +52,7 @@ public enum TokenType {
     }
 
     public static void matchType(Token token) {
-        if(token.getType() != TokenType.NONE) {
+        if (token.getType() != TokenType.NONE) {
             return;
         }
         String content = token.getContent();
