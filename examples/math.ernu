@@ -1,8 +1,4 @@
-main = function ()
-    a = []
-    a[0] = 1
-    a[2] = 0
-    print(a)
-end
-
-main()
+a = []
+a[0] = 1
+a[2] = 0
+print(a)

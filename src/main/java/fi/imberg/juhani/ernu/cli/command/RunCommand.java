@@ -19,7 +19,7 @@ public class RunCommand extends FileCommand {
 
     public void handleFile(Parser parser, Tokenizer tokenizer, String fileName) throws ErnuException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
-        Environment environment = new Environment();
+        Environment environment = new Environment(fileName);
         while (!tokenizer.isEmpty()) {
             Node node = parser.parseNode();
             if (node != null) {

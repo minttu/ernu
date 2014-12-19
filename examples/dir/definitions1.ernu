@@ -1,0 +1,2 @@
+coolVariable = 200
+import("definitions2.ernu")
