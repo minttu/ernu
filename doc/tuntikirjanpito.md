@@ -4,4 +4,5 @@
 | 13.12 | 8h   | Lisää tokenizeria, parseria toimintakuntoon
 | 15.12 | 3h   | Lisää ominaisuuksia parseriin
 | 18.12 | 1h   | Komentoriviä kauniimmaksi
-| 19.12 | 10h  | Komentoriviä kauniimmaksi, dokumentointia, arrayn parseaminen, tulkin alku
+| 19.12 | 11h  | Komentoriviä kauniimmaksi, dokumentointia, arrayn parseaminen, tulkin alku
+| 20.12 | 1h   | REPL
