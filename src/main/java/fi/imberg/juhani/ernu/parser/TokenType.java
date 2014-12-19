@@ -3,6 +3,8 @@ package fi.imberg.juhani.ernu.parser;
 public enum TokenType {
     LPAREN("\\("),
     RPAREN("\\)"),
+    LBRACKET("\\["),
+    RBRACKET("\\]"),
     NUMBER("\\-?[0-9]+\\.?[0-9]*"),
     FUNCTION("function"),
     IF("if"),

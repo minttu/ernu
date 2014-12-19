@@ -79,4 +79,15 @@ public class ParserTest {
         doTest("a = function()\nreturn 3\nend", "(= a (fn [] [(return 3)]))");
     }
 
+    @Test
+    public void callWorks() {
+        doTest("a = function()\ncall()\nend", "(= a (fn [] [(call [])]))");
+        doTest("a = function()\nfoo(0, \"bar\")\nend", "(= a (fn [] [(foo [0, \"bar\"])]))");
+    }
+
+    @Test
+    public void arrayWorks() {
+        doTest("a = function()\nb = [0, 1, 2]\nb[0] = 3\nend", "(= a (fn [] [(= b [0, 1, 2]), (= b[0] 3)]))");
+    }
+
 }

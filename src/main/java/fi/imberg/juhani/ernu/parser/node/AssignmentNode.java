@@ -3,12 +3,12 @@ package fi.imberg.juhani.ernu.parser.node;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
 public class AssignmentNode implements Node {
-    private final IdentifierNode left;
+    private final Node left;
     private final Node right;
     private final TokenType type;
     private String display;
 
-    public AssignmentNode(IdentifierNode left, TokenType type, Node right) {
+    public AssignmentNode(Node left, TokenType type, Node right) {
         this.left = left;
         this.right = right;
         this.type = type;
@@ -18,7 +18,7 @@ public class AssignmentNode implements Node {
         }
     }
 
-    public IdentifierNode getLeft() {
+    public Node getLeft() {
         return left;
     }
 

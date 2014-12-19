@@ -30,8 +30,10 @@ public class Parser {
         prefixParsers.put(TokenType.WHILE, new WhileParser());
         prefixParsers.put(TokenType.FOR, new ForParser());
         prefixParsers.put(TokenType.RETURN, new ReturnParser());
+        prefixParsers.put(TokenType.LBRACKET, new NewArrayParser());
 
         infixParsers.put(TokenType.LPAREN, new CallParser());
+        infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());
 
         infixParsers.put(TokenType.SET, new AssignmentParser());
         infixParsers.put(TokenType.ADDSET, new AssignmentParser());

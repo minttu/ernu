@@ -1,14 +1,25 @@
-Toteutetaan ohjelmointikieli joka mahdollistaa toimivien ohjelmien
-kirjoittamisen. Kompiloidaan JVM bytecodeksi. Kielen tulee näyttää jokseenkin
-Lualta mutta vaikutteita muista kielistä joita olen kirjoitellut. Toisin kuin
-nimi antaa käsityksen ei ole tarkoitus olla erillainen kieli. Jahka perusjutut
-toimivat olisi kiva lisätä joitain funktionaalisen ohjelmoinnin vaikutteita.
+# Aiheen kuvaus ja rakenne
 
-Toteutettavan ohjelman tulisi pystyä ajamaan lähdetiedosto ja antamaan
-hyödyllistä tietoa lähdetiedostosta.
+## Aihe
 
-Lähdetiedoston ajaminen tapahtuu niin, että ensin tekstistä poimitaan kaikki
-tokenit. Sitten tokeneista parsetaan puu kuvaamaan ohjelman rakennetta. Sen
-jälkeen suoritetaan mahdolliset optimisaatiot puuhun ja sitten generoidaan
-JVM bytecode puun perusteella. JVM bytecoden generoinnin valmistuttua
-suoritetaan generoitu bytecode.
+Toteutetaan ohjelmointikieli tulkki joka mahdollistaa Ernu-kielen lähdekoodin
+ajamisen. Ernu-kielen tulee olla helppolukuista ja sen ominaisuuksien sopivan
+rajattuja. Kielen ulkoasun tulee muistuttaa Lua-kieltä, mutta lisäyksiä muista
+kielistä ja muutenvaan kivalta vaikuttavia ideoita. Koska performanssilla ei
+ole väliä Javalabrassa, tehdään kieli aika läskisti.
+
+Sovelluksen tulee pystyä toimimaan muutamassa eri tilassa. Päätilana REPL eli
+Read Evaluate Print Loop. Mutta pitäisi myös tekemää jonkintapaista projekti-
+hallintaa ja pystyä myös kertomaan erillaisia tärkeitä tai vähemmän tärkeitä
+tietoja lähdekoodista jota se käsittelee.
+
+## Käyttäjät
+
+* Ohjelmoija
+
+### Ohjelmoijan toiminnot
+
+* Ajaa tiedostossa oleva ohjelma
+* Käynnistää komentorivi kielen interaktiiviseen käyttämiseen
+* Paketoida tiedostot kätevään arkistoon
+* Näyttää debug tietoja ohjelmasta

@@ -97,6 +97,8 @@ public class Tokenizer {
                 case '!':
                 case '(':
                 case ')':
+                case '[':
+                case ']':
                 case ',':
                     createNew(c);
                     break;
