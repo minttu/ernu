@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.parser;
 
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
-import fi.imberg.juhani.ernu.parser.node.Node;
+import fi.imberg.juhani.ernu.interpreter.node.Node;
 import org.junit.Assert;
 import org.junit.After;
 import org.junit.Before;

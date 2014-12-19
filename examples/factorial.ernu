@@ -1,19 +1,21 @@
 factorial = function (n)
   "Calculates the factorial of n recursively"
   if n == 0 do
-    return 0
+    1
   else
-    return n * factorial(n - 1)
+    n * factorial(n - 1)
   end
 end
 
 c = 20
 
-main = function (args)
+main = function ()
   for i in range(c) do
-    print("factorial of {} is {}", i, factorial(i))
-    if i >= 15 do
-      print("starting to slow down? get a better language!")
+    print(i, factorial(i))
+    if i >= 13 do
+      print("starting to overflow? get a better language!")
     end
   end
 end
+
+main()

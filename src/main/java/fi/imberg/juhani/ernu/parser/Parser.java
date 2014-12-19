@@ -1,9 +1,9 @@
 package fi.imberg.juhani.ernu.parser;
 
+import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import fi.imberg.juhani.ernu.parser.exceptions.ParsingException;
 import fi.imberg.juhani.ernu.parser.exceptions.UnexpectedTokenException;
-import fi.imberg.juhani.ernu.parser.node.Node;
 import fi.imberg.juhani.ernu.parser.parsers.*;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class Parser {
         prefixParsers.put(TokenType.WHILE, new WhileParser());
         prefixParsers.put(TokenType.FOR, new ForParser());
         prefixParsers.put(TokenType.RETURN, new ReturnParser());
-        prefixParsers.put(TokenType.LBRACKET, new NewArrayParser());
+        prefixParsers.put(TokenType.LBRACKET, new ArrayParser());
 
         infixParsers.put(TokenType.LPAREN, new CallParser());
         infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());

@@ -1,12 +1,13 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
+import fi.imberg.juhani.ernu.interpreter.node.BlockNode;
+import fi.imberg.juhani.ernu.interpreter.node.ForNode;
+import fi.imberg.juhani.ernu.interpreter.node.IdentifierNode;
+import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
-import fi.imberg.juhani.ernu.parser.node.BlockNode;
-import fi.imberg.juhani.ernu.parser.node.ForNode;
-import fi.imberg.juhani.ernu.parser.node.Node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,6 @@ public class ForParser implements PrefixParser {
             } while (!parser.match(TokenType.END));
         }
 
-        return new ForNode(identifier, function, new BlockNode(body));
+        return new ForNode((IdentifierNode) identifier, function, new BlockNode(body));
     }
 }

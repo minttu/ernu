@@ -9,7 +9,6 @@ public class Tokenizer {
     private int column;
 
     private boolean inString;
-    private boolean skipLine;
 
     private ArrayDeque<Token> tokens;
 
@@ -49,7 +48,7 @@ public class Tokenizer {
         line = 0;
         column = 0;
         inString = false;
-        skipLine = false;
+        boolean skipLine = false;
         for (char c : source) {
             if (skipLine && c != '\n') {
                 column++;

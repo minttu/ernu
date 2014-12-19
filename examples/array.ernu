@@ -1,5 +1,7 @@
 main = function ()
     a = [0, 1, 2]
     a[0] = 3
-    print("{} {}", 0, a[0])
+    print(0, a[0])
 end
+
+main()

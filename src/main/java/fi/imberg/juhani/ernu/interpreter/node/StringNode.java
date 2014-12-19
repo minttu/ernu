@@ -1,4 +1,7 @@
-package fi.imberg.juhani.ernu.parser.node;
+package fi.imberg.juhani.ernu.interpreter.node;
+
+import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 public class StringNode implements Node {
     private final String stringLiteral;
@@ -14,5 +17,10 @@ public class StringNode implements Node {
     @Override
     public String toString() {
         return "\"" + stringLiteral + "\"";
+    }
+
+    @Override
+    public Node getValue(Environment environment) throws RuntimeException {
+        return this;
     }
 }

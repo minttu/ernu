@@ -1,5 +1,7 @@
-package fi.imberg.juhani.ernu.parser.node;
+package fi.imberg.juhani.ernu.interpreter.node;
 
+import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
 public class AssignmentNode implements Node {
@@ -18,16 +20,18 @@ public class AssignmentNode implements Node {
         }
     }
 
-    public Node getLeft() {
-        return left;
-    }
-
-    public Node getRight() {
-        return right;
-    }
-
     @Override
     public String toString() {
         return "(" + display + " " + this.left + " " + this.right + ")";
+    }
+
+    @Override
+    public Node getValue(Environment environment) throws RuntimeException {
+        if (!(left instanceof IdentifierNode)) {
+            throw new RuntimeException("Left needs to be identifier or array access");
+        }
+        Node realValue = right.getValue(environment);
+        ((IdentifierNode) left).setValue(environment, right.getValue(environment));
+        return realValue;
     }
 }

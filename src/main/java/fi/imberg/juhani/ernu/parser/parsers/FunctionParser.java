@@ -1,13 +1,13 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
+import fi.imberg.juhani.ernu.interpreter.node.BlockNode;
+import fi.imberg.juhani.ernu.interpreter.node.FunctionNode;
+import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.node.StringNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
-import fi.imberg.juhani.ernu.parser.node.BlockNode;
-import fi.imberg.juhani.ernu.parser.node.FunctionNode;
-import fi.imberg.juhani.ernu.parser.node.Node;
-import fi.imberg.juhani.ernu.parser.node.StringNode;
 
 import java.util.ArrayList;
 import java.util.List;

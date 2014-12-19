@@ -1,3 +1,5 @@
 main = function ()
   print("hello world")
 end
+
+main()

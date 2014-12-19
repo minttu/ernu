@@ -1,12 +1,13 @@
 package fi.imberg.juhani.ernu.cli.command;
 
 import fi.imberg.juhani.ernu.ErnuException;
+import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.util.Range;
 
-public class ParseCommand extends FileCommand {
+public class RunCommand extends FileCommand {
     @Override
     public void call(String[] args) throws ErnuException {
         Tokenizer tokenizer = new Tokenizer();
@@ -18,14 +19,14 @@ public class ParseCommand extends FileCommand {
 
     public void handleFile(Parser parser, Tokenizer tokenizer, String fileName) throws ErnuException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
+        Environment environment = new Environment();
         while (!tokenizer.isEmpty()) {
             Node node = parser.parseNode();
             if (node != null) {
-                System.out.println(node);
+                node.getValue(environment);
             }
         }
     }
-
 
     @Override
     public Range getRange() {
@@ -34,11 +35,11 @@ public class ParseCommand extends FileCommand {
 
     @Override
     public String getCommand() {
-        return "parse";
+        return "run";
     }
 
     @Override
     public String getDescription() {
-        return "Prints a tree structure representation of the source.";
+        return "Runs the program.";
     }
 }

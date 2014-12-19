@@ -49,10 +49,6 @@ public enum TokenType {
         this.match = match;
     }
 
-    public String getMatch() {
-        return match;
-    }
-
     public static void matchType(Token token) {
         if (token.getType() != TokenType.NONE) {
             return;
@@ -64,5 +60,9 @@ public enum TokenType {
                 return;
             }
         }
+    }
+
+    public String getMatch() {
+        return match;
     }
 }
