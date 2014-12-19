@@ -96,10 +96,7 @@ public class Parser {
 
     public boolean isNext(TokenType type) {
         Token token = lookAhead(0);
-        if (token.getType() != type) {
-            return false;
-        }
-        return true;
+        return token.getType() == type;
     }
 
     public Token consume(TokenType type) throws UnexpectedTokenException {

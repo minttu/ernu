@@ -2,7 +2,10 @@ package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
+
+import static fi.imberg.juhani.ernu.parser.TokenType.SET;
 
 public class AssignmentNode implements Node {
     private final Node left;
@@ -31,7 +34,15 @@ public class AssignmentNode implements Node {
             throw new RuntimeException("Left needs to be identifier or array access");
         }
         Node realValue = right.getValue(environment);
-        ((IdentifierNode) left).setValue(environment, right.getValue(environment));
+        IdentifierNode identifier = (IdentifierNode) left;
+
+        if(type != TokenType.SET) {
+            Node leftValue = left.getValue(environment);
+            OperatorNode calculation = new OperatorNode(leftValue, type, realValue);
+            realValue = calculation.getValue(environment);
+        }
+
+        identifier.setValue(environment, realValue);
         return realValue;
     }
 }

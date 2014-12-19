@@ -35,14 +35,19 @@ public class OperatorNode implements Node {
         Math rightMath = (Math) right;
         switch (operator) {
             case ADD:
+            case ADDSET:
                 return leftMath.add(rightMath);
             case SUB:
+            case SUBSET:
                 return leftMath.sub(rightMath);
             case DIV:
+            case DIVSET:
                 return leftMath.div(rightMath);
             case MUL:
+            case MULSET:
                 return leftMath.mul(rightMath);
             case MOD:
+            case MODSET:
                 return leftMath.mod(rightMath);
         }
         return new NullNode();
@@ -91,7 +96,12 @@ public class OperatorNode implements Node {
                 operator == TokenType.SUB ||
                 operator == TokenType.MUL ||
                 operator == TokenType.DIV ||
-                operator == TokenType.MOD) {
+                operator == TokenType.MOD ||
+                operator == TokenType.ADDSET ||
+                operator == TokenType.SUBSET ||
+                operator == TokenType.DIVSET ||
+                operator == TokenType.MULSET ||
+                operator == TokenType.MODSET) {
             return getMathValue(left, right);
         } else if (operator == TokenType.EQ ||
                 operator == TokenType.NOTEQ ||
