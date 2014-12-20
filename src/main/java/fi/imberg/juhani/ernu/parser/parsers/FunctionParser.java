@@ -27,17 +27,17 @@ public class FunctionParser implements PrefixParser {
             parser.consume(TokenType.RPAREN);
         }
 
-        parser.consume(TokenType.EOL);
+        parser.match(TokenType.EOL);
 
         if (parser.isNext(TokenType.STRING)) {
             doc = ((StringNode) parser.parseNode()).getStringLiteral();
-            parser.consume(TokenType.EOL);
+            parser.match(TokenType.EOL);
         }
 
         if (!parser.match(TokenType.END)) {
             do {
                 nodes.add(parser.parseNode());
-                parser.consume(TokenType.EOL);
+                parser.match(TokenType.EOL);
             } while (!parser.match(TokenType.END));
         }
 

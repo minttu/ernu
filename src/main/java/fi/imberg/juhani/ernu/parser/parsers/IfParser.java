@@ -19,7 +19,7 @@ public class IfParser implements PrefixParser {
         List<Node> branch2 = new ArrayList<>();
 
         parser.consume(TokenType.DO);
-        parser.consume(TokenType.EOL);
+        parser.match(TokenType.EOL);
 
         if (!parser.match(TokenType.END)) {
             do {
@@ -27,7 +27,7 @@ public class IfParser implements PrefixParser {
                     break;
                 }
                 branch1.add(parser.parseNode());
-                parser.consume(TokenType.EOL);
+                parser.match(TokenType.EOL);
             } while (!parser.match(TokenType.END));
         }
 
@@ -36,7 +36,7 @@ public class IfParser implements PrefixParser {
             if (!parser.match(TokenType.END)) {
                 do {
                     branch2.add(parser.parseNode());
-                    parser.consume(TokenType.EOL);
+                    parser.match(TokenType.EOL);
                 } while (!parser.match(TokenType.END));
             }
         }

@@ -19,16 +19,16 @@ public class ForParser implements PrefixParser {
         parser.consume(TokenType.IN);
         Node function = parser.parseNode();
         parser.consume(TokenType.DO);
-        parser.consume(TokenType.EOL);
+        parser.match(TokenType.EOL);
 
         List<Node> body = new ArrayList<>();
         if (!parser.match(TokenType.END)) {
             do {
                 body.add(parser.parseNode());
-                parser.consume(TokenType.EOL);
+                parser.match(TokenType.EOL);
             } while (!parser.match(TokenType.END));
         }
 
-        return new ForNode((IdentifierNode) identifier, function, new BlockNode(body));
+        return new ForNode(identifier, function, new BlockNode(body));
     }
 }

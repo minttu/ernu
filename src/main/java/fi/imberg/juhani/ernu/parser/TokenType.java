@@ -26,7 +26,7 @@ public enum TokenType {
     NOT("not|\\!"),
     IDENTIFIER("[A-Za-z]+[A-Za-z0-9_]*"),
     STRING("\".+\""),
-    EOL("\n"),
+    EOL("\n|\\;"),
     EQ("=="),
     SET("="),
     GT("\\>"),
