@@ -26,10 +26,10 @@ public class ArrayAccessNode extends IdentifierNode {
             throw new RuntimeException("Identifier is not a sequence.");
         }
         Node realIndex = index.getValue(environment);
-        if (!(realIndex instanceof IntegerNode)) {
+        if (!(realIndex instanceof NumberNode)) {
             throw new RuntimeException("Index must be an integer.");
         }
-        IntegerNode realIndexInteger = (IntegerNode) realIndex;
+        NumberNode realIndexInteger = (NumberNode) realIndex;
         Sequence sequence = (Sequence) value;
         if (realIndexInteger.getInteger() >= sequence.length()) {
             throw new RuntimeException("Array access out of bounds.");
@@ -44,10 +44,10 @@ public class ArrayAccessNode extends IdentifierNode {
             throw new RuntimeException("Identifier is not a sequence.");
         }
         Node realIndex = index.getValue(environment);
-        if (!(realIndex instanceof IntegerNode)) {
+        if (!(realIndex instanceof NumberNode)) {
             throw new RuntimeException("Index must be an integer.");
         }
-        IntegerNode realIndexInteger = (IntegerNode) realIndex;
+        NumberNode realIndexInteger = (NumberNode) realIndex;
         Sequence sequence = (Sequence) node;
         sequence.set(realIndexInteger.getInteger(), value);
     }

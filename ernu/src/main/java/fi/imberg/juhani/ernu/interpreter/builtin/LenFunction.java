@@ -3,7 +3,7 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.IntegerNode;
+import fi.imberg.juhani.ernu.interpreter.node.NumberNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 
 import java.util.List;
@@ -22,6 +22,6 @@ public class LenFunction extends BuiltinFunction {
         if (!(arg instanceof Sequence)) {
             throw new RuntimeException("len argument should implement len");
         }
-        return new IntegerNode(((Sequence) arg).length());
+        return new NumberNode(((Sequence) arg).length());
     }
 }
