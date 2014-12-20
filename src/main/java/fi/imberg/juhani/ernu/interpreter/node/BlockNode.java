@@ -22,7 +22,7 @@ public class BlockNode implements Node {
         Environment local = environment;
         for (int i = 0; i < nodes.size(); i++) {
             Node node = nodes.get(i);
-            if(node == null) {
+            if (node == null) {
                 continue;
             }
 

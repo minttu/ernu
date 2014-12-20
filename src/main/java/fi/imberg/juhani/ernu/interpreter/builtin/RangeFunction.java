@@ -2,7 +2,9 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.*;
+import fi.imberg.juhani.ernu.interpreter.node.ArrayNode;
+import fi.imberg.juhani.ernu.interpreter.node.IntegerNode;
+import fi.imberg.juhani.ernu.interpreter.node.Node;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +19,7 @@ public class RangeFunction extends BuiltinFunction {
         List<Node> values = new ArrayList<>();
         int to = ((IntegerNode) arguments.get(0)).getInteger();
         int from = 0;
-        if(arguments.size() == 2) {
+        if (arguments.size() == 2) {
             from = ((IntegerNode) arguments.get(1)).getInteger();
             int asd = to;
             to = from;

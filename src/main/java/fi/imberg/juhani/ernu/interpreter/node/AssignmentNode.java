@@ -2,10 +2,7 @@ package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
-
-import static fi.imberg.juhani.ernu.parser.TokenType.SET;
 
 public class AssignmentNode implements Node {
     private final Node left;
@@ -36,7 +33,7 @@ public class AssignmentNode implements Node {
         Node realValue = right.getValue(environment);
         IdentifierNode identifier = (IdentifierNode) left;
 
-        if(type != TokenType.SET) {
+        if (type != TokenType.SET) {
             Node leftValue = left.getValue(environment);
             OperatorNode calculation = new OperatorNode(leftValue, type, realValue);
             realValue = calculation.getValue(environment);

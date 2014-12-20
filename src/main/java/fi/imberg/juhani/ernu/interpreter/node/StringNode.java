@@ -1,7 +1,9 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.*;
-import fi.imberg.juhani.ernu.interpreter.Math;
+import fi.imberg.juhani.ernu.interpreter.Append;
+import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.Printable;
+import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Append {
@@ -54,7 +56,7 @@ public class StringNode implements Node, Comparable<StringNode>, Sequence, Print
     @Override
     public Node append(Node node) {
         String other;
-        if(node instanceof Printable) {
+        if (node instanceof Printable) {
             other = ((Printable) node).toPrintable();
         } else {
             other = node.toString();
@@ -65,7 +67,7 @@ public class StringNode implements Node, Comparable<StringNode>, Sequence, Print
     @Override
     public Node prepend(Node node) {
         String other;
-        if(node instanceof Printable) {
+        if (node instanceof Printable) {
             other = ((Printable) node).toPrintable();
         } else {
             other = node.toString();

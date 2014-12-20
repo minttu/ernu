@@ -25,7 +25,7 @@ public class REPL {
     }
 
     private String read() {
-        if(lastOk) {
+        if (lastOk) {
             System.out.print("(^_^) ");
         } else {
             System.out.print("(>_<) ");
@@ -48,7 +48,7 @@ public class REPL {
 
     private void print(Node node) throws RuntimeException {
         Node value = node.getValue(this.environment);
-        if(!(value instanceof NullNode)) {
+        if (!(value instanceof NullNode)) {
             System.out.println(value);
         }
     }

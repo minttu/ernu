@@ -31,7 +31,7 @@ public class ArrayAccessNode extends IdentifierNode {
         }
         IntegerNode realIndexInteger = (IntegerNode) realIndex;
         Sequence sequence = (Sequence) value;
-        if(realIndexInteger.getInteger() >= sequence.length()) {
+        if (realIndexInteger.getInteger() >= sequence.length()) {
             throw new RuntimeException("Array access out of bounds.");
         }
         return sequence.get(realIndexInteger.getInteger());

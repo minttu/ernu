@@ -1,11 +1,9 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.App;
 import fi.imberg.juhani.ernu.interpreter.Append;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Math;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
 public class OperatorNode implements Node {
@@ -91,8 +89,8 @@ public class OperatorNode implements Node {
     public Node getValue(Environment environment) throws RuntimeException {
         Node left = this.left.getValue(environment);
         Node right = this.right.getValue(environment);
-        if(operator == TokenType.ADD || operator == TokenType.ADDSET) {
-            if(left instanceof Append || right instanceof Append) {
+        if (operator == TokenType.ADD || operator == TokenType.ADDSET) {
+            if (left instanceof Append || right instanceof Append) {
                 return getAppendValue(left, right);
             }
         }
@@ -118,12 +116,12 @@ public class OperatorNode implements Node {
                 operator == TokenType.LTOE) {
             return getCompareValue(left, right);
         }
-        if(left instanceof BooleanNode) {
+        if (left instanceof BooleanNode) {
             BooleanNode leftBoolean = (BooleanNode) left;
             BooleanNode rightBoolean = (BooleanNode) right;
-            if(operator == TokenType.AND) {
+            if (operator == TokenType.AND) {
                 return new BooleanNode(leftBoolean.isTrue() && rightBoolean.isTrue());
-            } else if(operator == TokenType.OR) {
+            } else if (operator == TokenType.OR) {
                 return new BooleanNode(leftBoolean.isTrue() || rightBoolean.isTrue());
             }
         }
@@ -131,7 +129,7 @@ public class OperatorNode implements Node {
     }
 
     private Node getAppendValue(Node left, Node right) {
-        if(left instanceof Append) {
+        if (left instanceof Append) {
             return ((Append) left).append(right);
         } else {
             return ((Append) right).prepend(left);

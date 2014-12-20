@@ -2,7 +2,6 @@ package fi.imberg.juhani.ernu.parser.parsers;
 
 import fi.imberg.juhani.ernu.interpreter.node.BlockNode;
 import fi.imberg.juhani.ernu.interpreter.node.ForNode;
-import fi.imberg.juhani.ernu.interpreter.node.IdentifierNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;

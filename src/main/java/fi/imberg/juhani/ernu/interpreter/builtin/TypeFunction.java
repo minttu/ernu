@@ -14,7 +14,7 @@ public class TypeFunction extends BuiltinFunction {
 
     @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
-        if(arguments.size() != 1) {
+        if (arguments.size() != 1) {
             throw new RuntimeException("help takes one argument only");
         }
         Node node = arguments.get(0);

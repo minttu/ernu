@@ -18,7 +18,7 @@ public class PrefixNode implements Node {
         Node node = this.node.getValue(environment);
         switch (type) {
             case NOT:
-                if(!(node instanceof BooleanNode)) {
+                if (!(node instanceof BooleanNode)) {
                     throw new RuntimeException("Must be boolean to be notted!");
                 }
                 return new BooleanNode(!((BooleanNode) node).isTrue());

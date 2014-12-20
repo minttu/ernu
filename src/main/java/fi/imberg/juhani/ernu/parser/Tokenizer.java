@@ -78,7 +78,7 @@ public class Tokenizer {
                     continue;
                 case '&':
                 case '|':
-                    if(!isEmpty()) {
+                    if (!isEmpty()) {
                         if (this.tokens.getLast().getLength() == 1) {
                             String last = this.tokens.getLast().getContent();
                             if (last.matches("" + c)) {

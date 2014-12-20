@@ -54,9 +54,9 @@ public class ArrayNode implements Node, Sequence, Append {
     @Override
     public Node append(Node node) {
         ArrayNode newArray = new ArrayNode(new ArrayList<>(values));
-        if(node instanceof ArrayNode) {
+        if (node instanceof ArrayNode) {
             ArrayNode other = (ArrayNode) node;
-            for(Node value : other.getValues()) {
+            for (Node value : other.getValues()) {
                 newArray.appendNode(value);
             }
         } else {
@@ -77,9 +77,9 @@ public class ArrayNode implements Node, Sequence, Append {
     @Override
     public Node prepend(Node node) {
         ArrayNode newArray = new ArrayNode(new ArrayList<>(values));
-        if(node instanceof ArrayNode) {
+        if (node instanceof ArrayNode) {
             ArrayNode other = (ArrayNode) node;
-            for(Node value : other.getValues()) {
+            for (Node value : other.getValues()) {
                 newArray.prependNode(value);
             }
         } else {
