@@ -1,5 +1,7 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
+import fi.imberg.juhani.ernu.App;
+import fi.imberg.juhani.ernu.interpreter.Append;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Math;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
@@ -89,6 +91,11 @@ public class OperatorNode implements Node {
     public Node getValue(Environment environment) throws RuntimeException {
         Node left = this.left.getValue(environment);
         Node right = this.right.getValue(environment);
+        if(operator == TokenType.ADD || operator == TokenType.ADDSET) {
+            if(left instanceof Append || right instanceof Append) {
+                return getAppendValue(left, right);
+            }
+        }
         if (!(left.getClass().equals(right.getClass()))) {
             throw new RuntimeException("left and right don't share a class");
         }
@@ -121,5 +128,13 @@ public class OperatorNode implements Node {
             }
         }
         return new NullNode();
+    }
+
+    private Node getAppendValue(Node left, Node right) {
+        if(left instanceof Append) {
+            return ((Append) left).append(right);
+        } else {
+            return ((Append) right).prepend(left);
+        }
     }
 }
