@@ -44,22 +44,22 @@ public class Parser {
         infixParsers.put(TokenType.DIVSET, new AssignmentParser());
         infixParsers.put(TokenType.MODSET, new AssignmentParser());
 
-        infixParsers.put(TokenType.OR, new OperatorParser(2, false));
-        infixParsers.put(TokenType.AND, new OperatorParser(3, false));
+        infixParsers.put(TokenType.OR, new OperatorParser(Precedence.OR, false));
+        infixParsers.put(TokenType.AND, new OperatorParser(Precedence.AND, false));
 
-        infixParsers.put(TokenType.EQ, new OperatorParser(4, false));
-        infixParsers.put(TokenType.NOTEQ, new OperatorParser(4, false));
+        infixParsers.put(TokenType.EQ, new OperatorParser(Precedence.EQUALITY, false));
+        infixParsers.put(TokenType.NOTEQ, new OperatorParser(Precedence.EQUALITY, false));
 
-        infixParsers.put(TokenType.GT, new OperatorParser(5, false));
-        infixParsers.put(TokenType.LT, new OperatorParser(5, false));
-        infixParsers.put(TokenType.GTOE, new OperatorParser(5, false));
-        infixParsers.put(TokenType.LTOE, new OperatorParser(5, false));
+        infixParsers.put(TokenType.GT, new OperatorParser(Precedence.COMPARISON, false));
+        infixParsers.put(TokenType.LT, new OperatorParser(Precedence.COMPARISON, false));
+        infixParsers.put(TokenType.GTOE, new OperatorParser(Precedence.COMPARISON, false));
+        infixParsers.put(TokenType.LTOE, new OperatorParser(Precedence.COMPARISON, false));
 
-        infixParsers.put(TokenType.ADD, new OperatorParser(6, false));
-        infixParsers.put(TokenType.SUB, new OperatorParser(6, false));
-        infixParsers.put(TokenType.DIV, new OperatorParser(7, false));
-        infixParsers.put(TokenType.MUL, new OperatorParser(7, false));
-        infixParsers.put(TokenType.MOD, new OperatorParser(7, false));
+        infixParsers.put(TokenType.ADD, new OperatorParser(Precedence.SUM, false));
+        infixParsers.put(TokenType.SUB, new OperatorParser(Precedence.SUM, false));
+        infixParsers.put(TokenType.DIV, new OperatorParser(Precedence.PRODUCT, false));
+        infixParsers.put(TokenType.MUL, new OperatorParser(Precedence.PRODUCT, false));
+        infixParsers.put(TokenType.MOD, new OperatorParser(Precedence.PRODUCT, false));
 
     }
 

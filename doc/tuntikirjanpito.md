@@ -5,4 +5,4 @@
 | 15.12 | 3h   | Lisää ominaisuuksia parseriin
 | 18.12 | 1h   | Komentoriviä kauniimmaksi
 | 19.12 | 11h  | Komentoriviä kauniimmaksi, dokumentointia, arrayn parseaminen, tulkin alku
-| 20.12 | 1h   | REPL
+| 20.12 | 2h   | REPL, kaikki assignment operaattorit, booleanit ja niille operaattoreita

@@ -4,6 +4,7 @@ import fi.imberg.juhani.ernu.interpreter.node.ArrayAccessNode;
 import fi.imberg.juhani.ernu.interpreter.node.IdentifierNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
+import fi.imberg.juhani.ernu.parser.Precedence;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
@@ -19,6 +20,6 @@ public class ArrayAccessParser implements InfixParser {
 
     @Override
     public int getPrecedence() {
-        return 10;
+        return Precedence.CALL;
     }
 }
