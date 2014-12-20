@@ -34,6 +34,8 @@ public class Parser {
         prefixParsers.put(TokenType.TRUE, new BooleanParser());
         prefixParsers.put(TokenType.FALSE, new BooleanParser());
 
+        prefixParsers.put(TokenType.NOT, new PrefixOperatorParser());
+
         infixParsers.put(TokenType.LPAREN, new CallParser());
         infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());
 

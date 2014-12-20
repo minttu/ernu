@@ -14,16 +14,22 @@ public class REPL {
     private final Tokenizer tokenizer;
     private final Parser parser;
     private final Environment environment;
+    private boolean lastOk;
 
     public REPL() {
         this.scanner = new Scanner(System.in);
         this.tokenizer = new Tokenizer();
         this.parser = new Parser(tokenizer);
         this.environment = new Environment("repl");
+        this.lastOk = true;
     }
 
     private String read() {
-        System.out.print("<(^_^)> ");
+        if(lastOk) {
+            System.out.print("(^_^) ");
+        } else {
+            System.out.print("(>_<) ");
+        }
         return scanner.nextLine() + "\n\n";
     }
 
@@ -48,8 +54,10 @@ public class REPL {
         while (true) {
             try {
                 print(eval(read()));
+                lastOk = true;
             } catch (ErnuException e) {
                 e.printStackTrace();
+                lastOk = false;
                 while (!tokenizer.isEmpty()) {
                     tokenizer.nextToken();
                 }
