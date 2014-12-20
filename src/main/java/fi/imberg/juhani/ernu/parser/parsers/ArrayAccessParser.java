@@ -15,7 +15,7 @@ public class ArrayAccessParser implements InfixParser {
     public Node parse(Parser parser, Node left, Token token) throws LangException {
         Node index = parser.parseNode();
         parser.match(TokenType.RBRACKET);
-        return new ArrayAccessNode((IdentifierNode) left, index);
+        return new ArrayAccessNode(left, index);
     }
 
     @Override

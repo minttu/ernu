@@ -11,11 +11,9 @@ import fi.imberg.juhani.ernu.interpreter.node.NullNode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintFunction extends FunctionNode {
+public class PrintFunction extends BuiltinFunction {
     public PrintFunction() {
-        super(new ArrayList<Node>(),
-                "Prints stuff.",
-                new BlockNode(new ArrayList<Node>()));
+        super("Prints stuff.");
     }
 
     @Override

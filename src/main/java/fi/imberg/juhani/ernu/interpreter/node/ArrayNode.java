@@ -1,18 +1,19 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Length;
+import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
 
-public class ArrayNode implements Node, Length {
+public class ArrayNode implements Node, Sequence {
     private final List<Node> values;
 
     public ArrayNode(List<Node> values) {
         this.values = values;
     }
 
+    @Override
     public void set(int index, Node value) {
         while (values.size() <= index) {
             values.add(new NullNode());
@@ -20,10 +21,8 @@ public class ArrayNode implements Node, Length {
         values.set(index, value);
     }
 
+    @Override
     public Node get(int index) throws RuntimeException {
-        if (values.size() <= index) {
-            throw new RuntimeException("No such element in the array.");
-        }
         return values.get(index);
     }
 

@@ -16,6 +16,10 @@ public class FunctionNode implements Node {
         this.doc = doc;
     }
 
+    public String getDoc() {
+        return doc;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

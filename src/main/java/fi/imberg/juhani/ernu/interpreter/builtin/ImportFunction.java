@@ -14,11 +14,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ImportFunction extends FunctionNode {
+public class ImportFunction extends BuiltinFunction {
     public ImportFunction() {
-        super(new ArrayList<Node>(),
-                "Brings symbols from another file.",
-                new BlockNode(new ArrayList<Node>()));
+        super("Brings symbols from another file.");
     }
 
     private String realFilename(Environment environment, String fileName) {

@@ -59,7 +59,7 @@ public class REPL {
                 print(eval(read()));
                 lastOk = true;
             } catch (ErnuException e) {
-                e.printStackTrace();
+                System.err.println("\033[31m" + e.getMessage() + "\033[0m");
                 lastOk = false;
                 while (!tokenizer.isEmpty()) {
                     tokenizer.nextToken();

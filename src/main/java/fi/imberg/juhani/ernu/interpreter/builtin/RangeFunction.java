@@ -7,11 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.node.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RangeFunction extends FunctionNode {
+public class RangeFunction extends BuiltinFunction {
     public RangeFunction() {
-        super(new ArrayList<Node>(),
-                "Creates a range.",
-                new BlockNode(new ArrayList<Node>()));
+        super("Creates a range.");
     }
 
     @Override

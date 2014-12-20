@@ -1,11 +1,11 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Length;
+import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.Printable;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
-public class StringNode implements Node, Comparable<StringNode>, Length, Printable {
+public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable {
     private final String stringLiteral;
 
     public StringNode(String stringLiteral) {
@@ -34,6 +34,16 @@ public class StringNode implements Node, Comparable<StringNode>, Length, Printab
     @Override
     public int length() {
         return this.stringLiteral.length();
+    }
+
+    @Override
+    public Node get(int index) throws RuntimeException {
+        return new StringNode("" + stringLiteral.charAt(index));
+    }
+
+    @Override
+    public void set(int index, Node value) throws RuntimeException {
+        throw new RuntimeException("Strings are immutable");
     }
 
     @Override
