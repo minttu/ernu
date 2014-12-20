@@ -1,11 +1,12 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.Length;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
 
-public class ArrayNode implements Node {
+public class ArrayNode implements Node, Length {
     private final List<Node> values;
 
     public ArrayNode(List<Node> values) {
@@ -38,5 +39,10 @@ public class ArrayNode implements Node {
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
         return this;
+    }
+
+    @Override
+    public int length() {
+        return values.size();
     }
 }

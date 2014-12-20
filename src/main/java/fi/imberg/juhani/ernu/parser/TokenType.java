@@ -24,7 +24,7 @@ public enum TokenType {
     AND("and|\\&\\&"),
     OR("or|\\|\\|"),
     NOT("not|\\!"),
-    IDENTIFIER("[A-Za-z]+[A-Za-z0-9_]*"),
+    IDENTIFIER("[A-Za-z_]+[A-Za-z0-9_]*"),
     STRING("\".+\""),
     EOL("\n|\\;"),
     EQ("=="),

@@ -1,10 +1,13 @@
 package fi.imberg.juhani.ernu.interpreter;
 
 import fi.imberg.juhani.ernu.interpreter.builtin.ImportFunction;
+import fi.imberg.juhani.ernu.interpreter.builtin.LenFunction;
 import fi.imberg.juhani.ernu.interpreter.builtin.PrintFunction;
 import fi.imberg.juhani.ernu.interpreter.builtin.RangeFunction;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.node.BooleanNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.node.StringNode;
 
 import java.util.HashMap;
 
@@ -12,14 +15,17 @@ public class Environment {
     private final HashMap<String, Node> symbols;
     private final String fileName;
     private Environment parent;
+    private boolean executed;
 
     public Environment(Environment parent, String fileName) {
         this.symbols = new HashMap<>();
         this.parent = parent;
         this.fileName = fileName;
+        this.executed = parent == null;
         addSymbol("print", new PrintFunction());
         addSymbol("range", new RangeFunction());
         addSymbol("import", new ImportFunction());
+        addSymbol("len", new LenFunction());
     }
 
     public Environment(String fileName) {
@@ -31,6 +37,12 @@ public class Environment {
     }
 
     public Node getSymbol(String string) throws RuntimeException {
+        switch (string) {
+            case "__name__":
+                return new StringNode(fileName);
+            case "__executed__":
+                return new BooleanNode(executed);
+        }
         Node node = this.symbols.get(string);
         if (node == null) {
             if (parent == null) {

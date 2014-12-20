@@ -9,9 +9,15 @@ end
 
 import("dir/definitions1.ernu")
 
-for i in range(coolVariable) do
-  print(i, factorial(i))
-  if i >= coolVariable2 do
-    print("starting to overflow? get a better language!")
+main = function ()
+  for i in range(coolVariable) do
+    print(i, factorial(i))
+    if i >= coolVariable2 do
+      print("starting to overflow? get a better language!")
+    end
   end
+end
+
+if __executed__ do
+  main()
 end

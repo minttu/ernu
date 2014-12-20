@@ -22,6 +22,9 @@ public class BlockNode implements Node {
         Environment local = environment;
         for (int i = 0; i < nodes.size(); i++) {
             Node node = nodes.get(i);
+            if(node == null) {
+                continue;
+            }
 
             if (node instanceof ReturnNode || i == nodes.size() - 1) {
                 return node.getValue(local);

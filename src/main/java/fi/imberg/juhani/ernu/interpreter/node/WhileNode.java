@@ -19,13 +19,15 @@ public class WhileNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        Node truth = conditional.getValue(environment);
-        if (!(truth instanceof BooleanNode)) {
-            throw new RuntimeException("Conditional is not a boolean");
-        }
-
         Node valueNode = new NullNode();
-        while (((BooleanNode) truth).isTrue()) {
+        while(true) {
+            Node truth = conditional.getValue(environment);
+            if (!(truth instanceof BooleanNode)) {
+                throw new RuntimeException("Conditional is not a boolean");
+            }
+            if(!((BooleanNode) truth).isTrue()) {
+                break;
+            }
             valueNode = body.getValue(environment);
         }
         return valueNode;

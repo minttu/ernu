@@ -10,6 +10,6 @@ public class StringParser implements PrefixParser {
 
     @Override
     public Node parse(Parser parser, Token token) throws LangException {
-        return new StringNode(token.getContent());
+        return new StringNode(token.getContent().substring(1, token.getContent().length() - 1));
     }
 }

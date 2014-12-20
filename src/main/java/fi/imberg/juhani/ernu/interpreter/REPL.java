@@ -47,7 +47,10 @@ public class REPL {
     }
 
     private void print(Node node) throws RuntimeException {
-        System.out.println(node.getValue(this.environment).toString());
+        Node value = node.getValue(this.environment);
+        if(!(value instanceof NullNode)) {
+            System.out.println(value);
+        }
     }
 
     public void loop() {
