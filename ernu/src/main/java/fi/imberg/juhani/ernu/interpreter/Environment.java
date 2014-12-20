@@ -19,12 +19,9 @@ public class Environment {
         this.parent = parent;
         this.fileName = fileName;
         this.executed = parent == null;
-        addSymbol("print", new PrintFunction());
-        addSymbol("range", new RangeFunction());
-        addSymbol("import", new ImportFunction());
-        addSymbol("len", new LenFunction());
-        addSymbol("help", new HelpFunction());
-        addSymbol("type", new TypeFunction());
+        if(executed && !fileName.equals("builtin")) {
+            this.parent = new BuiltinEnvironment();
+        }
     }
 
     public Environment(String fileName) {
