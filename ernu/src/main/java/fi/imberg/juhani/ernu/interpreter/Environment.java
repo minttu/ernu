@@ -54,8 +54,7 @@ public class Environment {
     }
 
     public Environment subEnvironment() {
-        Environment environment = new Environment(this, this.fileName);
-        return environment;
+        return new Environment(this, this.fileName);
     }
 
     public Environment getParent() {

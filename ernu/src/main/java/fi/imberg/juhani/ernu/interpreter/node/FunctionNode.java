@@ -43,7 +43,7 @@ public class FunctionNode implements Node {
     }
 
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
-        Environment local = environment; //.subEnvironment();
+        Environment local = environment.subEnvironment();
 
         if (arguments.size() != this.arguments.size()) {
             throw new RuntimeException("Wrong number of arguments");
@@ -56,6 +56,6 @@ public class FunctionNode implements Node {
             }
             ((IdentifierNode) identifier).setValue(local, value);
         }
-        return body.getValue(environment);
+        return body.getValue(local);
     }
 }
