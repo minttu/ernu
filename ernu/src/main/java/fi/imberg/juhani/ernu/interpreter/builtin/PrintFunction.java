@@ -16,7 +16,7 @@ public class PrintFunction extends BuiltinFunction {
     @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
         for (int i = 0; i < arguments.size(); i++) {
-            Node node = arguments.get(i);
+            Node node = arguments.get(i).getValue(environment);
             if (node instanceof Printable) {
                 System.out.print(((Printable) node).toPrintable());
             } else {

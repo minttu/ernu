@@ -18,7 +18,7 @@ public class LenFunction extends BuiltinFunction {
         if (arguments.size() != 1) {
             throw new RuntimeException("len takes exactly one argument");
         }
-        Node arg = arguments.get(0);
+        Node arg = arguments.get(0).getValue(environment);;
         if (!(arg instanceof Sequence)) {
             throw new RuntimeException("len argument should implement len");
         }

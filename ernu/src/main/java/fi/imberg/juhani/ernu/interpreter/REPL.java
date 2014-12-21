@@ -7,6 +7,8 @@ import fi.imberg.juhani.ernu.interpreter.node.NullNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 
+import java.io.IOException;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class REPL {
@@ -22,6 +24,28 @@ public class REPL {
         this.parser = new Parser(tokenizer);
         this.environment = new Environment("repl");
         this.lastOk = true;
+        greet();
+        execute("import(\"math\", \"functional\")");
+    }
+
+    public void execute(String string) {
+        System.out.println("(^_^) " + string);
+        try {
+            print(eval(string + "\n\n"));
+        } catch (ErnuException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void greet() {
+        Properties properties = new Properties();
+        try {
+            properties.load(this.getClass().getResourceAsStream("/git.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("(   ) ernu lang");
+        System.out.println("(   ) git rev: " + properties.getProperty("git.commit.id.abbrev"));
     }
 
     private String read() {

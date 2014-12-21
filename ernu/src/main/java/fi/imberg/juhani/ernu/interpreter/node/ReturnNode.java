@@ -1,6 +1,7 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 public class ReturnNode implements Node {
@@ -17,6 +18,6 @@ public class ReturnNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        return value.getValue(environment);
+        throw new ReturnException(value.getValue(environment));
     }
 }

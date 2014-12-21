@@ -1,6 +1,7 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
@@ -56,6 +57,10 @@ public class FunctionNode implements Node {
             }
             ((IdentifierNode) identifier).setValue(local, value);
         }
-        return body.getValue(local);
+        try {
+            return body.getValue(local);
+        } catch (ReturnException ret) {
+            return ret.getValue();
+        }
     }
 }

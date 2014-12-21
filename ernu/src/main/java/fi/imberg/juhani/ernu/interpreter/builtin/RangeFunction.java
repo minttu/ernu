@@ -17,10 +17,10 @@ public class RangeFunction extends BuiltinFunction {
     @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
         List<Node> values = new ArrayList<>();
-        int to = ((NumberNode) arguments.get(0)).getInteger();
+        int to = ((NumberNode) arguments.get(0).getValue(environment)).getInteger();
         int from = 0;
         if (arguments.size() == 2) {
-            from = ((NumberNode) arguments.get(1)).getInteger();
+            from = ((NumberNode) arguments.get(1).getValue(environment)).getInteger();
             int asd = to;
             to = from;
             from = asd;

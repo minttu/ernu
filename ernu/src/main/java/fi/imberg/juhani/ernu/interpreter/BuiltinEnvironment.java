@@ -11,5 +11,11 @@ public class BuiltinEnvironment extends Environment {
         addSymbol("len", new LenFunction());
         addSymbol("help", new HelpFunction());
         addSymbol("type", new TypeFunction());
+        addSymbol("defined", new DefinedFunction());
+        addSymbol("apply", new ApplyFunction());
+        addSymbol("namespace", new NamespaceFunction());
+        addSymbol("use", new UseFunction());
+        addSymbol("str", new StrFunction());
+        addSymbol("num", new NumFunction());
     }
 }

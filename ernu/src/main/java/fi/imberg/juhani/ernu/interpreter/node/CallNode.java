@@ -22,9 +22,6 @@ public class CallNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        if (!(what instanceof IdentifierNode)) {
-            throw new RuntimeException("Not callable.");
-        }
         Node node = what.getValue(environment);
         if (!(node instanceof FunctionNode)) {
             throw new RuntimeException("Not callable.");

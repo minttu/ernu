@@ -9,11 +9,18 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 public class ImportFunction extends BuiltinFunction {
     public ImportFunction() {
@@ -21,6 +28,9 @@ public class ImportFunction extends BuiltinFunction {
     }
 
     private String realFilename(Environment environment, String fileName) {
+        if (!fileName.contains(".ernu")) {
+            return fileName;
+        }
         String[] parts = environment.getFileName().split("/");
         parts[parts.length - 1] = fileName;
         fileName = "";
@@ -31,6 +41,9 @@ public class ImportFunction extends BuiltinFunction {
     }
 
     private String fileToString(String fileName) throws RuntimeException {
+        if (!(fileName.contains(".ernu"))) {
+            return loadLib(fileName);
+        }
         byte[] bytes;
         try {
             bytes = Files.readAllBytes(Paths.get(fileName));
@@ -38,6 +51,25 @@ public class ImportFunction extends BuiltinFunction {
             throw new RuntimeException("No such file as \"" + fileName + "\".");
         }
         return new String(bytes, StandardCharsets.UTF_8);
+    }
+
+    private String loadLib(String fileName) throws RuntimeException {
+        try {
+            URI uri = this.getClass().getResource("/" + fileName + ".ernu").toURI();
+
+            // java7 <3 http://stackoverflow.com/a/22605905
+            Map<String, String> env = new HashMap<>();
+            String[] array = uri.toString().split("!");
+            FileSystem fs = FileSystems.newFileSystem(URI.create(array[0]), env);
+            Path path = fs.getPath(array[1]);
+            String result = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
+            fs.close();
+
+            return result;
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+            throw new RuntimeException("No such library as \"" + fileName + "\".");
+        }
     }
 
     private void processFile(Environment environment, String fileName) throws RuntimeException {

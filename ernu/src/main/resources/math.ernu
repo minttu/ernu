@@ -1,0 +1,37 @@
+namespace("math")
+
+abs = function (p) if p >= 0 do p else p * -1 end end
+
+pow = function (b, e)
+  r = 1
+  p = if e < 0 do 1/b else b end
+  if e < 0 do e *= -1 end
+  while e > 0 do
+    e -= 1
+    r *= p
+  end
+end
+
+root = function (a, n)
+  x = 1
+  while true do
+    xo = (1 / n) * ((n - 1) * x + a / pow(x, n - 1))
+    if abs(xo - x) < 0.0000000001 do
+      return xo
+    end
+    x = xo
+  end
+end
+
+sqrt = function (a) root(a, 2) end
+
+round = function (i)
+  if i % 1 >= 0.5 do
+    ceil(i)
+  else
+    floor(i)
+  end
+end
+
+floor = function (i) i - i % 1 end
+ceil = function (i) i + (1 - i % 1) end

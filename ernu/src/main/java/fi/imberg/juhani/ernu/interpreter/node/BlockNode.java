@@ -1,6 +1,7 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
@@ -22,13 +23,12 @@ public class BlockNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        Environment local = environment;
         for (int i = 0; i < nodes.size(); i++) {
             Node node = nodes.get(i);
-            if (node instanceof ReturnNode || i == nodes.size() - 1) {
-                return node.getValue(local);
+            if (i == nodes.size() - 1) {
+                return node.getValue(environment);
             } else {
-                node.getValue(local);
+                node.getValue(environment);
             }
         }
 

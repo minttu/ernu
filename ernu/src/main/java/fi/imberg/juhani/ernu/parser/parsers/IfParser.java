@@ -32,7 +32,7 @@ public class IfParser implements PrefixParser {
         }
 
         if (parser.match(TokenType.ELSE)) {
-            parser.consume(TokenType.EOL);
+            parser.match(TokenType.EOL);
             if (!parser.match(TokenType.END)) {
                 do {
                     branch2.add(parser.parseNode());

@@ -89,6 +89,8 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
     public String toString() {
         if(this.denominator.equals(BigInteger.ONE)) {
             return this.numerator.toString();
+        } else if(this.numerator.equals(BigInteger.ZERO)) {
+            return "0";
         }
         return this.getBigDecimal().toString().replaceAll("0*$", "");
     }
