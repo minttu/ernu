@@ -154,8 +154,10 @@ public class ParserTest {
     @Test
     public void arrayWorks() {
         doTest("a = function()\nb = [0, 1, 2]\nb[0] = 3\nend",
-                "(= a (fn [] [(= b [0, 1, 2]), (= b[0] 3)]))");
+                "(= a (fn [] [(= b [0, 1, 2]), (= b[[0]] 3)]))");
         doTest("a = []", "(= a [])");
+        doTest("c = a[0:3:1]", "(= c a[[0, 3, 1]])");
+        doTest("c = a[::1]", "(= c a[[null, null, 1]])");
     }
 
     @Test

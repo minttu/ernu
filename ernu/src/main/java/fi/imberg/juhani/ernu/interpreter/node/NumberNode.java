@@ -1,12 +1,12 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Math;
+import fi.imberg.juhani.ernu.interpreter.Mathable;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode> {
+public class NumberNode implements Node, Comparable<NumberNode>, Mathable<NumberNode> {
     private BigInteger numerator;
     private BigInteger denominator;
 

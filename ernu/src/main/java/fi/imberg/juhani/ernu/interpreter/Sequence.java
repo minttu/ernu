@@ -9,4 +9,6 @@ public interface Sequence {
     public Node get(int index) throws RuntimeException;
 
     public void set(int index, Node value) throws RuntimeException;
+
+    public Node newEmpty();
 }

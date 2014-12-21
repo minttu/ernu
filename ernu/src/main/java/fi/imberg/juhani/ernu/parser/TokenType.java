@@ -45,6 +45,7 @@ public enum TokenType {
     DIVSET("\\/="),
     MULSET("\\*="),
     COMMA(","),
+    SLICE_SEPARATOR("\\:"),
     NONE(""),
     EOF("");
 

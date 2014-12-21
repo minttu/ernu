@@ -2,6 +2,7 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.node.ArrayNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.interpreter.node.StringNode;
 
@@ -20,6 +21,17 @@ public class StrFunction extends BuiltinFunction {
         Node node = arguments.get(0).getValue(environment);
         if (node instanceof StringNode) {
             return node;
+        }
+        if (node instanceof ArrayNode) {
+            StringBuilder sb = new StringBuilder();
+            for (Node subnode : ((ArrayNode) node).getValues()) {
+                if (subnode instanceof StringNode) {
+                    sb.append(((StringNode) subnode).getStringLiteral());
+                } else {
+                    sb.append(sb.toString());
+                }
+            }
+            return new StringNode(sb.toString());
         }
         return new StringNode(node.toString());
     }

@@ -1,8 +1,8 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Append;
+import fi.imberg.juhani.ernu.interpreter.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Math;
+import fi.imberg.juhani.ernu.interpreter.Mathable;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
@@ -28,27 +28,27 @@ public class OperatorNode implements Node {
     }
 
     private Node getMathValue(Node left, Node right) throws RuntimeException {
-        if (!(left instanceof Math)) {
+        if (!(left instanceof Mathable)) {
             throw new RuntimeException("left and right don't know math");
         }
-        Math leftMath = (Math) left;
-        Math rightMath = (Math) right;
+        Mathable leftMathable = (Mathable) left;
+        Mathable rightMathable = (Mathable) right;
         switch (operator) {
             case ADD:
             case ADDSET:
-                return leftMath.add(rightMath);
+                return leftMathable.add(rightMathable);
             case SUB:
             case SUBSET:
-                return leftMath.sub(rightMath);
+                return leftMathable.sub(rightMathable);
             case DIV:
             case DIVSET:
-                return leftMath.div(rightMath);
+                return leftMathable.div(rightMathable);
             case MUL:
             case MULSET:
-                return leftMath.mul(rightMath);
+                return leftMathable.mul(rightMathable);
             case MOD:
             case MODSET:
-                return leftMath.mod(rightMath);
+                return leftMathable.mod(rightMathable);
         }
         return new NullNode();
     }
@@ -90,7 +90,7 @@ public class OperatorNode implements Node {
         Node left = this.left.getValue(environment);
         Node right = this.right.getValue(environment);
         if (operator == TokenType.ADD || operator == TokenType.ADDSET) {
-            if (left instanceof Append || right instanceof Append) {
+            if (left instanceof Appendable || right instanceof Appendable) {
                 return getAppendValue(left, right);
             }
         }
@@ -129,10 +129,10 @@ public class OperatorNode implements Node {
     }
 
     private Node getAppendValue(Node left, Node right) {
-        if (left instanceof Append) {
-            return ((Append) left).append(right);
+        if (left instanceof Appendable) {
+            return ((Appendable) left).append(right);
         } else {
-            return ((Append) right).prepend(left);
+            return ((Appendable) right).prepend(left);
         }
     }
 }

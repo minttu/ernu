@@ -1,6 +1,6 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Append;
+import fi.imberg.juhani.ernu.interpreter.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
@@ -8,8 +8,12 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayNode implements Node, Sequence, Append {
+public class ArrayNode implements Node, Sequence, Appendable {
     private final List<Node> values;
+
+    public ArrayNode() {
+        this.values = new ArrayList<>();
+    }
 
     public ArrayNode(List<Node> values) {
         this.values = values;
@@ -21,6 +25,11 @@ public class ArrayNode implements Node, Sequence, Append {
             values.add(new NullNode());
         }
         values.set(index, value);
+    }
+
+    @Override
+    public Node newEmpty() {
+        return new ArrayNode();
     }
 
     @Override

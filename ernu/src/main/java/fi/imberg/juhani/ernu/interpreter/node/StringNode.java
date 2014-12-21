@@ -1,13 +1,17 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Append;
+import fi.imberg.juhani.ernu.interpreter.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.Printable;
 import fi.imberg.juhani.ernu.interpreter.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
-public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Append {
+public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Appendable {
     private final String stringLiteral;
+
+    public StringNode() {
+        this.stringLiteral = "";
+    }
 
     public StringNode(String stringLiteral) {
         this.stringLiteral = stringLiteral;
@@ -45,6 +49,11 @@ public class StringNode implements Node, Comparable<StringNode>, Sequence, Print
     @Override
     public void set(int index, Node value) throws RuntimeException {
         throw new RuntimeException("Strings are immutable");
+    }
+
+    @Override
+    public Node newEmpty() {
+        return new StringNode();
     }
 
     @Override
