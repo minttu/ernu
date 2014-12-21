@@ -20,7 +20,7 @@ public class CaseNode implements Node {
 
     public boolean matches(Environment environment) throws RuntimeException {
         Node value = conditional.getValue(environment);
-        if(!(value instanceof BooleanNode)) {
+        if (!(value instanceof BooleanNode)) {
             throw new RuntimeException("Conditional must be boolean");
         }
         return ((BooleanNode) value).isTrue();

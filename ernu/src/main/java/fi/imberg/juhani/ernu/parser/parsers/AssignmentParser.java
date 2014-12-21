@@ -1,6 +1,5 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
-import fi.imberg.juhani.ernu.interpreter.node.ArrayAccessNode;
 import fi.imberg.juhani.ernu.interpreter.node.AssignmentNode;
 import fi.imberg.juhani.ernu.interpreter.node.IdentifierNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;

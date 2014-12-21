@@ -2,8 +2,8 @@ package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import org.junit.Assert;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -39,9 +39,9 @@ public class ArrayNodeTest {
 
     @Test
     public void appendAndPrependSingleWorks() {
-        arrayNode = (ArrayNode)arrayNode.append(new NumberNode(1));
-        arrayNode = (ArrayNode)arrayNode.append(new NumberNode(2));
-        arrayNode = (ArrayNode)arrayNode.prepend(new NumberNode(0));
+        arrayNode = (ArrayNode) arrayNode.append(new NumberNode(1));
+        arrayNode = (ArrayNode) arrayNode.append(new NumberNode(2));
+        arrayNode = (ArrayNode) arrayNode.prepend(new NumberNode(0));
         Assert.assertEquals(3, arrayNode.length());
         try {
             Assert.assertEquals(new NumberNode(0), arrayNode.get(0));
@@ -58,7 +58,7 @@ public class ArrayNodeTest {
         anotherArray.set(0, new NumberNode(0));
         anotherArray.set(1, new NumberNode(1));
         anotherArray.set(2, new NumberNode(2));
-        arrayNode = (ArrayNode)arrayNode.append(anotherArray);
+        arrayNode = (ArrayNode) arrayNode.append(anotherArray);
         Assert.assertEquals(3, arrayNode.length());
         try {
             Assert.assertEquals(new NumberNode(0), arrayNode.get(0));
@@ -68,7 +68,7 @@ public class ArrayNodeTest {
             e.printStackTrace();
         }
 
-        arrayNode = (ArrayNode)arrayNode.prepend(anotherArray);
+        arrayNode = (ArrayNode) arrayNode.prepend(anotherArray);
         Assert.assertEquals(6, arrayNode.length());
         try {
             Assert.assertEquals(new NumberNode(0), arrayNode.get(0));

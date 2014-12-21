@@ -1,9 +1,11 @@
 package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.exceptions.*;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.*;
+import fi.imberg.juhani.ernu.interpreter.node.ArrayNode;
+import fi.imberg.juhani.ernu.interpreter.node.CallNode;
+import fi.imberg.juhani.ernu.interpreter.node.FunctionNode;
+import fi.imberg.juhani.ernu.interpreter.node.Node;
 
 import java.util.List;
 

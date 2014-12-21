@@ -15,11 +15,11 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
     }
 
     public NumberNode(String value) {
-        if(value.contains(".")) {
+        if (value.contains(".")) {
             int len = value.length() - value.indexOf('.');
             String den = "1";
             String num = value.replace(".", "");
-            for(int i = 1; i < len; i++) {
+            for (int i = 1; i < len; i++) {
                 den += "0";
             }
             this.numerator = new BigInteger(num);
@@ -38,7 +38,7 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
     }
 
     private void reduce() {
-        if(!numerator.equals(BigInteger.ZERO)) {
+        if (!numerator.equals(BigInteger.ZERO)) {
             BigInteger common = numerator.abs().gcd(denominator);
             numerator = numerator.divide(common);
             denominator = denominator.divide(common);
@@ -74,10 +74,10 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
 
     @Override
     public boolean equals(Object other) {
-        if(this == other) {
+        if (this == other) {
             return true;
         }
-        if(!(other instanceof NumberNode)) {
+        if (!(other instanceof NumberNode)) {
             return false;
         }
         NumberNode otherNumber = (NumberNode) other;
@@ -87,9 +87,9 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
 
     @Override
     public String toString() {
-        if(this.denominator.equals(BigInteger.ONE)) {
+        if (this.denominator.equals(BigInteger.ONE)) {
             return this.numerator.toString();
-        } else if(this.numerator.equals(BigInteger.ZERO)) {
+        } else if (this.numerator.equals(BigInteger.ZERO)) {
             return "0";
         }
         return this.getBigDecimal().toString().replaceAll("0*$", "");

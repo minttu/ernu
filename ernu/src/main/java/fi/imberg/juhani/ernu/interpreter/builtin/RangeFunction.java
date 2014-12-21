@@ -3,8 +3,8 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.node.ArrayNode;
-import fi.imberg.juhani.ernu.interpreter.node.NumberNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.node.NumberNode;
 
 import java.util.ArrayList;
 import java.util.List;

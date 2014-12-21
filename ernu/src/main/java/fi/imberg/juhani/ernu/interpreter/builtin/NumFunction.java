@@ -1,7 +1,6 @@
 package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.exceptions.*;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.interpreter.node.NumberNode;
@@ -20,7 +19,7 @@ public class NumFunction extends BuiltinFunction {
             throw new RuntimeException("num takes one argument only");
         }
         Node node = arguments.get(0).getValue(environment);
-        if(!(node instanceof StringNode)) {
+        if (!(node instanceof StringNode)) {
             throw new RuntimeException("num takes a string only");
         }
         return new NumberNode(((StringNode) node).getStringLiteral());

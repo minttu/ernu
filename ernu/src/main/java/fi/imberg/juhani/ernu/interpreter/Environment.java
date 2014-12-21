@@ -1,12 +1,12 @@
 package fi.imberg.juhani.ernu.interpreter;
 
-import fi.imberg.juhani.ernu.interpreter.builtin.*;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.node.BooleanNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.interpreter.node.StringNode;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Environment {
     private final HashMap<String, Node> symbols;
@@ -21,9 +21,13 @@ public class Environment {
         this.fileName = fileName;
         this.executed = parent == null;
         this.namespace = "";
-        if(executed && !fileName.equals("builtin")) {
+        if (executed && !fileName.equals("builtin")) {
             this.parent = new BuiltinEnvironment();
         }
+    }
+
+    public Environment(String fileName) {
+        this(null, fileName);
     }
 
     public String getNamespace() {
@@ -32,10 +36,6 @@ public class Environment {
 
     public void setNamespace(String namespace) {
         this.namespace = namespace;
-    }
-
-    public Environment(String fileName) {
-        this(null, fileName);
     }
 
     public void addSymbol(String string, Node node) {
@@ -53,8 +53,8 @@ public class Environment {
 
         String target_ns = "";
         String target_id = "";
-        for(char c : string.toCharArray()) {
-            if(c == '.') {
+        for (char c : string.toCharArray()) {
+            if (c == '.') {
                 target_ns += target_id;
                 target_id = "";
             } else {
@@ -63,7 +63,7 @@ public class Environment {
         }
         Node node = null;
 
-        if(namespace.equals(target_ns)) {
+        if (namespace.equals(target_ns)) {
             node = symbols.get(target_id);
         }
 
@@ -98,10 +98,10 @@ public class Environment {
     }
 
     public Environment findNamespace(String string) {
-        if(namespace.equals(string)) {
+        if (namespace.equals(string)) {
             return this;
         } else {
-            if(parent == null) {
+            if (parent == null) {
                 return null;
             } else {
                 return parent.findNamespace(string);
@@ -111,7 +111,7 @@ public class Environment {
 
     public void addUsing(String string) throws RuntimeException {
         Environment other = findNamespace(string);
-        if(other != null) {
+        if (other != null) {
             Map<String, Node> otherSymbols = other.getSymbols();
             symbols.putAll(otherSymbols);
         } else {

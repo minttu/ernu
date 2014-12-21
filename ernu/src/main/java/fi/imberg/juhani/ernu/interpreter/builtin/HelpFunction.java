@@ -18,7 +18,8 @@ public class HelpFunction extends BuiltinFunction {
         if (arguments.size() != 1) {
             throw new RuntimeException("help takes one argument only");
         }
-        Node node = arguments.get(0).getValue(environment);;
+        Node node = arguments.get(0).getValue(environment);
+        ;
         if (!(node instanceof FunctionNode)) {
             throw new RuntimeException("helps argument must be a function");
         }

@@ -18,7 +18,8 @@ public class NamespaceFunction extends BuiltinFunction {
         if (arguments.size() != 1) {
             throw new RuntimeException("namespace takes one argument only");
         }
-        Node node = arguments.get(0).getValue(environment);;
+        Node node = arguments.get(0).getValue(environment);
+        ;
         if (!(node instanceof StringNode)) {
             throw new RuntimeException("namespaces argument must be a string");
         }

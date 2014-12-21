@@ -17,12 +17,12 @@ public class MatchParser implements PrefixParser {
     public Node parse(Parser parser, Token token) throws LangException {
         parser.match(TokenType.EOL);
         List<CaseNode> cases = new ArrayList<>();
-        while(!parser.match(TokenType.END)) {
+        while (!parser.match(TokenType.END)) {
             parser.consume(TokenType.CASE);
             Node conditional = parser.parseNode();
             List<Node> body = new ArrayList<>();
             parser.consume(TokenType.DO);
-            while(!(parser.isNext(TokenType.CASE) || parser.isNext(TokenType.END))) {
+            while (!(parser.isNext(TokenType.CASE) || parser.isNext(TokenType.END))) {
                 body.add(parser.parseNode());
                 parser.match(TokenType.EOL);
             }

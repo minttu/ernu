@@ -14,8 +14,8 @@ public class MatchNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        for(CaseNode caseNode : cases) {
-            if(caseNode.matches(environment)) {
+        for (CaseNode caseNode : cases) {
+            if (caseNode.matches(environment)) {
                 return caseNode.getValue(environment);
             }
         }

@@ -1,7 +1,6 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
@@ -10,7 +9,7 @@ public class BlockNode implements Node {
     private final List<Node> nodes;
 
     public BlockNode(List<Node> nodes) {
-        while(nodes.contains(null)) {
+        while (nodes.contains(null)) {
             nodes.remove(null);
         }
         this.nodes = nodes;

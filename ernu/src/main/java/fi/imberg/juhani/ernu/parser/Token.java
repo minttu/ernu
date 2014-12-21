@@ -60,16 +60,16 @@ public class Token {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) {
+        if (obj == null) {
             return false;
         }
-        if(obj == this) {
+        if (obj == this) {
             return true;
         }
-        if(!(obj instanceof Token)) {
+        if (!(obj instanceof Token)) {
             return false;
         }
-        Token other = (Token)obj;
+        Token other = (Token) obj;
         return (this.getColumn() == other.getColumn() &&
                 this.getLine() == other.getLine() &&
                 this.getContent().equals(other.getContent()) &&
