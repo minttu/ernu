@@ -23,6 +23,7 @@ public class TokenizerTest {
         for (int i = 0; i < line.length; i++) {
             Token token = tokenizer.nextToken();
             Assert.assertNotEquals(null, token);
+            Assert.assertNotEquals(TokenType.NONE, token.getType());
             Assert.assertEquals(line[i], token.getLine());
             Assert.assertEquals(column[i], token.getColumn());
             Assert.assertEquals(content[i], token.getContent());
@@ -79,8 +80,8 @@ public class TokenizerTest {
                 new int[]{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 31, 33, 35, 37, 39, 41, 43, 46},
                 new String[]{"==", "!=", "<=", ">=", "%=", "+=", "-=", "*=", "/=", "<",
                         "=", ">", "%", "+", "-", "*", "/", "||", "&&"});
-        doTest("| ||", new int[]{0, 0}, new int[]{0, 2}, new String[]{"|", "||"});
-        doTest("a= a|", new int[]{0, 0, 0, 0}, new int[]{0, 1, 3, 4}, new String[]{"a", "=", "a", "|"});
+        doTest("a ||", new int[]{0, 0}, new int[]{0, 2}, new String[]{"a", "||"});
+        doTest("a= a||", new int[]{0, 0, 0, 0}, new int[]{0, 1, 3, 4}, new String[]{"a", "=", "a", "||"});
     }
 
     @Test

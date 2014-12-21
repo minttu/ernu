@@ -28,10 +28,6 @@ public class ArrayNode implements Node, Sequence, Append {
         return values.get(index);
     }
 
-    public int size() {
-        return values.size();
-    }
-
     @Override
     public String toString() {
         return values.toString();
@@ -67,7 +63,7 @@ public class ArrayNode implements Node, Sequence, Append {
     }
 
     public void appendNode(Node node) {
-        set(size(), node);
+        set(length(), node);
     }
 
     public void prependNode(Node node) {
@@ -79,7 +75,8 @@ public class ArrayNode implements Node, Sequence, Append {
         ArrayNode newArray = new ArrayNode(new ArrayList<>(values));
         if (node instanceof ArrayNode) {
             ArrayNode other = (ArrayNode) node;
-            for (Node value : other.getValues()) {
+            for (int i = other.length() - 1; i >= 0; i--) {
+                Node value = other.getValues().get(i);
                 newArray.prependNode(value);
             }
         } else {

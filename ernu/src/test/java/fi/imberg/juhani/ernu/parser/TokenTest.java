@@ -53,4 +53,15 @@ public class TokenTest {
         token.add('\n');
         Assert.assertEquals("  0:0                  NONE    <EOL>", token.toString());
     }
+
+    @Test
+    public void testEquals() {
+        Assert.assertNotEquals(new Token(0, 1, "a"), new Token(0, 0, "a"));
+        Assert.assertNotEquals(new Token(1, 0, "a"), new Token(0, 0, "a"));
+        Assert.assertNotEquals(new Token(0, 0, "a"), null);
+        Assert.assertEquals(token, token);
+        Assert.assertNotEquals(token, new Integer(0));
+        token.setType(TokenType.IDENTIFIER);
+        Assert.assertNotEquals(token, new Token(0, 0, ""));
+    }
 }

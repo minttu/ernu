@@ -31,7 +31,7 @@ public class ForNode implements Node {
         }
         ArrayNode generatedArray = (ArrayNode) generated;
         Node value = new NullNode();
-        for (int i = 0; i < generatedArray.size(); i++) {
+        for (int i = 0; i < generatedArray.length(); i++) {
             local.addSymbol(identifier.toString(), generatedArray.get(i));
             value = body.getValue(local);
         }

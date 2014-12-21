@@ -71,6 +71,20 @@ public class NumberNode implements Node, Comparable<NumberNode>, Math<NumberNode
                 .compareTo(other.getNumerator().multiply(getDenominator()));
     }
 
+
+    @Override
+    public boolean equals(Object other) {
+        if(this == other) {
+            return true;
+        }
+        if(!(other instanceof NumberNode)) {
+            return false;
+        }
+        NumberNode otherNumber = (NumberNode) other;
+        return (getNumerator().equals(otherNumber.getNumerator()) &&
+                getDenominator().equals(otherNumber.getDenominator()));
+    }
+
     @Override
     public String toString() {
         if(this.denominator.equals(BigInteger.ONE)) {

@@ -69,6 +69,18 @@ public class ParserTest {
     }
 
     @Test
+    public void consumeTypeReturnsToken() {
+        tokenizer.tokenize("3");
+        Token token = new Token(0, 0, "3");
+        TokenType.matchType(token);
+        try {
+            Assert.assertEquals(token, parser.consume(TokenType.NUMBER));
+        } catch (LangException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
     public void groupingWorks() {
         doTest("a % (b + c)", "(% a (+ b c))");
     }

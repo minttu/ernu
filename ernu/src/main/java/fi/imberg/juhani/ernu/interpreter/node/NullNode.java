@@ -9,6 +9,11 @@ public class NullNode implements Node {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        return (obj instanceof NullNode);
+    }
+
+    @Override
     public String toString() {
         return "null";
     }
