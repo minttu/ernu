@@ -1,0 +1,18 @@
+fizzbuzz = function (n)
+  for i in range(1, n+1) do
+    match
+      case i % 15 == 0 do
+        print("FizzBuzz")
+      case i % 3 == 0 do
+        print("Fizz")
+      case i % 5 == 0 do
+        print("Buzz")
+      case true do
+        print(i)
+    end
+  end
+end
+
+if __executed__ do
+  fizzbuzz(100)
+end

@@ -27,6 +27,7 @@ public class TokenizerTest {
             Assert.assertEquals(column[i], token.getColumn());
             Assert.assertEquals(content[i], token.getContent());
         }
+        Assert.assertTrue(tokenizer.isEmpty());
     }
 
     @Test
@@ -73,10 +74,13 @@ public class TokenizerTest {
 
     @Test
     public void operatorsParsed() {
-        doTest("== != <= >= %= += -= *= /= < = > % + - * /",
-                new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                new int[]{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 31, 33, 35, 37, 39, 41},
-                new String[]{"==", "!=", "<=", ">=", "%=", "+=", "-=", "*=", "/=", "<", "=", ">", "%", "+", "-", "*", "/"});
+        doTest("== != <= >= %= += -= *= /= < = > % + - * / || &&",
+                new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                new int[]{0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 29, 31, 33, 35, 37, 39, 41, 43, 46},
+                new String[]{"==", "!=", "<=", ">=", "%=", "+=", "-=", "*=", "/=", "<",
+                        "=", ">", "%", "+", "-", "*", "/", "||", "&&"});
+        doTest("| ||", new int[]{0, 0}, new int[]{0, 2}, new String[]{"|", "||"});
+        doTest("a= a|", new int[]{0, 0, 0, 0}, new int[]{0, 1, 3, 4}, new String[]{"a", "=", "a", "|"});
     }
 
     @Test

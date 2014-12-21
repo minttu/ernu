@@ -50,4 +50,13 @@ public class TokenTypeTest {
             doTest(text, TokenType.NUMBER);
         }
     }
+
+    @Test
+    public void typeWontBeReassigned() {
+        Token token = new Token(0, 0, "hello");
+        token.setType(TokenType.DO);
+        Assert.assertEquals(TokenType.DO, token.getType());
+        TokenType.matchType(token);
+        Assert.assertEquals(TokenType.DO, token.getType());
+    }
 }

@@ -81,13 +81,13 @@ public class Tokenizer {
                     if (!isEmpty()) {
                         if (this.tokens.getLast().getLength() == 1) {
                             String last = this.tokens.getLast().getContent();
-                            if (last.matches("" + c)) {
+                            if (last.charAt(0) == c) {
                                 addToLast(c);
+                                break;
                             }
                         }
-                    } else {
-                        createNew(c);
                     }
+                    createNew(c);
                     break;
                 case '=':
                     if (!isEmpty()) {

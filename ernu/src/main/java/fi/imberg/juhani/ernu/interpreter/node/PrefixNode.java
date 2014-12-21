@@ -25,4 +25,9 @@ public class PrefixNode implements Node {
         }
         return new NullNode();
     }
+
+    @Override
+    public String toString() {
+        return "(! " + node + ")";
+    }
 }

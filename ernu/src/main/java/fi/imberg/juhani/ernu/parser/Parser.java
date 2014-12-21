@@ -29,6 +29,7 @@ public class Parser {
         prefixParsers.put(TokenType.IF, new IfParser());
         prefixParsers.put(TokenType.WHILE, new WhileParser());
         prefixParsers.put(TokenType.FOR, new ForParser());
+        prefixParsers.put(TokenType.MATCH, new MatchParser());
         prefixParsers.put(TokenType.RETURN, new ReturnParser());
         prefixParsers.put(TokenType.LBRACKET, new ArrayParser());
         prefixParsers.put(TokenType.TRUE, new BooleanParser());

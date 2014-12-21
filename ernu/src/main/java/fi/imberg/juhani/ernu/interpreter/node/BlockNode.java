@@ -9,6 +9,9 @@ public class BlockNode implements Node {
     private final List<Node> nodes;
 
     public BlockNode(List<Node> nodes) {
+        while(nodes.contains(null)) {
+            nodes.remove(null);
+        }
         this.nodes = nodes;
     }
 
@@ -22,10 +25,6 @@ public class BlockNode implements Node {
         Environment local = environment;
         for (int i = 0; i < nodes.size(); i++) {
             Node node = nodes.get(i);
-            if (node == null) {
-                continue;
-            }
-
             if (node instanceof ReturnNode || i == nodes.size() - 1) {
                 return node.getValue(local);
             } else {
