@@ -24,7 +24,7 @@ public class CallNode implements Node {
     public Node getValue(Environment environment) throws RuntimeException {
         Node node = what.getValue(environment);
         if (!(node instanceof FunctionNode)) {
-            throw new RuntimeException("Not callable.");
+            throw new RuntimeException("Not callable. Got: " + node);
         }
         List<Node> args = new ArrayList<>();
         for (Node value : arguments) {

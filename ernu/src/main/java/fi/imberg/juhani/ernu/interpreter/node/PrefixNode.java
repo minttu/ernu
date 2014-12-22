@@ -22,6 +22,11 @@ public class PrefixNode implements Node {
                     throw new RuntimeException("Must be boolean to be notted!");
                 }
                 return new BooleanNode(!((BooleanNode) node).isTrue());
+            case SUB:
+                if (!(node instanceof NumberNode)) {
+                    throw new RuntimeException("Must be number to be made negative");
+                }
+                return new OperatorNode(node, TokenType.MUL, new NumberNode("-1")).getValue(environment);
         }
         return new NullNode();
     }

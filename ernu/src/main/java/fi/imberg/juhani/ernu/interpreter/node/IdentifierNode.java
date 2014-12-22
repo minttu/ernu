@@ -17,7 +17,11 @@ public class IdentifierNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        return environment.getSymbol(name);
+        Node value = environment.getSymbol(name);
+        if (value instanceof IdentifierNode) {
+            value = value.getValue(environment);
+        }
+        return value;
     }
 
     public void setValue(Environment environment, Node value) throws RuntimeException {

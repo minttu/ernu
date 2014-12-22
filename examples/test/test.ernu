@@ -1,0 +1,50 @@
+assertEquals = function (message, a, b)
+  if a != b do
+    print("FAIL: " + message + " GOT: " + a + ", " + b)
+    return 0
+  end
+  print("OK: " + message)
+  return 1
+end
+
+assertClose = function (message, a, b, threshold)
+  if a - b > threshold do
+    print("FAIL: " + message + " GOT: " + a + ", " + b)
+    return 0
+  end
+  print("OK: " + message)
+  return 1
+end
+
+sum = function (arr)
+  import("functional")
+  functional.reduce(function (a, b) a+b end, arr)
+end
+
+testNumbers = function ()
+  "Tests numbers"
+  res = []
+
+  res += assertEquals("1 == 1", 1, 1)
+  res += assertEquals("3.14 == 3.14", 3.14, 3.14)
+  res += assertEquals("1-0 == 1", 1 - 0, 1)
+  res += assertEquals("1-4 == -3", 1 - 4, -3)
+  res += assertEquals("3/4 == 0.75", 3/4, 0.75)
+  res += assertClose("67/23 nearly 2.913043478260869565217391304348", 67/23, 2.913043478260869565217391304348, 0.00000000000000000000000001)
+
+  return res
+end
+
+doTests = function ()
+  tests = [testNumbers]
+  for test in tests do
+    print(help(test))
+    print("-------------")
+    res = test()
+    print("RES: " + sum(res) / len(res) * 100 + "% (" + sum(res) + "/" + len(res) + ")")
+  end
+end
+
+if __executed__ do
+  doTests()
+end

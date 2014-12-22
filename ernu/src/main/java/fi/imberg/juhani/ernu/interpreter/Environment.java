@@ -51,20 +51,20 @@ public class Environment {
                 return new BooleanNode(executed);
         }
 
-        String target_ns = "";
-        String target_id = "";
+        String targetNS = "";
+        String targetID = "";
         for (char c : string.toCharArray()) {
             if (c == '.') {
-                target_ns += target_id;
-                target_id = "";
+                targetNS += targetID;
+                targetID = "";
             } else {
-                target_id += c;
+                targetID += c;
             }
         }
         Node node = null;
 
-        if (namespace.equals(target_ns)) {
-            node = symbols.get(target_id);
+        if (namespace.equals(targetNS)) {
+            node = symbols.get(targetID);
         }
 
         if (node == null) {
