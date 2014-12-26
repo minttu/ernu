@@ -1,12 +1,14 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 
 import java.util.List;
 
-public class FunctionNode implements Node {
+public class FunctionNode implements Node, Callable {
     private final List<Node> arguments;
     private final BlockNode body;
     private final String doc;

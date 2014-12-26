@@ -19,6 +19,7 @@ public enum TokenType {
     CASE("case"),
     FOR("for"),
     IN("in"),
+    OBJECT("object"),
     TRUE("true"),
     FALSE("false"),
     AND("and|\\&\\&"),
@@ -45,6 +46,7 @@ public enum TokenType {
     DIVSET("\\/="),
     MULSET("\\*="),
     COMMA(","),
+    OBJECT_ACCESS("\\."),
     SLICE_SEPARATOR("\\:"),
     NONE(""),
     EOF("");

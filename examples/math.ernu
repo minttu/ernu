@@ -1,4 +1,4 @@
-a = []
-a[0] = 1
-a[2] = 0
-print(a)
+obj = object
+  a = 3
+end
+

@@ -1,9 +1,10 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
-public class IdentifierNode implements Node {
+public class IdentifierNode implements Node, Identifier {
     private final String name;
 
     public IdentifierNode(String name) {
@@ -24,6 +25,7 @@ public class IdentifierNode implements Node {
         return value;
     }
 
+    @Override
     public void setValue(Environment environment, Node value) throws RuntimeException {
         environment.addSymbol(name, value);
     }

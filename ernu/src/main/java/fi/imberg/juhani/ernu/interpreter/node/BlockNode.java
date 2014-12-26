@@ -3,6 +3,7 @@ package fi.imberg.juhani.ernu.interpreter.node;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BlockNode implements Node {
@@ -13,6 +14,10 @@ public class BlockNode implements Node {
             nodes.remove(null);
         }
         this.nodes = nodes;
+    }
+
+    public BlockNode() {
+        this.nodes = new ArrayList<>();
     }
 
     @Override

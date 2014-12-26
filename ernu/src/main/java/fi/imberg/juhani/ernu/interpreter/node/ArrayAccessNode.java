@@ -1,18 +1,18 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Appendable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Sequence;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.List;
 
-public class ArrayAccessNode extends IdentifierNode {
+public class ArrayAccessNode implements Node, Identifier {
     private final Node identifier;
     private final List<Node> args;
 
     public ArrayAccessNode(Node identifier, List<Node> args) {
-        super(identifier.toString());
         this.identifier = identifier;
         this.args = args;
     }

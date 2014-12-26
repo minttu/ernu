@@ -1,8 +1,8 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Appendable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Mathable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Mathable;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.parser.TokenType;
 

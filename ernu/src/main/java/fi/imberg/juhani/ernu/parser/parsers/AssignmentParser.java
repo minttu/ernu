@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
+import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.node.AssignmentNode;
-import fi.imberg.juhani.ernu.interpreter.node.IdentifierNode;
 import fi.imberg.juhani.ernu.interpreter.node.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Precedence;
@@ -13,7 +13,7 @@ public class AssignmentParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {
         Node right = parser.parseNode(0);
-        if (!(left instanceof IdentifierNode)) {
+        if (!(left instanceof Identifier)) {
             throw new ParsingException("Assignment left side must be an Identifier", token);
         }
         return new AssignmentNode(left, token.getType(), right);

@@ -30,6 +30,7 @@ public class Parser {
         prefixParsers.put(TokenType.WHILE, new WhileParser());
         prefixParsers.put(TokenType.FOR, new ForParser());
         prefixParsers.put(TokenType.MATCH, new MatchParser());
+        prefixParsers.put(TokenType.OBJECT, new ObjectParser());
         prefixParsers.put(TokenType.RETURN, new ReturnParser());
         prefixParsers.put(TokenType.LBRACKET, new ArrayParser());
         prefixParsers.put(TokenType.TRUE, new BooleanParser());
@@ -40,6 +41,7 @@ public class Parser {
 
         infixParsers.put(TokenType.LPAREN, new CallParser());
         infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());
+        infixParsers.put(TokenType.OBJECT_ACCESS, new ObjectAccessParser());
 
         infixParsers.put(TokenType.SET, new AssignmentParser());
         infixParsers.put(TokenType.ADDSET, new AssignmentParser());

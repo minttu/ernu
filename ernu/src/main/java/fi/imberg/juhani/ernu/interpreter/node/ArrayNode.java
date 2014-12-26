@@ -1,8 +1,8 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
-import fi.imberg.juhani.ernu.interpreter.Appendable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.Sequence;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 import java.util.ArrayList;

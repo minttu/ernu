@@ -116,6 +116,17 @@ public class Tokenizer {
                 case ';':
                     createNew(c);
                     break;
+                case '.':
+                    if (!isEmpty()) {
+                        Token token = tokens.getLast();
+                        String str = token.getContent();
+                        if(str.matches(TokenType.NUMBER.getMatch())) {
+                            addToLast(c);
+                            break;
+                        }
+                    }
+                    createNew(c);
+                    break;
                 default:
                     if (!isEmpty()) {
                         Token token = tokens.getLast();

@@ -1,5 +1,6 @@
 package fi.imberg.juhani.ernu.interpreter.node;
 
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
@@ -23,13 +24,13 @@ public class CallNode implements Node {
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
         Node node = what.getValue(environment);
-        if (!(node instanceof FunctionNode)) {
+        if (!(node instanceof Callable)) {
             throw new RuntimeException("Not callable. Got: " + node);
         }
         List<Node> args = new ArrayList<>();
         for (Node value : arguments) {
             args.add(value.getValue(environment));
         }
-        return ((FunctionNode) node).call(environment, args);
+        return ((Callable) node).call(environment, args);
     }
 }
