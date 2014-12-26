@@ -2,6 +2,7 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.*;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
@@ -37,5 +38,15 @@ public class ObjectNode implements Node, Object {
             return new NullNode();
         }
         return node;
+    }
+
+    @Override
+    public boolean hasAttribute(String key) throws RuntimeException {
+        try {
+            getAttribute(key);
+        } catch (UnknownAttributeException ignored) {
+            return false;
+        }
+        return true;
     }
 }

@@ -1,11 +1,19 @@
 Cat = class
-  age = 10
-  fun = function (this, i)
-    this.age * i
+  init = function (this, name, age)
+    this.name = name
+    this.age = age
+  end
+  grow = function (this, val)
+    this.age += val
+  end
+  toString = function (this)
+    return "Name: " + this.name + " Age: " + this.age
   end
 end
 
 if __executed__ do
-  cat = Cat()
-  print(cat.fun(10))
+  cat = Cat("Matti", 4)
+  print(cat.toString())
+  cat.grow(4)
+  print(cat.toString())
 end

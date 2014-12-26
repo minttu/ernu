@@ -6,4 +6,6 @@ public interface Object {
     public void setAttribute(String key, Node value) throws RuntimeException;
 
     public Node getAttribute(String key) throws RuntimeException;
+
+    public boolean hasAttribute(String key) throws RuntimeException;
 }

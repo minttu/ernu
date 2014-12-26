@@ -81,4 +81,14 @@ public class FunctionNode implements Node, Callable, Object {
         }
         throw new UnknownAttributeException(key);
     }
+
+    @Override
+    public boolean hasAttribute(String key) throws RuntimeException {
+        try {
+            getAttribute(key);
+        } catch (UnknownAttributeException ignored) {
+            return false;
+        }
+        return true;
+    }
 }

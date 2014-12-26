@@ -2,10 +2,12 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,16 +50,26 @@ public class ClassNode implements Node, Callable, Object {
     }
 
     @Override
-    public Node getAttribute(String key) {
+    public Node getAttribute(String key) throws UnknownAttributeException {
         switch(key) {
             case "__doc__":
                 return new StringNode(doc);
         }
         Node node = attributes.get(key);
         if (node == null) {
-            return new NullNode();
+            throw new UnknownAttributeException(key);
         }
         return node;
+    }
+
+    @Override
+    public boolean hasAttribute(String key) {
+        try {
+            getAttribute(key);
+        } catch (UnknownAttributeException ignored) {
+            return false;
+        }
+        return true;
     }
 
     @Override
@@ -65,7 +77,12 @@ public class ClassNode implements Node, Callable, Object {
         Environment local = environment.subEnvironment();
         initial.getValue(local);
         ObjectNode node = new ObjectNode(doc, local.getSymbols());
-        node.setAttribute("this", node);
+        if(node.hasAttribute("init")) {
+            List<Node> args = new ArrayList<>(arguments);
+            args.add(0, node);
+            CallNode callNode = new CallNode(node.getAttribute("init"), args);
+            callNode.getValue(local);
+        }
         return node;
     }
 
