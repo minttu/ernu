@@ -19,7 +19,7 @@ public enum TokenType {
     CASE("case"),
     FOR("for"),
     IN("in"),
-    OBJECT("object"),
+    CLASS("class"),
     TRUE("true"),
     FALSE("false"),
     AND("and|\\&\\&"),

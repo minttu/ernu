@@ -2,21 +2,18 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.*;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class ObjectNode implements Node, Callable, Object {
-    private final Map<String, Node> contents;
-    private final BlockNode initial;
+public class ObjectNode implements Node, Object {
+    private final Map<String, Node> attributes;
+    private final String doc;
 
-    public ObjectNode(BlockNode initial) {
-        this.contents = new HashMap<>();
-        this.initial = initial;
+    public ObjectNode(String doc, Map<String, Node> values) {
+        this.doc = doc;
+        this.attributes = values;
     }
 
     @Override
@@ -24,39 +21,21 @@ public class ObjectNode implements Node, Callable, Object {
         return this;
     }
 
-    public Map<String, Node> getContents() {
-        return contents;
-    }
-
-    public void setContents(Map<String, Node> contents) {
-        this.contents.putAll(contents);
+    @Override
+    public void setAttribute(String key, Node value) throws RuntimeException {
+        attributes.put(key, value);
     }
 
     @Override
-    public void setContent(String key, Node value) {
-        contents.put(key, value);
-    }
-
-    @Override
-    public Node getContent(String key) {
-        Node node = contents.get(key);
+    public Node getAttribute(String key) throws RuntimeException {
+        switch(key) {
+            case "__doc__":
+                return new StringNode(doc);
+        }
+        Node node = attributes.get(key);
         if (node == null) {
             return new NullNode();
         }
         return node;
-    }
-
-    @Override
-    public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
-        ObjectNode objectNode = new ObjectNode(new BlockNode());
-        Environment local = environment.subEnvironment();
-        initial.getValue(local);
-        objectNode.setContents(local.getSymbols());
-        return objectNode;
-    }
-
-    @Override
-    public String toString() {
-        return "(object " + contents.keySet() + ")";
     }
 }

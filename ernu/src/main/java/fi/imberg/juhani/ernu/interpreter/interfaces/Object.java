@@ -1,7 +1,9 @@
 package fi.imberg.juhani.ernu.interpreter.interfaces;
 
-public interface Object {
-    public void setContent(String key, Node value);
+import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
-    public Node getContent(String key);
+public interface Object {
+    public void setAttribute(String key, Node value) throws RuntimeException;
+
+    public Node getAttribute(String key) throws RuntimeException;
 }

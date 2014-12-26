@@ -1,14 +1,16 @@
 package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.ImmutableException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.*;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;
 
-public class FunctionNode implements Node, Callable {
+public class FunctionNode implements Node, Callable, Object {
     private final List<Node> arguments;
     private final BlockNode body;
     private final String doc;
@@ -64,5 +66,19 @@ public class FunctionNode implements Node, Callable {
         } catch (ReturnException ret) {
             return ret.getValue();
         }
+    }
+
+    @Override
+    public void setAttribute(String key, Node value) throws RuntimeException {
+        throw new ImmutableException();
+    }
+
+    @Override
+    public Node getAttribute(String key) throws RuntimeException {
+        switch (key) {
+            case "__doc__":
+                return new StringNode(doc);
+        }
+        throw new UnknownAttributeException(key);
     }
 }
