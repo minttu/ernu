@@ -29,6 +29,9 @@ public class CallNode implements Node {
             throw new RuntimeException("Not callable. Got: " + node);
         }
         List<Node> args = new ArrayList<>();
+        if(what instanceof ObjectAccessNode) {
+            args.add(((ObjectAccessNode) what).getObject());
+        }
         for (Node value : arguments) {
             args.add(value.getValue(environment));
         }

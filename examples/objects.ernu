@@ -1,0 +1,11 @@
+Cat = class
+  age = 10
+  fun = function (this, i)
+    this.age * i
+  end
+end
+
+if __executed__ do
+  cat = Cat()
+  print(cat.fun(10))
+end
