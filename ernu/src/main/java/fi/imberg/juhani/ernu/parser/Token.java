@@ -77,6 +77,16 @@ public class Token {
     }
 
     @Override
+    public int hashCode() {
+        int result = line;
+        result = 31 * result + column;
+        result = 31 * result + length;
+        result = 31 * result + content.hashCode();
+        result = 31 * result + type.hashCode();
+        return result;
+    }
+
+    @Override
     public String toString() {
         return String.format("%3d:%-3d%20s    %s",
                 this.line,
