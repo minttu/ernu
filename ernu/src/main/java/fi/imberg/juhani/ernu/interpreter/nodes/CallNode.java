@@ -1,8 +1,9 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
-import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,10 @@
 package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-import fi.imberg.juhani.ernu.interpreter.node.NumberNode;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
+import fi.imberg.juhani.ernu.interpreter.nodes.NumberNode;
 
 import java.util.List;
 

@@ -2,9 +2,9 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-import fi.imberg.juhani.ernu.interpreter.node.NullNode;
-import fi.imberg.juhani.ernu.interpreter.node.StringNode;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;

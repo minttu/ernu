@@ -1,9 +1,9 @@
 package fi.imberg.juhani.ernu.interpreter;
 
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.BooleanNode;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-import fi.imberg.juhani.ernu.interpreter.node.StringNode;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.BooleanNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.HashMap;
 import java.util.Map;

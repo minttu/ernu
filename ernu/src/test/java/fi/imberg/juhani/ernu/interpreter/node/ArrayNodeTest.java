@@ -1,7 +1,8 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

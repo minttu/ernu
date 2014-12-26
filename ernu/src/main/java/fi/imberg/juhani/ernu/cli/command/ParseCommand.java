@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.cli.command;
 
 import fi.imberg.juhani.ernu.ErnuException;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.util.Range;

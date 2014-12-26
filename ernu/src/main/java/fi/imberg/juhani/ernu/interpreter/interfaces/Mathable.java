@@ -1,7 +1,5 @@
 package fi.imberg.juhani.ernu.interpreter.interfaces;
 
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-
 public interface Mathable<T> {
     public Node add(T other);
 

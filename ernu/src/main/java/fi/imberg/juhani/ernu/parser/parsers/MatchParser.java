@@ -1,9 +1,9 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
-import fi.imberg.juhani.ernu.interpreter.node.BlockNode;
-import fi.imberg.juhani.ernu.interpreter.node.CaseNode;
-import fi.imberg.juhani.ernu.interpreter.node.MatchNode;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.BlockNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.CaseNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.MatchNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;

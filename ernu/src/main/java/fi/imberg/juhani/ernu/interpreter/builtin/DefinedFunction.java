@@ -2,9 +2,9 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.BooleanNode;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-import fi.imberg.juhani.ernu.interpreter.node.StringNode;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.BooleanNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class DefinedFunction extends BuiltinFunction {
         Node node = arguments.get(0).getValue(environment);
         ;
         if (!(node instanceof StringNode)) {
-            throw new RuntimeException("defineds argument must be a string node");
+            throw new RuntimeException("defineds argument must be a string nodes");
         }
         try {
             environment.getSymbol(((StringNode) node).getStringLiteral());

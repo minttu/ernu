@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.parser.parsers;
 
-import fi.imberg.juhani.ernu.interpreter.node.CallNode;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.CallNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Precedence;
 import fi.imberg.juhani.ernu.parser.Token;

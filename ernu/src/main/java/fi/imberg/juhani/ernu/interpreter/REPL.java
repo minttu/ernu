@@ -2,8 +2,8 @@ package fi.imberg.juhani.ernu.interpreter;
 
 import fi.imberg.juhani.ernu.ErnuException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.node.Node;
-import fi.imberg.juhani.ernu.interpreter.node.NullNode;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
+import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 

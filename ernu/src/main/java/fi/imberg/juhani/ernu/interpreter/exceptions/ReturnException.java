@@ -1,6 +1,6 @@
 package fi.imberg.juhani.ernu.interpreter.exceptions;
 
-import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 public class ReturnException extends RuntimeException {
     private final Node value;

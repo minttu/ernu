@@ -1,8 +1,9 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 public class IdentifierNode implements Node, Identifier {
     private final String name;

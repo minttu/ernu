@@ -1,10 +1,11 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
-import fi.imberg.juhani.ernu.interpreter.interfaces.Appendable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
+import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Appendable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Printable;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
-import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
 public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Appendable {
     private final String stringLiteral;

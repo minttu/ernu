@@ -1,10 +1,10 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
-import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 import java.util.List;
 
@@ -55,7 +55,7 @@ public class FunctionNode implements Node, Callable {
             Node identifier = this.arguments.get(i);
             Node value = arguments.get(i);
             if (!(identifier instanceof IdentifierNode)) {
-                throw new RuntimeException("Non identifier node in arguments");
+                throw new RuntimeException("Non identifier nodes in arguments");
             }
             ((IdentifierNode) identifier).setValue(local, value);
         }

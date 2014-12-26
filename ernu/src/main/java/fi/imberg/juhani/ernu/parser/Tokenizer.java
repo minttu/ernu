@@ -120,7 +120,7 @@ public class Tokenizer {
                     if (!isEmpty()) {
                         Token token = tokens.getLast();
                         String str = token.getContent();
-                        if(str.matches(TokenType.NUMBER.getMatch())) {
+                        if (str.matches(TokenType.NUMBER.getMatch())) {
                             addToLast(c);
                             break;
                         }

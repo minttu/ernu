@@ -1,8 +1,9 @@
-package fi.imberg.juhani.ernu.interpreter.node;
+package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ProxyNode implements Node, Callable {
     @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
         Node node = getValue(env);
-        if(!(node instanceof Callable)) {
+        if (!(node instanceof Callable)) {
             throw new RuntimeException("Node must be callable!");
         }
         return ((Callable) node).call(env, arguments);

@@ -1,6 +1,6 @@
 package fi.imberg.juhani.ernu.parser;
 
-import fi.imberg.juhani.ernu.interpreter.node.Node;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import fi.imberg.juhani.ernu.parser.exceptions.ParsingException;
 import fi.imberg.juhani.ernu.parser.exceptions.UnexpectedTokenException;
