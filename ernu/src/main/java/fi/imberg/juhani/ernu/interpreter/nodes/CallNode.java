@@ -24,17 +24,24 @@ public class CallNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
+        Environment env = environment;
         Node node = what.getValue(environment);
         if (!(node instanceof Callable)) {
             throw new RuntimeException("Not callable. Got: " + node);
         }
         List<Node> args = new ArrayList<>();
         if(what instanceof ObjectAccessNode) {
-            args.add(((ObjectAccessNode) what).getObject());
+            ObjectAccessNode objectAccessNode = (ObjectAccessNode) what;
+            Node object = objectAccessNode.getObject().getValue(environment);
+            if(object instanceof ObjectNode) {
+                args.add(((ObjectAccessNode) what).getObject());
+            } else if(object instanceof EnvironmentNode) {
+                env = ((EnvironmentNode) object).getEnvironment();
+            }
         }
         for (Node value : arguments) {
             args.add(value.getValue(environment));
         }
-        return ((Callable) node).call(environment, args);
+        return ((Callable) node).call(env, args);
     }
 }

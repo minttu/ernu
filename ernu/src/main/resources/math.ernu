@@ -1,4 +1,4 @@
-namespace("math")
+__doc__ = "Math stuff here!"
 
 abs = function (p) if p >= 0 do p else p * -1 end end
 

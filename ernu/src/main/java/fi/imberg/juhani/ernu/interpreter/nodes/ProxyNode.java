@@ -30,4 +30,9 @@ public class ProxyNode implements Node, Callable {
     public Node getValue(Environment environment) throws RuntimeException {
         return identifier.getValue(env);
     }
+
+    @Override
+    public String toString() {
+        return "(proxy " + env + "." + identifier + ")";
+    }
 }

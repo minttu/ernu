@@ -25,7 +25,7 @@ public class REPL {
         this.environment = new Environment("repl");
         this.lastOk = true;
         greet();
-        execute("import(\"math\", \"functional\")");
+        execute("math = import(\"math\")");
     }
 
     public void execute(String string) {

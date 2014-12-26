@@ -3,8 +3,7 @@ package fi.imberg.juhani.ernu.interpreter.builtin;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
-import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
-import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
+import fi.imberg.juhani.ernu.interpreter.nodes.*;
 import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
@@ -14,6 +13,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,18 +68,16 @@ public class ImportFunction extends BuiltinFunction {
         }
     }
 
-    private void processFile(Environment environment, String fileName) throws RuntimeException {
+    private Node processFile(Environment environment, String fileName) throws RuntimeException {
         fileName = realFilename(environment, fileName);
         String source = fileToString(fileName);
-        Environment other = new Environment(environment, fileName);
 
-        Environment thisParent = environment.getParent();
-        other.setParent(thisParent);
-        environment.setParent(other);
+        Environment other = new Environment(fileName);
 
         Tokenizer tokenizer = new Tokenizer();
         Parser parser = new Parser(tokenizer);
         tokenizer.tokenize(source + "\n\n");
+
         while (!tokenizer.isEmpty()) {
             Node node;
             try {
@@ -87,17 +85,19 @@ public class ImportFunction extends BuiltinFunction {
             } catch (LangException e) {
                 throw new RuntimeException(e.getMessage());
             }
-            if (node != null) {
+            if(node != null) {
                 node.getValue(other);
             }
         }
+        return new EnvironmentNode(other);
     }
 
     @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
-        for (Node node : arguments) {
-            processFile(environment, ((StringNode) node).getStringLiteral());
+        if (arguments.size() != 1) {
+            throw new RuntimeException("import takes exactly one argument");
         }
-        return new NullNode();
+        Node arg = arguments.get(0).getValue(environment);
+        return processFile(environment, ((StringNode) arg).getStringLiteral());
     }
 }

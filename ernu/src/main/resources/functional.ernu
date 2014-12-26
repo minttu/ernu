@@ -1,4 +1,4 @@
-namespace("functional")
+__doc__ = "Functional stuff here!"
 
 map = function (fun, arr)
   res = []

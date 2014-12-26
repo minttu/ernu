@@ -1,6 +1,7 @@
 package fi.imberg.juhani.ernu.interpreter;
 
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
+import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.nodes.BooleanNode;
 import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
@@ -13,14 +14,12 @@ public class Environment {
     private final String fileName;
     private Environment parent;
     private boolean executed;
-    private String namespace;
 
     public Environment(Environment parent, String fileName) {
         this.symbols = new HashMap<>();
         this.parent = parent;
         this.fileName = fileName;
         this.executed = parent == null;
-        this.namespace = "";
         if (executed && !fileName.equals("builtin")) {
             this.parent = new BuiltinEnvironment();
         }
@@ -28,14 +27,6 @@ public class Environment {
 
     public Environment(String fileName) {
         this(null, fileName);
-    }
-
-    public String getNamespace() {
-        return namespace;
-    }
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
     }
 
     public void addSymbol(String string, Node node) {
@@ -51,25 +42,11 @@ public class Environment {
                 return new BooleanNode(executed);
         }
 
-        String targetNS = "";
-        String targetID = "";
-        for (char c : string.toCharArray()) {
-            if (c == '.') {
-                targetNS += targetID;
-                targetID = "";
-            } else {
-                targetID += c;
-            }
-        }
-        Node node = null;
-
-        if (namespace.equals(targetNS)) {
-            node = symbols.get(targetID);
-        }
+        Node node = symbols.get(string);
 
         if (node == null) {
             if (parent == null) {
-                throw new RuntimeException("Unknown symbol \"" + string + "\"");
+                throw new UnknownAttributeException(string);
             } else {
                 return parent.getSymbol(string);
             }
@@ -95,27 +72,5 @@ public class Environment {
 
     public Map<String, Node> getSymbols() {
         return this.symbols;
-    }
-
-    public Environment findNamespace(String string) {
-        if (namespace.equals(string)) {
-            return this;
-        } else {
-            if (parent == null) {
-                return null;
-            } else {
-                return parent.findNamespace(string);
-            }
-        }
-    }
-
-    public void addUsing(String string) throws RuntimeException {
-        Environment other = findNamespace(string);
-        if (other != null) {
-            Map<String, Node> otherSymbols = other.getSymbols();
-            symbols.putAll(otherSymbols);
-        } else {
-            throw new RuntimeException("Unknown namespace");
-        }
     }
 }

@@ -88,6 +88,6 @@ public class ClassNode implements Node, Callable, Object {
 
     @Override
     public String toString() {
-        return "(object " + attributes.keySet() + ")";
+        return "(class " + attributes.keySet() + ")";
     }
 }
