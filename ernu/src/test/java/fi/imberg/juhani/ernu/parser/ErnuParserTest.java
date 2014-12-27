@@ -9,14 +9,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class ParserTest {
+public class ErnuParserTest {
     Tokenizer tokenizer;
-    Parser parser;
+    ErnuParser parser;
 
     @Before
     public void init() {
         tokenizer = new Tokenizer();
-        parser = new Parser(tokenizer);
+        parser = new ErnuParser(tokenizer);
     }
 
     @After

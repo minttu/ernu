@@ -15,14 +15,18 @@ public class Environment {
     private Environment parent;
     private boolean executed;
 
-    public Environment(Environment parent, String fileName) {
+    public Environment(boolean executed, Environment parent, String fileName) {
         this.symbols = new HashMap<>();
         this.parent = parent;
         this.fileName = fileName;
-        this.executed = parent == null;
-        if (executed && !fileName.equals("builtin")) {
+        this.executed = executed;
+        if (parent == null && !fileName.equals("builtin")) {
             this.parent = new BuiltinEnvironment();
         }
+    }
+
+    public Environment(Environment parent, String fileName) {
+        this(parent != null, parent, fileName);
     }
 
     public Environment(String fileName) {

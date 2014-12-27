@@ -7,14 +7,11 @@ factorial = function (n)
   end
 end
 
-import("dir/definitions1.ernu")
+from dir.definitions1 import coolVariable, coolVariable2, coolVariable3
 
 main = function ()
   for i in range(coolVariable) do
-    print(i, factorial(i))
-    if i >= coolVariable2 do
-      print("starting to overflow? get a better language!")
-    end
+    print(i + ": " + factorial(i))
   end
 end
 

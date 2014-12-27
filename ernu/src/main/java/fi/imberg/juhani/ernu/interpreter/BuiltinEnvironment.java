@@ -7,7 +7,6 @@ public class BuiltinEnvironment extends Environment {
         super(null, "builtin");
         addSymbol("print", new PrintFunction());
         addSymbol("range", new RangeFunction());
-        addSymbol("import", new ImportFunction());
         addSymbol("len", new LenFunction());
         addSymbol("help", new HelpFunction());
         addSymbol("type", new TypeFunction());

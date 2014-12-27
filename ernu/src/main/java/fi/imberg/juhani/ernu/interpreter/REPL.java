@@ -4,7 +4,7 @@ import fi.imberg.juhani.ernu.ErnuException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
-import fi.imberg.juhani.ernu.parser.Parser;
+import fi.imberg.juhani.ernu.parser.ErnuParser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 
 import java.io.IOException;
@@ -14,18 +14,18 @@ import java.util.Scanner;
 public class REPL {
     private final Scanner scanner;
     private final Tokenizer tokenizer;
-    private final Parser parser;
+    private final ErnuParser parser;
     private final Environment environment;
     private boolean lastOk;
 
     public REPL() {
         this.scanner = new Scanner(System.in);
         this.tokenizer = new Tokenizer();
-        this.parser = new Parser(tokenizer);
-        this.environment = new Environment("repl");
+        this.parser = new ErnuParser(tokenizer);
+        this.environment = new Environment(true, null, "repl");
         this.lastOk = true;
         greet();
-        execute("math = import(\"math\")");
+        execute("import math");
     }
 
     public void execute(String string) {

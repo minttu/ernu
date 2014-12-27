@@ -1,1 +1,3 @@
-coolVariable2 = 13
+from definitions3 import coolVariable3
+
+coolVariable2 = 60

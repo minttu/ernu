@@ -20,53 +20,14 @@ public class Parser {
         this.buffer = new ArrayList<>();
         this.prefixParsers = new HashMap<>();
         this.infixParsers = new HashMap<>();
+    }
 
-        prefixParsers.put(TokenType.IDENTIFIER, new IdentifierParser());
-        prefixParsers.put(TokenType.NUMBER, new NumberParser());
-        prefixParsers.put(TokenType.LPAREN, new GroupingParser());
-        prefixParsers.put(TokenType.FUNCTION, new FunctionParser());
-        prefixParsers.put(TokenType.STRING, new StringParser());
-        prefixParsers.put(TokenType.IF, new IfParser());
-        prefixParsers.put(TokenType.WHILE, new WhileParser());
-        prefixParsers.put(TokenType.FOR, new ForParser());
-        prefixParsers.put(TokenType.MATCH, new MatchParser());
-        prefixParsers.put(TokenType.CLASS, new ClassParser());
-        prefixParsers.put(TokenType.RETURN, new ReturnParser());
-        prefixParsers.put(TokenType.LBRACKET, new ArrayParser());
-        prefixParsers.put(TokenType.TRUE, new BooleanParser());
-        prefixParsers.put(TokenType.FALSE, new BooleanParser());
+    public void addInfixParser(TokenType tokenType, InfixParser parser) {
+        this.infixParsers.put(tokenType, parser);
+    }
 
-        prefixParsers.put(TokenType.NOT, new PrefixOperatorParser());
-        prefixParsers.put(TokenType.SUB, new PrefixOperatorParser());
-
-        infixParsers.put(TokenType.LPAREN, new CallParser());
-        infixParsers.put(TokenType.LBRACKET, new ArrayAccessParser());
-        infixParsers.put(TokenType.OBJECT_ACCESS, new ObjectAccessParser());
-
-        infixParsers.put(TokenType.SET, new AssignmentParser());
-        infixParsers.put(TokenType.ADDSET, new AssignmentParser());
-        infixParsers.put(TokenType.SUBSET, new AssignmentParser());
-        infixParsers.put(TokenType.MULSET, new AssignmentParser());
-        infixParsers.put(TokenType.DIVSET, new AssignmentParser());
-        infixParsers.put(TokenType.MODSET, new AssignmentParser());
-
-        infixParsers.put(TokenType.OR, new OperatorParser(Precedence.OR, false));
-        infixParsers.put(TokenType.AND, new OperatorParser(Precedence.AND, false));
-
-        infixParsers.put(TokenType.EQ, new OperatorParser(Precedence.EQUALITY, false));
-        infixParsers.put(TokenType.NOTEQ, new OperatorParser(Precedence.EQUALITY, false));
-
-        infixParsers.put(TokenType.GT, new OperatorParser(Precedence.COMPARISON, false));
-        infixParsers.put(TokenType.LT, new OperatorParser(Precedence.COMPARISON, false));
-        infixParsers.put(TokenType.GTOE, new OperatorParser(Precedence.COMPARISON, false));
-        infixParsers.put(TokenType.LTOE, new OperatorParser(Precedence.COMPARISON, false));
-
-        infixParsers.put(TokenType.ADD, new OperatorParser(Precedence.SUM, false));
-        infixParsers.put(TokenType.SUB, new OperatorParser(Precedence.SUM, false));
-        infixParsers.put(TokenType.DIV, new OperatorParser(Precedence.PRODUCT, false));
-        infixParsers.put(TokenType.MUL, new OperatorParser(Precedence.PRODUCT, false));
-        infixParsers.put(TokenType.MOD, new OperatorParser(Precedence.PRODUCT, false));
-
+    public void addPrefixParser(TokenType tokenType, PrefixParser parser) {
+        this.prefixParsers.put(tokenType, parser);
     }
 
     public Node parseNode(int precedence) throws LangException {

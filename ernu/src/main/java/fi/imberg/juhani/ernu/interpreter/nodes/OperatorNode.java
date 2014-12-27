@@ -88,15 +88,15 @@ public class OperatorNode implements Node {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        Node left = this.left.getValue(environment);
-        Node right = this.right.getValue(environment);
+        Node left = this.left.getValue(environment).getValue(environment);
+        Node right = this.right.getValue(environment).getValue(environment);
         if (operator == TokenType.ADD || operator == TokenType.ADDSET) {
             if (left instanceof Appendable || right instanceof Appendable) {
                 return getAppendValue(left, right);
             }
         }
         if (!(left.getClass().equals(right.getClass()))) {
-            throw new RuntimeException("left and right don't share a class");
+            throw new RuntimeException("left and right don't share a class, got: " + left + " and " + right);
         }
         if (operator == TokenType.ADD ||
                 operator == TokenType.SUB ||
