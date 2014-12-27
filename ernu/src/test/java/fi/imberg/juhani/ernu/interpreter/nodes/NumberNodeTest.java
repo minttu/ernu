@@ -49,6 +49,8 @@ public class NumberNodeTest {
     public void toStringWorks() {
         Assert.assertEquals("0.323232", new NumberNode("0.323232").toString());
         Assert.assertEquals("1", new NumberNode("1").toString());
+        Assert.assertEquals("2.", new NumberNode("2.00000000000000000000000000000000000000001").toString());
+        Assert.assertEquals("0", new NumberNode("0").toString());
     }
 
     @Test

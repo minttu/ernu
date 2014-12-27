@@ -26,7 +26,7 @@ public class Environment {
     }
 
     public Environment(Environment parent, String fileName) {
-        this(parent != null, parent, fileName);
+        this(parent == null, parent, fileName);
     }
 
     public Environment(String fileName) {
@@ -59,7 +59,7 @@ public class Environment {
     }
 
     public Environment subEnvironment() {
-        return new Environment(this, this.fileName);
+        return new Environment(false, this, this.fileName);
     }
 
     public Environment getParent() {

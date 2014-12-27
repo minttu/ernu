@@ -9,4 +9,4 @@
 | 21.12 | 8h   | Match/case, testejä, namespacet, standardi kirjastoa, sisäänrakennettuja komentoja
 | 22.12 | 1h   | Array slice
 | 26.12 | 4h   | Objekteja ja luokkien alkua, refaktorointia
-| 27.12 | 3h   | Uusi import/import as/from import systeemi
+| 27.12 | 6h   | Uusi import/import as/from import systeemi, testejä

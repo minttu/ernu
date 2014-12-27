@@ -84,4 +84,18 @@ public class StringNode implements Node, Comparable<StringNode>, Sequence, Print
         }
         return new StringNode(other + stringLiteral);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        StringNode that = (StringNode) o;
+
+        return getStringLiteral().equals(that.getStringLiteral());
+    }
 }

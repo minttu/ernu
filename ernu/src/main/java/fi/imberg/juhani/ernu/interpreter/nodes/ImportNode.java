@@ -131,4 +131,18 @@ public class ImportNode implements Node {
         return new NullNode();
     }
 
+    @Override
+    public String toString() {
+        if(subs.size() == 0) {
+            if(!what.equals(getLastPart())) {
+                return "(import " + what + " as " + getLastPart() + ")";
+            } else {
+                return "(import " + what + ")";
+            }
+        } else {
+            return "(from " + what + " import " + subs +")";
+        }
+
+    }
+
 }

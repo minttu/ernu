@@ -113,6 +113,12 @@ public class ErnuParserTest {
                 "(= a (fn [] [(if (== c 0) [] [])]))");
         doTest("a = function()\nif c == 0 do\nelse\nc += 1\nend\nend",
                 "(= a (fn [] [(if (== c 0) [] [(+= c 1)])]))");
+        doTest("if c == 0 do v(); v() else v(); v() end",
+                "(if (== c 0) [(v []), (v [])] [(v []), (v [])])");
+        doTest("if c == 0 do v() else end",
+                "(if (== c 0) [(v [])] [])");
+        doTest("if c == 0 do v(); v(); end",
+                "(if (== c 0) [(v []), (v [])] [])");
     }
 
     @Test
@@ -158,6 +164,7 @@ public class ErnuParserTest {
         doTest("a = []", "(= a [])");
         doTest("c = a[0:3:1]", "(= c a[[0, 3, 1]])");
         doTest("c = a[::1]", "(= c a[[null, null, 1]])");
+        doTest("a[1:]", "a[[1, null]]");
     }
 
     @Test
@@ -173,6 +180,35 @@ public class ErnuParserTest {
     @Test
     public void prefixesWork() {
         doTest("!true", "(! true)");
+    }
+
+    @Test
+    public void classWorks() {
+        // Classes aren't evaluated here yet
+        doTest("class \"hello doc\"; v = 3 end",
+                "(class [])");
+        doTest("class end",
+                "(class [])");
+    }
+
+    @Test
+    public void importWorks() {
+        doTest("import a",
+                "(import a)");
+        doTest("import asd.asd",
+                "(import asd.asd as asd)");
+        doTest("import a as b",
+                "(import a as b)");
+        doTest("from a import b",
+                "(from a import [b])");
+        doTest("from a import b, c",
+                "(from a import [b, c])");
+    }
+
+    @Test
+    public void objectAccessWorks() {
+        doTest("a.b",
+                "a.b");
     }
 
 }
