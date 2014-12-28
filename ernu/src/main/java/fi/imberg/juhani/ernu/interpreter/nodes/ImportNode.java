@@ -45,6 +45,11 @@ public class ImportNode implements Node {
             return null;
         }
 
+        // So, it seems when I try to mvn test this, there is no jar so the path is a real path in the FS.
+        if(!uri.toString().contains("!")) {
+            return Paths.get(uri);
+        }
+
         String[] array = uri.toString().split("!");
         fs = null;
         Path path = null;

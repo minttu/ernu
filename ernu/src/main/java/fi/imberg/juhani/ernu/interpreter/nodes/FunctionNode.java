@@ -21,10 +21,6 @@ public class FunctionNode implements Node, Callable, Object {
         this.doc = doc;
     }
 
-    public String getDoc() {
-        return doc;
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
