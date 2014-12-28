@@ -1,5 +1,8 @@
 package fi.imberg.juhani.ernu.parser;
 
+/**
+ * Enum of all of the possible token types
+ */
 public enum TokenType {
     LPAREN("\\("),
     RPAREN("\\)"),
@@ -60,6 +63,10 @@ public enum TokenType {
         this.match = match;
     }
 
+    /**
+     * Finds the first suitable type for the token, and marks the token as being of the found type.
+     * @param token The token to be matched against.
+     */
     public static void matchType(Token token) {
         if (token.getType() != TokenType.NONE) {
             return;

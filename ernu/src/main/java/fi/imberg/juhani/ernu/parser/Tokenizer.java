@@ -2,6 +2,9 @@ package fi.imberg.juhani.ernu.parser;
 
 import java.util.ArrayDeque;
 
+/**
+ * Splits a source string to tokens
+ */
 public class Tokenizer {
     private char[] source;
 
@@ -43,6 +46,10 @@ public class Tokenizer {
         createNew("" + c);
     }
 
+    /**
+     * Creates tokens out of the text
+     * @param text The string to be tokenized.
+     */
     public void tokenize(String text) {
         source = text.toCharArray();
         line = 0;
@@ -147,6 +154,10 @@ public class Tokenizer {
         }
     }
 
+    /**
+     *
+     * @return The next token
+     */
     public Token nextToken() {
         Token token = this.tokens.removeFirst();
         TokenType.matchType(token);

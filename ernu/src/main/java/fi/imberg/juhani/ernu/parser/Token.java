@@ -1,5 +1,8 @@
 package fi.imberg.juhani.ernu.parser;
 
+/**
+ * Describes a token, a piece of text that can be grouped.
+ */
 public class Token {
     private int line;
     private int column;
@@ -7,6 +10,12 @@ public class Token {
     private String content;
     private TokenType type;
 
+    /**
+     *
+     * @param line The line number the token starts appearing on
+     * @param column The column the token starts appearing on
+     * @param content The content of the token
+     */
     public Token(int line, int column, String content) {
         this.line = line;
         this.column = column;
@@ -39,11 +48,19 @@ public class Token {
         this.type = type;
     }
 
+    /**
+     * Adds a character to the token.
+     * @param c The character to be added
+     */
     public void add(char c) {
         length++;
         content += c;
     }
 
+    /**
+     * Adds a string to the token.
+     * @param chars The string to be added
+     */
     public void add(String chars) {
         for (char c : chars.toCharArray()) {
             add(c);

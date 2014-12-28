@@ -1,5 +1,8 @@
 package fi.imberg.juhani.ernu.parser;
 
+/**
+ * Describes the different infix parser precedences.
+ */
 public class Precedence {
     public static final int ASSIGNMENT = 1;
     public static final int OR = 2;

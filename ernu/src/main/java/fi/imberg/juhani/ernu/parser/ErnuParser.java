@@ -2,6 +2,9 @@ package fi.imberg.juhani.ernu.parser;
 
 import fi.imberg.juhani.ernu.parser.parsers.*;
 
+/**
+ * The actual parser, with all of the sub parsers added.
+ */
 public class ErnuParser extends Parser {
     public ErnuParser(Tokenizer tokenizer) {
         super(tokenizer);
