@@ -4,7 +4,7 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.builtin.BuiltinFunction;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.*;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;
@@ -32,10 +32,10 @@ public class EnvironmentNode implements Node, Object {
 
     @Override
     public Node getAttribute(String key) throws RuntimeException {
-        switch(key) {
+        switch (key) {
             case "__proxy__":
                 return new BuiltinFunction("Returns a proxy call node.",
-                        (Environment env, List<Node> args) -> getProxyTo(((StringNode)args.get(0)).getStringLiteral()));
+                        (Environment env, List<Node> args) -> getProxyTo(((StringNode) args.get(0)).getStringLiteral()));
         }
         return environment.getSymbol(key);
     }
@@ -50,7 +50,7 @@ public class EnvironmentNode implements Node, Object {
         }
     }
 
-    public Node getProxyTo(String key) throws RuntimeException{
+    public Node getProxyTo(String key) throws RuntimeException {
         return new ProxyNode(environment, getAttribute(key));
     }
 

@@ -5,7 +5,8 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.ImmutableException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.*;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;

@@ -30,12 +30,12 @@ public class CallNode implements Node {
             throw new RuntimeException("Not callable. Got: " + node);
         }
         List<Node> args = new ArrayList<>();
-        if(what instanceof ObjectAccessNode) {
+        if (what instanceof ObjectAccessNode) {
             ObjectAccessNode objectAccessNode = (ObjectAccessNode) what;
             Node object = objectAccessNode.getObject().getValue(environment);
-            if(object instanceof ObjectNode) {
+            if (object instanceof ObjectNode) {
                 args.add(((ObjectAccessNode) what).getObject());
-            } else if(object instanceof EnvironmentNode) {
+            } else if (object instanceof EnvironmentNode) {
                 env = ((EnvironmentNode) object).getEnvironment();
             }
         }

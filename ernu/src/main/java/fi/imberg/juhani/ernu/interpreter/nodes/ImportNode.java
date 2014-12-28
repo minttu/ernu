@@ -2,7 +2,7 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.*;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.ErnuParser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
@@ -46,7 +46,7 @@ public class ImportNode implements Node {
         }
 
         // So, it seems when I try to mvn test this, there is no jar so the path is a real path in the FS.
-        if(!uri.toString().contains("!")) {
+        if (!uri.toString().contains("!")) {
             return Paths.get(uri);
         }
 
@@ -65,18 +65,18 @@ public class ImportNode implements Node {
     private Path resolvePath(Environment environment, String name) {
         name = name.replaceAll("\\.", "\\/");
         Path local = createLocalFilePath(environment, name);
-        if(local != null && Files.exists(local)) {
+        if (local != null && Files.exists(local)) {
             return local;
         }
         Path library = createLibraryFilePath(name);
-        if(library != null && Files.exists(library)) {
+        if (library != null && Files.exists(library)) {
             return library;
         }
         return null;
     }
 
     private String loadPath(Path path) throws RuntimeException {
-        if(path == null) {
+        if (path == null) {
             throw new RuntimeException("No such file as " + what.replaceAll("\\.", "\\/"));
         }
         byte[] bytes = null;
@@ -102,7 +102,7 @@ public class ImportNode implements Node {
             } catch (LangException e) {
                 throw new RuntimeException(e.getMessage());
             }
-            if(node != null) {
+            if (node != null) {
                 node.getValue(other);
             }
         }
@@ -110,7 +110,7 @@ public class ImportNode implements Node {
     }
 
     private String getLastPart() {
-        if(as.length() > 0) {
+        if (as.length() > 0) {
             return as;
         }
         String[] parts = what.split("\\.");
@@ -121,10 +121,10 @@ public class ImportNode implements Node {
     public Node getValue(Environment environment) throws RuntimeException {
         Path path = resolvePath(environment, what);
         EnvironmentNode node = createEnvironment(path, loadPath(path));
-        if(subs.size() == 0) {
+        if (subs.size() == 0) {
             environment.addSymbol(getLastPart(), node);
         } else {
-            for(String sub : subs) {
+            for (String sub : subs) {
                 environment.addSymbol(sub, node.getProxyTo(sub));
             }
         }
@@ -138,14 +138,14 @@ public class ImportNode implements Node {
 
     @Override
     public String toString() {
-        if(subs.size() == 0) {
-            if(!what.equals(getLastPart())) {
+        if (subs.size() == 0) {
+            if (!what.equals(getLastPart())) {
                 return "(import " + what + " as " + getLastPart() + ")";
             } else {
                 return "(import " + what + ")";
             }
         } else {
-            return "(from " + what + " import " + subs +")";
+            return "(from " + what + " import " + subs + ")";
         }
 
     }

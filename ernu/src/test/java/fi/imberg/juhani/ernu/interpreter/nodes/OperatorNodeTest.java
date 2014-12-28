@@ -11,10 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OperatorNodeTest {
-    Environment environment;
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    Environment environment;
 
     @Before
     public void init() {

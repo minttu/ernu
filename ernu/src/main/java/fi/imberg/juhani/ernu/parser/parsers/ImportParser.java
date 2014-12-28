@@ -16,12 +16,12 @@ public class ImportParser implements PrefixParser {
         String what = "";
         String as = "";
         List<String> subs = new ArrayList<>();
-        while(!(parser.isNext(TokenType.EOL) || parser.isNext(TokenType.AS) || parser.isNext(TokenType.IMPORT))) {
+        while (!(parser.isNext(TokenType.EOL) || parser.isNext(TokenType.AS) || parser.isNext(TokenType.IMPORT))) {
             what += parser.consume().getContent();
         }
-        if(parser.match(TokenType.AS)) {
+        if (parser.match(TokenType.AS)) {
             as = parser.consume().getContent();
-        } else if(parser.match(TokenType.IMPORT)) {
+        } else if (parser.match(TokenType.IMPORT)) {
             do {
                 subs.add(parser.consume(TokenType.IDENTIFIER).getContent());
             } while (parser.match(TokenType.COMMA));

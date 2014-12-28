@@ -7,14 +7,17 @@ import org.junit.Test;
 
 public class RangeTest {
     Range range;
+
     @Before
     public void init() {
         range = new Range(0, 10);
     }
+
     @After
     public void destroy() {
         range = null;
     }
+
     @Test
     public void testToString() {
         Assert.assertEquals("0 to 10", range.toString());
@@ -23,6 +26,7 @@ public class RangeTest {
         range = new Range();
         Assert.assertEquals("0 to n", range.toString());
     }
+
     @Test
     public void testInRange() {
         Assert.assertTrue(range.inRange(0));

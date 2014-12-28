@@ -27,7 +27,7 @@ public class ClassNode implements Node, Callable, Object {
 
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
-        if(!hasInitialized) {
+        if (!hasInitialized) {
             Environment local = environment.subEnvironment();
             initial.getValue(local);
             this.setAttributes(local.getSymbols());
@@ -51,7 +51,7 @@ public class ClassNode implements Node, Callable, Object {
 
     @Override
     public Node getAttribute(String key) throws UnknownAttributeException {
-        switch(key) {
+        switch (key) {
             case "__doc__":
                 return new StringNode(doc);
         }
@@ -77,7 +77,7 @@ public class ClassNode implements Node, Callable, Object {
         Environment local = environment.subEnvironment();
         initial.getValue(local);
         ObjectNode node = new ObjectNode(doc, local.getSymbols());
-        if(node.hasAttribute("init")) {
+        if (node.hasAttribute("init")) {
             List<Node> args = new ArrayList<>(arguments);
             args.add(0, node);
             CallNode callNode = new CallNode(node.getAttribute("init"), args);

@@ -5,10 +5,10 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.nodes.BooleanNode;
 import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.Before;
 import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 public class EnvironmentTest {
     Environment environment;
@@ -50,7 +50,7 @@ public class EnvironmentTest {
         String[] keys = new String[]{"print", "range", "len", "help", "type", "defined", "apply", "str", "num"};
         Class[] clss = new Class[]{PrintFunction.class, RangeFunction.class, LenFunction.class, HelpFunction.class,
                 TypeFunction.class, DefinedFunction.class, ApplyFunction.class, StrFunction.class, NumFunction.class};
-        for(int i = 0; i < keys.length; i++) {
+        for (int i = 0; i < keys.length; i++) {
             testGetSymbolAndMatchType(keys[i], clss[i]);
         }
     }

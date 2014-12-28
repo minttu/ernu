@@ -3,7 +3,7 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
-import fi.imberg.juhani.ernu.interpreter.interfaces.*;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.Map;
@@ -29,7 +29,7 @@ public class ObjectNode implements Node, Object {
 
     @Override
     public Node getAttribute(String key) throws RuntimeException {
-        switch(key) {
+        switch (key) {
             case "__doc__":
                 return new StringNode(doc);
         }

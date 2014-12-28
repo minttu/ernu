@@ -2,7 +2,6 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 
 import fi.imberg.juhani.ernu.ErnuException;
 import fi.imberg.juhani.ernu.interpreter.Environment;
-import fi.imberg.juhani.ernu.interpreter.exceptions.*;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.ErnuParser;
@@ -16,10 +15,9 @@ import java.util.Collections;
 import java.util.List;
 
 public class FunctionNodeTest {
-    Environment environment;
-
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    Environment environment;
 
     @Before
     public void init() {

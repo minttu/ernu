@@ -4,7 +4,8 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import fi.imberg.juhani.ernu.parser.exceptions.ParsingException;
 import fi.imberg.juhani.ernu.parser.exceptions.UnexpectedTokenException;
-import fi.imberg.juhani.ernu.parser.parsers.*;
+import fi.imberg.juhani.ernu.parser.parsers.InfixParser;
+import fi.imberg.juhani.ernu.parser.parsers.PrefixParser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
