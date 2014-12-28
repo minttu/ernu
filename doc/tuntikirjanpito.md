@@ -10,4 +10,4 @@
 | 22.12 | 1h   | Array slice
 | 26.12 | 4h   | Objekteja ja luokkien alkua, refaktorointia
 | 27.12 | 6h   | Uusi import/import as/from import systeemi, testejä
-| 28.12 | 2h   | Testejä
+| 28.12 | 3h   | Testejä, Javadoccia

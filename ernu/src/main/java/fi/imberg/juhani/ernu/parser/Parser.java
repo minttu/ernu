@@ -20,7 +20,6 @@ public class Parser {
     private final HashMap<TokenType, InfixParser> infixParsers;
 
     /**
-     *
      * @param tokenizer A tokenizer that has already parsed some text.
      */
     public Parser(Tokenizer tokenizer) {
@@ -39,7 +38,6 @@ public class Parser {
     }
 
     /**
-     *
      * @param precedence Limits when to stop parsing, if a parser with higher precedence
      *                   is encountered, the parsing is stopped.
      * @return A node which probably has some children, a small tree basically.
@@ -69,6 +67,7 @@ public class Parser {
 
     /**
      * Consumes the next token if it's of the type
+     *
      * @param type Token type to match against
      * @return True if the next token was of type
      */
@@ -82,7 +81,6 @@ public class Parser {
     }
 
     /**
-     *
      * @param type Token type to match against
      * @return True if the next token was of type
      */
@@ -92,7 +90,6 @@ public class Parser {
     }
 
     /**
-     *
      * @param type Token type to match against
      * @return A token that is of the type
      * @throws UnexpectedTokenException If the next token is not of the type
@@ -106,7 +103,6 @@ public class Parser {
     }
 
     /**
-     *
      * @return The next token
      */
     public Token consume() {
@@ -115,7 +111,6 @@ public class Parser {
     }
 
     /**
-     *
      * @return The precedence of the next tokens parser type
      */
     public int getPrecedence() {
@@ -127,7 +122,6 @@ public class Parser {
     }
 
     /**
-     *
      * @param number How many tokens are buffered from the tokenizer
      * @return The nth next token
      */

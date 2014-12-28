@@ -11,9 +11,8 @@ public class Token {
     private TokenType type;
 
     /**
-     *
-     * @param line The line number the token starts appearing on
-     * @param column The column the token starts appearing on
+     * @param line    The line number the token starts appearing on
+     * @param column  The column the token starts appearing on
      * @param content The content of the token
      */
     public Token(int line, int column, String content) {
@@ -50,6 +49,7 @@ public class Token {
 
     /**
      * Adds a character to the token.
+     *
      * @param c The character to be added
      */
     public void add(char c) {
@@ -59,6 +59,7 @@ public class Token {
 
     /**
      * Adds a string to the token.
+     *
      * @param chars The string to be added
      */
     public void add(String chars) {

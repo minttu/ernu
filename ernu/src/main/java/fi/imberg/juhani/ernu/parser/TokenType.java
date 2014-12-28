@@ -65,6 +65,7 @@ public enum TokenType {
 
     /**
      * Finds the first suitable type for the token, and marks the token as being of the found type.
+     *
      * @param token The token to be matched against.
      */
     public static void matchType(Token token) {

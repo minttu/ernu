@@ -35,7 +35,7 @@ public class ObjectNode implements Node, Object {
         }
         Node node = attributes.get(key);
         if (node == null) {
-            return new NullNode();
+            throw new UnknownAttributeException(key);
         }
         return node;
     }

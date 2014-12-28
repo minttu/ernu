@@ -48,6 +48,7 @@ public class Tokenizer {
 
     /**
      * Creates tokens out of the text
+     *
      * @param text The string to be tokenized.
      */
     public void tokenize(String text) {
@@ -155,7 +156,6 @@ public class Tokenizer {
     }
 
     /**
-     *
      * @return The next token
      */
     public Token nextToken() {

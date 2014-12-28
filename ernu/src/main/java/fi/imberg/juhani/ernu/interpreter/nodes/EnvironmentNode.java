@@ -14,6 +14,8 @@ public class EnvironmentNode implements Node, Object {
 
     public EnvironmentNode(Environment environment) {
         this.environment = environment;
+        this.environment.addSymbol("__proxy__", new BuiltinFunction("Returns a proxy call node.",
+                (Environment env, List<Node> args) -> getProxyTo(((StringNode) args.get(0)).getStringLiteral())));
     }
 
     public Environment getEnvironment() {
@@ -32,22 +34,16 @@ public class EnvironmentNode implements Node, Object {
 
     @Override
     public Node getAttribute(String key) throws RuntimeException {
-        switch (key) {
-            case "__proxy__":
-                return new BuiltinFunction("Returns a proxy call node.",
-                        (Environment env, List<Node> args) -> getProxyTo(((StringNode) args.get(0)).getStringLiteral()));
+        Node node = environment.getSymbols().get(key);
+        if (node == null) {
+            throw new UnknownAttributeException(key);
         }
-        return environment.getSymbol(key);
+        return node;
     }
 
     @Override
     public boolean hasAttribute(String key) throws RuntimeException {
-        try {
-            environment.getSymbol(key);
-            return true;
-        } catch (UnknownAttributeException ignored) {
-            return false;
-        }
+        return environment.getSymbols().containsKey(key);
     }
 
     public Node getProxyTo(String key) throws RuntimeException {
