@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.FunctionNode;
 
 import java.util.List;
 
+/**
+ * Applies a args list to a function.
+ */
 public class ApplyFunction extends BuiltinFunction {
     public ApplyFunction() {
         super("Applies a list of arguments to a function");

@@ -4,6 +4,9 @@ import fi.imberg.juhani.ernu.ErnuException;
 import fi.imberg.juhani.ernu.interpreter.REPL;
 import fi.imberg.juhani.ernu.util.Range;
 
+/**
+ * This command starts a REPL.
+ */
 public class REPLCommand implements Command {
     @Override
     public void call(String[] args) throws ErnuException {

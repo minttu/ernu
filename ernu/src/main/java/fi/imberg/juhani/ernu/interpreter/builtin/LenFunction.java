@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.NumberNode;
 
 import java.util.List;
 
+/**
+ * Returns the length of a sequence.
+ */
 public class LenFunction extends BuiltinFunction {
     public LenFunction() {
         super("Returns the length of something.");

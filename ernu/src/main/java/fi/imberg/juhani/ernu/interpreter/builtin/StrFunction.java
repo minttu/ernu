@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.List;
 
+/**
+ * Creates a string out of a node.
+ */
 public class StrFunction extends BuiltinFunction {
     public StrFunction() {
         super("Returns a formatted representation.");

@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.List;
 
+/**
+ * Returns true if the given symbol is defined.
+ */
 public class DefinedFunction extends BuiltinFunction {
     public DefinedFunction() {
         super("Returns true if something is defined");

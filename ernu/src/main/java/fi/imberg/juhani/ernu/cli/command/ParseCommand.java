@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.ErnuParser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.util.Range;
 
+/**
+ * This command shows the parsed nodes from a file.
+ */
 public class ParseCommand extends FileCommand {
     @Override
     public void call(String[] args) throws ErnuException {

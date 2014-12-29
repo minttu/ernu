@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.List;
 
+/**
+ * Converts a string into a number.
+ */
 public class NumFunction extends BuiltinFunction {
     public NumFunction() {
         super("Converts a string to number");

@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
 
 import java.util.List;
 
+/**
+ * Prints the arguments separated with comma spaces.
+ */
 public class PrintFunction extends BuiltinFunction {
     public PrintFunction() {
         super("Prints stuff.");

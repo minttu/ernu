@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.NumberNode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Returns a list of numbers in an increasing order.
+ */
 public class RangeFunction extends BuiltinFunction {
     public RangeFunction() {
         super("Creates a range.");

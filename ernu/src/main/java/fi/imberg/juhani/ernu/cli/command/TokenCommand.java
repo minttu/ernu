@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.util.Range;
 
+/**
+ * This command shows the tokens contained in a file.
+ */
 public class TokenCommand extends FileCommand {
     @Override
     public void call(String[] args) throws CLIException {

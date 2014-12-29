@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;
 
+/**
+ * Returns the __doc__ attribute of an object.
+ */
 public class HelpFunction extends BuiltinFunction {
     public HelpFunction() {
         super("Helps with something.");

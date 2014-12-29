@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.cli.exceptions.UnknownCommandException;
 
 import java.util.HashMap;
 
+/**
+ * Dispatches control to command line commands.
+ */
 public class CLI {
     private final HashMap<String, Command> commands;
 

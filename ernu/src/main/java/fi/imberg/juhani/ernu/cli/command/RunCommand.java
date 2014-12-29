@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.parser.ErnuParser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 import fi.imberg.juhani.ernu.util.Range;
 
+/**
+ * This command runs a file.
+ */
 public class RunCommand extends FileCommand {
     @Override
     public void call(String[] args) throws ErnuException {

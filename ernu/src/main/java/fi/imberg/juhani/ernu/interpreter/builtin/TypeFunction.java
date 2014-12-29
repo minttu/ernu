@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 
 import java.util.List;
 
+/**
+ * Returns the nodes type as a string.
+ */
 public class TypeFunction extends BuiltinFunction {
     public TypeFunction() {
         super("Returns the type of something");

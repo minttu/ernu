@@ -10,6 +10,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Superclass for other builtin functions to extend.
+ */
 public class BuiltinFunction extends FunctionNode {
     private final BuiltinFunctionCall callFunction;
 
