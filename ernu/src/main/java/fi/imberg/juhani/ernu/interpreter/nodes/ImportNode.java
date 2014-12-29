@@ -134,7 +134,7 @@ public class ImportNode implements Node {
         try {
             fs.close();
         } catch (IOException | NullPointerException ignored) {
-
+            fs = null; // this branch can't be empty T: checkstyle
         }
         return new NullNode();
     }

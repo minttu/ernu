@@ -38,6 +38,7 @@ public class Environment {
 
     /**
      * Adds a symbol to the environment.
+     *
      * @param string
      * @param node
      */
@@ -47,6 +48,7 @@ public class Environment {
 
     /**
      * Gets a symbol from the environment or it's parent.
+     *
      * @param string
      * @return
      * @throws RuntimeException
@@ -73,7 +75,6 @@ public class Environment {
     }
 
     /**
-     *
      * @return An environment which has it's parent set to this one.
      */
     public Environment subEnvironment() {

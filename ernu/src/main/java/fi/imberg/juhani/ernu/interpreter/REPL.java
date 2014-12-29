@@ -33,6 +33,7 @@ public class REPL {
 
     /**
      * Executes a string directly in the REPL.
+     *
      * @param string
      */
     public void execute(String string) {
@@ -60,6 +61,7 @@ public class REPL {
 
     /**
      * Reads the next line from stdin.
+     *
      * @return
      */
     private String read() {
@@ -73,6 +75,7 @@ public class REPL {
 
     /**
      * Evaluates a string.
+     *
      * @param source The string to be evaluated.
      * @return The resulting node.
      * @throws ErnuException
@@ -92,6 +95,7 @@ public class REPL {
 
     /**
      * Retrieves the nodes value and prints it.
+     *
      * @param node The node to have its value printed.
      * @throws RuntimeException
      */
