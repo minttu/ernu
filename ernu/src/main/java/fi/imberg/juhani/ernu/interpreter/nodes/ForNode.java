@@ -4,6 +4,9 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * A for node represents a for loop.
+ */
 public class ForNode implements Node {
     private final Node identifier;
     private final Node generator;

@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
+/**
+ * Accesses an object and either brings results or assigns nodes to the object.
+ */
 public class ObjectAccessNode implements Node, Identifier {
     private final Node object;
     private final Node thing;

@@ -3,7 +3,7 @@ package fi.imberg.juhani.ernu.parser;
 import java.util.ArrayDeque;
 
 /**
- * Splits a source string to tokens
+ * Splits a source string to tokens.
  */
 public class Tokenizer {
     private char[] source;

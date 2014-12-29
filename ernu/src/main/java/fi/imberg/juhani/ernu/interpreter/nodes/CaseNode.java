@@ -4,6 +4,9 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * A internal node that represents a single case of a match expression.
+ */
 public class CaseNode implements Node {
 
     private final Node conditional;

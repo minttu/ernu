@@ -10,6 +10,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a new array. For example [3, 2, 1]
+ */
 public class ArrayParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

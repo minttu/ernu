@@ -2,6 +2,9 @@ package fi.imberg.juhani.ernu.interpreter.interfaces;
 
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 
+/**
+ * Interface for all list type objects in ernu.
+ */
 public interface Sequence {
     public int length();
 

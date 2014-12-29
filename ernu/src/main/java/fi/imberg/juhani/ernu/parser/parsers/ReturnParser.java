@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a return statement. For example return 3
+ */
 public class ReturnParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

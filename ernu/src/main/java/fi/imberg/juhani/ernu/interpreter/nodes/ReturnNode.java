@@ -5,6 +5,9 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * Return nodes throw ReturnExceptions to return values to functions.
+ */
 public class ReturnNode implements Node {
     private final Node value;
 

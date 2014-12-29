@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.parser.Precedence;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for object access. For example a.b
+ */
 public class ObjectAccessParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {

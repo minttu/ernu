@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.Scanner;
 
+/**
+ * Read-Evaluate-Print loop. An interactive interface to Ernu.
+ */
 public class REPL {
     private final Scanner scanner;
     private final Tokenizer tokenizer;
@@ -28,6 +31,10 @@ public class REPL {
         execute("import math");
     }
 
+    /**
+     * Executes a string directly in the REPL.
+     * @param string
+     */
     public void execute(String string) {
         System.out.println("(^_^) " + string);
         try {
@@ -37,6 +44,9 @@ public class REPL {
         }
     }
 
+    /**
+     * Prints a greeting.
+     */
     private void greet() {
         Properties properties = new Properties();
         try {
@@ -48,6 +58,10 @@ public class REPL {
         System.out.println("(   ) git rev: " + properties.getProperty("git.commit.id.abbrev"));
     }
 
+    /**
+     * Reads the next line from stdin.
+     * @return
+     */
     private String read() {
         if (lastOk) {
             System.out.print("(^_^) ");
@@ -57,6 +71,12 @@ public class REPL {
         return scanner.nextLine() + "\n\n";
     }
 
+    /**
+     * Evaluates a string.
+     * @param source The string to be evaluated.
+     * @return The resulting node.
+     * @throws ErnuException
+     */
     private Node eval(String source) throws ErnuException {
         tokenizer.tokenize(source);
         Node node = new NullNode();
@@ -70,6 +90,11 @@ public class REPL {
         return node;
     }
 
+    /**
+     * Retrieves the nodes value and prints it.
+     * @param node The node to have its value printed.
+     * @throws RuntimeException
+     */
     private void print(Node node) throws RuntimeException {
         Node value = node.getValue(this.environment);
         if (!(value instanceof NullNode)) {
@@ -77,6 +102,9 @@ public class REPL {
         }
     }
 
+    /**
+     * The main loop. Prints the evaluated value of whatever has been typed.
+     */
     public void loop() {
         while (true) {
             try {

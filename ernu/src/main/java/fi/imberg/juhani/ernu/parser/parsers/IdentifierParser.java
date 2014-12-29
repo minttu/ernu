@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an identifier expression. For example i
+ */
 public class IdentifierParser implements PrefixParser {
 
     @Override

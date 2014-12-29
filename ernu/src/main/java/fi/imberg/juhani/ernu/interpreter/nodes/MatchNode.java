@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 import java.util.List;
 
+/**
+ * Match nodes hold case nodes, from which max one is evaluated.
+ */
 public class MatchNode implements Node {
     private final List<CaseNode> cases;
 

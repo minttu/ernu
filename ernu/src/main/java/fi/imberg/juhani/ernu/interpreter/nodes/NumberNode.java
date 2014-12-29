@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+/**
+ * Number nodes represent an infinite precision rational number.
+ */
 public class NumberNode implements Node, Comparable<NumberNode>, Mathable<NumberNode> {
     private BigInteger numerator;
     private BigInteger denominator;

@@ -15,6 +15,9 @@ import java.nio.file.*;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * Import nodes hold information about a import. They bring symbols from a file to another one.
+ */
 public class ImportNode implements Node {
     private final String what;
     private final String as;

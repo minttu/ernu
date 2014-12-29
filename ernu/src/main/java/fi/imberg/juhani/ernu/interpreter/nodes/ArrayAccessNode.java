@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 
 import java.util.List;
 
+/**
+ * Accesses an array and either brings results or assigns nodes to the array.
+ */
 public class ArrayAccessNode implements Node, Identifier {
     private final Node identifier;
     private final List<Node> args;

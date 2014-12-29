@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
+/**
+ * A node that assigns a node to an identifier.
+ */
 public class AssignmentNode implements Node {
     private final Node left;
     private final Node right;

@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.Map;
 
+/**
+ * Represents an instance of a class.
+ */
 public class ObjectNode implements Node, Object {
     private final Map<String, Node> attributes;
     private final String doc;

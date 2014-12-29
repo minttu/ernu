@@ -12,6 +12,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a new class. For example class v = 3 end
+ */
 public class ClassParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

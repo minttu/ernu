@@ -4,6 +4,9 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * While nodes evaluate the body so long as the conditional is true.
+ */
 public class WhileNode implements Node {
     private final Node conditional;
     private final BlockNode body;

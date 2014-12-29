@@ -11,6 +11,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a while statement. For example while true do print("asd") end
+ */
 public class WhileParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

@@ -1,5 +1,8 @@
 package fi.imberg.juhani.ernu.util;
 
+/**
+ * Describes a range between two integers.
+ */
 public class Range {
     private int start;
     private int end;

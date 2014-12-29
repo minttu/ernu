@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.parser.Precedence;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a prefix operator. For example !true
+ */
 public class PrefixOperatorParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

@@ -11,6 +11,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a for statement. For example for i in range(100) do print(i) end
+ */
 public class ForParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

@@ -2,6 +2,9 @@ package fi.imberg.juhani.ernu.interpreter;
 
 import fi.imberg.juhani.ernu.interpreter.builtin.*;
 
+/**
+ * Describes an environment with the builtin functions already in.
+ */
 public class BuiltinEnvironment extends Environment {
     public BuiltinEnvironment() {
         super(null, "builtin");

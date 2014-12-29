@@ -5,6 +5,9 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Identifier;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * Identifier nodes are just basic labels that can be used for assignment and stuff.
+ */
 public class IdentifierNode implements Node, Identifier {
     private final String name;
 

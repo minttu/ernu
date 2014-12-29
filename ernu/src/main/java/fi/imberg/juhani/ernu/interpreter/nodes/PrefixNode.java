@@ -5,6 +5,9 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
+/**
+ * Represents an prefix operation on a node.
+ */
 public class PrefixNode implements Node {
     private final TokenType type;
     private final Node node;

@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
 import java.util.List;
 
+/**
+ * Proxy nodes proxy calls of functions into other namespaces.
+ */
 public class ProxyNode implements Node, Callable {
 
     private final Environment env;

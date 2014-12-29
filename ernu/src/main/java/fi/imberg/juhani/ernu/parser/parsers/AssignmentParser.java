@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import fi.imberg.juhani.ernu.parser.exceptions.ParsingException;
 
+/**
+ * Parses an expression for assignment. For example a = b
+ */
 public class AssignmentParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {

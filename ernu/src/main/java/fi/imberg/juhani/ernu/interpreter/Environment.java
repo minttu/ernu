@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.nodes.StringNode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Describes an environment where nodes are executed.
+ */
 public class Environment {
     private final HashMap<String, Node> symbols;
     private final String fileName;
@@ -33,10 +36,21 @@ public class Environment {
         this(null, fileName);
     }
 
+    /**
+     * Adds a symbol to the environment.
+     * @param string
+     * @param node
+     */
     public void addSymbol(String string, Node node) {
         this.symbols.put(string, node);
     }
 
+    /**
+     * Gets a symbol from the environment or it's parent.
+     * @param string
+     * @return
+     * @throws RuntimeException
+     */
     public Node getSymbol(String string) throws RuntimeException {
         // These are environment specific so they can't be passed down.
         switch (string) {
@@ -58,6 +72,10 @@ public class Environment {
         return node;
     }
 
+    /**
+     *
+     * @return An environment which has it's parent set to this one.
+     */
     public Environment subEnvironment() {
         return new Environment(false, this, this.fileName);
     }

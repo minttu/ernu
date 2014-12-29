@@ -4,6 +4,9 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * If nodes are just your everyday if/else/end structure. To be replaced.
+ */
 public class IfNode implements Node {
     private final Node conditional;
     private final BlockNode trueBranch;

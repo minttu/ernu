@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;
 
+/**
+ * A node that holds an environment, specifically used with importing environments to another one.
+ */
 public class EnvironmentNode implements Node, Object {
     private final Environment environment;
 

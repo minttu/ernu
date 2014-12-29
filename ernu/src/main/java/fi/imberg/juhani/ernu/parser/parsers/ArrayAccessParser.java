@@ -12,7 +12,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Parses an expression for array access. For example left[a:b:c]
+ */
 public class ArrayAccessParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {

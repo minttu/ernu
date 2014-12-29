@@ -10,6 +10,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for an import statement. For example from math import sqrt
+ */
 public class ImportParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

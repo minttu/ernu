@@ -3,6 +3,9 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * A node that represents a boolean.
+ */
 public class BooleanNode implements Node {
 
     private final boolean truth;

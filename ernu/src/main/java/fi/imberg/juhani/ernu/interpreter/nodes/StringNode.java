@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Printable;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 
+/**
+ * StringNode holds a string inside.
+ */
 public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Appendable {
     private final String stringLiteral;
 

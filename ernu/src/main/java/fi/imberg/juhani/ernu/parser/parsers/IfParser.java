@@ -11,6 +11,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for an if statement. For example if i == 0 do print(i) end
+ */
 public class IfParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

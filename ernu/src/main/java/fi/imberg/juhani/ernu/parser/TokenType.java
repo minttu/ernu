@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.parser;
 
 /**
- * Enum of all of the possible token types
+ * Enum of all of the possible token types.
  */
 public enum TokenType {
     LPAREN("\\("),

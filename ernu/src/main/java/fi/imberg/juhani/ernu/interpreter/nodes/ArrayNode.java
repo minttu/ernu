@@ -9,6 +9,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A node that describes an array, a generic list.
+ */
 public class ArrayNode implements Node, Sequence, Appendable {
     private final List<Node> values;
 

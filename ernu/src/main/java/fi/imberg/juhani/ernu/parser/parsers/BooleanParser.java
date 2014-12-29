@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a boolean. For example true
+ */
 public class BooleanParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

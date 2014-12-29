@@ -11,6 +11,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a call. For example a(b, c)
+ */
 public class CallParser implements InfixParser {
     @Override
     public Node parse(Parser parser, Node left, Token token) throws LangException {

@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a number. For example 8
+ */
 public class NumberParser implements PrefixParser {
 
     @Override

@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A node that represents an uninitialized class, that can be called upon to create an instance of the class.
+ */
 public class ClassNode implements Node, Callable, Object {
     private final Map<String, Node> attributes;
     private final BlockNode initial;

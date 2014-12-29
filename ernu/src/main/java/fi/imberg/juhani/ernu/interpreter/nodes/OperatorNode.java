@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Mathable;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.TokenType;
 
+/**
+ * Represents an operation on two things, such as 3 + 2.
+ */
 public class OperatorNode implements Node {
     private final Node left;
     private final Node right;

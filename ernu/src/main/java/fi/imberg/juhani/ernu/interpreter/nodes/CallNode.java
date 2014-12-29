@@ -8,6 +8,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A node that calls a callable with arguments given to it.
+ */
 public class CallNode implements Node {
     private final Node what;
     private final List<Node> arguments;

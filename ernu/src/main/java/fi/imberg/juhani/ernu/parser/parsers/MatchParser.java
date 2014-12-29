@@ -12,6 +12,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a match statement. For example match case i % 2 == 0 do print(i) end
+ */
 public class MatchParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

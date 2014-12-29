@@ -12,6 +12,9 @@ import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Parses an expression for a function. For example function (i) return i end
+ */
 public class FunctionParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

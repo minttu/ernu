@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a string. For example "asd"
+ */
 public class StringParser implements PrefixParser {
 
     @Override

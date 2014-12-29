@@ -11,6 +11,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
 import java.util.List;
 
+/**
+ * A function node holds a function, the arguments it takes and the statements that construct the functions body.
+ */
 public class FunctionNode implements Node, Callable, Object {
     private final List<Node> arguments;
     private final BlockNode body;

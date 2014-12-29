@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.TokenType;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for a parenthesized group. For example (3 + 2)
+ */
 public class GroupingParser implements PrefixParser {
     @Override
     public Node parse(Parser parser, Token token) throws LangException {

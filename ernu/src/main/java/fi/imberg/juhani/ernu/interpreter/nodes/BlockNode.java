@@ -7,6 +7,9 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Internal node for getting a singular value out of several statements.
+ */
 public class BlockNode implements Node {
     private final List<Node> nodes;
 

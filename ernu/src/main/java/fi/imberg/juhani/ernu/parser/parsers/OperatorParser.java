@@ -6,6 +6,9 @@ import fi.imberg.juhani.ernu.parser.Parser;
 import fi.imberg.juhani.ernu.parser.Token;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 
+/**
+ * Parses an expression for an operator. For example 3 + 2
+ */
 public class OperatorParser implements InfixParser {
     private final int precedence;
     private final boolean isRightAssociative;

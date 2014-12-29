@@ -1,5 +1,9 @@
 package fi.imberg.juhani.ernu.interpreter.interfaces;
 
+/**
+ * Interface for all nodes in ernu that know math with each other.
+ * @param <T>
+ */
 public interface Mathable<T> {
     public Node add(T other);
 

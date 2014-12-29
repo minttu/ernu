@@ -3,6 +3,9 @@ package fi.imberg.juhani.ernu.interpreter.nodes;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 
+/**
+ * Null nodes are the nulls of ernu.
+ */
 public class NullNode implements Node {
     @Override
     public Node getValue(Environment environment) throws RuntimeException {
