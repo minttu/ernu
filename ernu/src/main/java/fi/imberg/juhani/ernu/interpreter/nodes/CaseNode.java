@@ -22,6 +22,12 @@ public class CaseNode implements Node {
         return body.getValue(environment);
     }
 
+    /**
+     * Is the conditional true in the given environment
+     * @param environment Where to check
+     * @return True if the conditional is true
+     * @throws RuntimeException
+     */
     public boolean matches(Environment environment) throws RuntimeException {
         Node value = conditional.getValue(environment);
         if (!(value instanceof BooleanNode)) {

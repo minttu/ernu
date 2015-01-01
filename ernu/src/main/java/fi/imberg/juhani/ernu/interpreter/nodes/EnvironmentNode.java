@@ -49,6 +49,12 @@ public class EnvironmentNode implements Node, Object {
         return environment.getSymbols().containsKey(key);
     }
 
+    /**
+     *
+     * @param key Which attribute to get a proxy to
+     * @return A new proxy node to the given attribute
+     * @throws RuntimeException
+     */
     public Node getProxyTo(String key) throws RuntimeException {
         return new ProxyNode(environment, getAttribute(key));
     }

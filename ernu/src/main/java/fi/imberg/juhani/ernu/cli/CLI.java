@@ -22,10 +22,14 @@ public class CLI {
         addCommand(new REPLCommand());
     }
 
-    public void addCommand(Command command) {
+    private void addCommand(Command command) {
         this.commands.put(command.getCommand(), command);
     }
 
+    /**
+     * Runs the commandline dispatcher
+     * @param args The programs arguments
+     */
     public void run(String[] args) {
         try {
             parseArguments(args);
@@ -40,7 +44,7 @@ public class CLI {
         }
     }
 
-    public void parseArguments(String[] args) throws ErnuException {
+    private void parseArguments(String[] args) throws ErnuException {
         if (args.length == 0 || args[0].equals("help")) {
             showHelp();
             return;

@@ -43,7 +43,7 @@ public class ClassNode implements Node, Callable, Object {
         return attributes;
     }
 
-    public void setAttributes(Map<String, Node> attributes) {
+    private void setAttributes(Map<String, Node> attributes) {
         this.attributes.putAll(attributes);
     }
 

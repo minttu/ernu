@@ -47,6 +47,7 @@ public class FunctionNode implements Node, Callable, Object {
         return this;
     }
 
+    @Override
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException {
         Environment local = environment.subEnvironment();
 

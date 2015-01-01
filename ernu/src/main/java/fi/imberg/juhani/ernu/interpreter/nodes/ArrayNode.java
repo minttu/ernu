@@ -75,11 +75,11 @@ public class ArrayNode implements Node, Sequence, Appendable {
         return newArray;
     }
 
-    public void appendNode(Node node) {
+    private void appendNode(Node node) {
         set(length(), node);
     }
 
-    public void prependNode(Node node) {
+    private void prependNode(Node node) {
         values.add(0, node);
     }
 

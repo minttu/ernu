@@ -20,6 +20,11 @@ public class Range {
         this(0, -1);
     }
 
+    /**
+     * Is the given value in the range
+     * @param value
+     * @return True if the value is in the range
+     */
     public boolean inRange(int value) {
         if (end == -1) {
             return start <= value;

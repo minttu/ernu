@@ -18,7 +18,7 @@ public class TokenCommand extends FileCommand {
         }
     }
 
-    public void handleFile(Tokenizer tokenizer, String fileName) throws FileNotFoundException {
+    private void handleFile(Tokenizer tokenizer, String fileName) throws FileNotFoundException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
         while (!tokenizer.isEmpty()) {
             Token token = tokenizer.nextToken();

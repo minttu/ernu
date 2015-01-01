@@ -19,7 +19,7 @@ public class ParseCommand extends FileCommand {
         }
     }
 
-    public void handleFile(ErnuParser parser, Tokenizer tokenizer, String fileName) throws ErnuException {
+    private void handleFile(ErnuParser parser, Tokenizer tokenizer, String fileName) throws ErnuException {
         tokenizer.tokenize(fileToString(fileName) + "\n\n");
         while (!tokenizer.isEmpty()) {
             Node node = parser.parseNode();
