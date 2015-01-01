@@ -1,7 +1,7 @@
 package fi.imberg.juhani.ernu.cli.command;
 
 import fi.imberg.juhani.ernu.ErnuException;
-import fi.imberg.juhani.ernu.interpreter.REPL;
+import fi.imberg.juhani.ernu.REPL;
 import fi.imberg.juhani.ernu.util.Range;
 
 /**

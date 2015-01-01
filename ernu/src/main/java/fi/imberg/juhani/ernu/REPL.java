@@ -1,6 +1,6 @@
-package fi.imberg.juhani.ernu.interpreter;
+package fi.imberg.juhani.ernu;
 
-import fi.imberg.juhani.ernu.ErnuException;
+import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
