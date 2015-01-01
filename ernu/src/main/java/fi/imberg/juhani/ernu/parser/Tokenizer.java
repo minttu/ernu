@@ -6,13 +6,28 @@ import java.util.ArrayDeque;
  * Splits a source string to tokens.
  */
 public class Tokenizer {
+    /**
+     * The sourcecode the tokenizer is working on currently
+     */
     private char[] source;
 
+    /**
+     * The current line number
+     */
     private int line;
+    /**
+     * The current column number
+     */
     private int column;
 
+    /**
+     * Are we currently inside a string?
+     */
     private boolean inString;
 
+    /**
+     * The tokens we have already tokenized from the text
+     */
     private ArrayDeque<Token> tokens;
 
     public Tokenizer() {

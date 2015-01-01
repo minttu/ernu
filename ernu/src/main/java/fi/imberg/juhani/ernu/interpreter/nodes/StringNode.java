@@ -11,12 +11,18 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Sequence;
  * StringNode holds a string inside.
  */
 public class StringNode implements Node, Comparable<StringNode>, Sequence, Printable, Appendable {
+    /**
+     * The string this StringNode holds inside
+     */
     private final String stringLiteral;
 
     public StringNode() {
         this.stringLiteral = "";
     }
 
+    /**
+     * @param stringLiteral The string this StringNode holds inside
+     */
     public StringNode(String stringLiteral) {
         this.stringLiteral = stringLiteral;
     }

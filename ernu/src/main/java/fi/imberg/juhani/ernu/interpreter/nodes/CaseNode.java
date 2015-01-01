@@ -9,9 +9,19 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
  */
 public class CaseNode implements Node {
 
+    /**
+     * A node that must resolve into a boolean node
+     */
     private final Node conditional;
+    /**
+     * The body of the case node, what gets run
+     */
     private final BlockNode body;
 
+    /**
+     * @param conditional A node that must resolve into a boolean node
+     * @param body        The body of the case node, what gets run
+     */
     public CaseNode(Node conditional, BlockNode body) {
         this.conditional = conditional;
         this.body = body;
@@ -24,9 +34,10 @@ public class CaseNode implements Node {
 
     /**
      * Is the conditional true in the given environment
+     *
      * @param environment Where to check
      * @return True if the conditional is true
-     * @throws RuntimeException
+     * @throws RuntimeException If anything goes haywire, this gets thrown
      */
     public boolean matches(Environment environment) throws RuntimeException {
         Node value = conditional.getValue(environment);

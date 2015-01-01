@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 public abstract class FileCommand implements Command {
     /**
      * Retuns a string representation of the given filename
+     *
      * @param fileName The file to open
      * @return The contents of the file
      * @throws FileNotFoundException If no such file is found

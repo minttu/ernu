@@ -9,9 +9,10 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 public interface Identifier {
     /**
      * As there is a getValue, there is also setValue, for binding the value to an identifier.
+     *
      * @param environment Environment where this binding should happen
-     * @param value What to bind to this
-     * @throws RuntimeException
+     * @param value       What to bind to this
+     * @throws RuntimeException If anything goes haywire, this gets thrown
      */
     public void setValue(Environment environment, Node value) throws RuntimeException;
 }

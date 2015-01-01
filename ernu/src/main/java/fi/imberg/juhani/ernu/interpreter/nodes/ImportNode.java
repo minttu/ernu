@@ -19,11 +19,28 @@ import java.util.List;
  * Import nodes hold information about a import. They bring symbols from a file to another one.
  */
 public class ImportNode implements Node {
+    /**
+     * What is imported, the files name
+     */
     private final String what;
+    /**
+     * If this is not "" this is the name the imported thing is given
+     */
     private final String as;
+    /**
+     * If this is not empty, only these are imported to the current environment
+     */
     private final List<String> subs;
+    /**
+     * This needs to be here, because it needs to be closed possibly later
+     */
     private FileSystem fs;
 
+    /**
+     * @param what What is imported, the files name
+     * @param as   If this is not "" this is the name the imported thing is given
+     * @param subs If this is not empty, only these are imported to the current environment
+     */
     public ImportNode(String what, String as, List<String> subs) {
         this.what = what;
         this.as = as;

@@ -15,10 +15,24 @@ import java.util.List;
  * A function node holds a function, the arguments it takes and the statements that construct the functions body.
  */
 public class FunctionNode implements Node, Callable, Object {
+    /**
+     * A list of identifiers that all get assigned values from the call
+     */
     private final List<Node> arguments;
+    /**
+     * The body of this function
+     */
     private final BlockNode body;
+    /**
+     * The documentation of this function
+     */
     private final String doc;
 
+    /**
+     * @param arguments A list of identifiers that all get assigned values from the call
+     * @param doc       The body of this function
+     * @param body      The documentation of this function
+     */
     public FunctionNode(List<Node> arguments, String doc, BlockNode body) {
         this.arguments = arguments;
         this.body = body;

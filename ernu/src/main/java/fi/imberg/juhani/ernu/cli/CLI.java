@@ -12,6 +12,9 @@ import java.util.HashMap;
  * Dispatches control to command line commands.
  */
 public class CLI {
+    /**
+     * Contains all of the commands that are registered.
+     */
     private final HashMap<String, Command> commands;
 
     public CLI() {
@@ -28,6 +31,7 @@ public class CLI {
 
     /**
      * Runs the commandline dispatcher
+     *
      * @param args The programs arguments
      */
     public void run(String[] args) {

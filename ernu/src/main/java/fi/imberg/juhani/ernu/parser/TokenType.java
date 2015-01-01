@@ -57,6 +57,9 @@ public enum TokenType {
     NONE(""),
     EOF("");
 
+    /**
+     * A regex that a matching tokens content should match
+     */
     private String match;
 
     TokenType(String match) {

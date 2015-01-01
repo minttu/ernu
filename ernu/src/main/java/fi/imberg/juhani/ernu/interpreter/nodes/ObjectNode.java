@@ -12,9 +12,19 @@ import java.util.Map;
  * Represents an instance of a class.
  */
 public class ObjectNode implements Node, Object {
+    /**
+     * A map of all of the attributes this object holds
+     */
     private final Map<String, Node> attributes;
+    /**
+     * The documentation of the class that this is an instance of
+     */
     private final String doc;
 
+    /**
+     * @param doc    The documentation of the class that this is an instance of
+     * @param values A map of all of the attributes this object holds
+     */
     public ObjectNode(String doc, Map<String, Node> values) {
         this.doc = doc;
         this.attributes = values;

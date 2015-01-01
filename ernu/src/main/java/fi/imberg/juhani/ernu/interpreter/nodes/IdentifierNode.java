@@ -9,8 +9,14 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
  * Identifier nodes are just basic labels that can be used for assignment and stuff.
  */
 public class IdentifierNode implements Node, Identifier {
+    /**
+     * The string that this node uses to get it's value from the environment
+     */
     private final String name;
 
+    /**
+     * @param name The string that this node uses to get it's value from the environment
+     */
     public IdentifierNode(String name) {
         this.name = name;
     }

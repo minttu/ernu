@@ -9,26 +9,30 @@ import fi.imberg.juhani.ernu.util.Range;
 public interface Command {
     /**
      * Calls the command with args.
-     * @param args
-     * @throws ErnuException
+     *
+     * @param args the arguments to the command
+     * @throws ErnuException If anything bad happens
      */
     public void call(String[] args) throws ErnuException;
 
     /**
      * The number of arguments this command takes
-     * @return
+     *
+     * @return A range of the possible argument numbers
      */
     public Range getRange();
 
     /**
      * Gets the name of the command
-     * @return
+     *
+     * @return The name
      */
     public String getCommand();
 
     /**
      * Gets the description of the command
-     * @return
+     *
+     * @return The description
      */
     public String getDescription();
 }

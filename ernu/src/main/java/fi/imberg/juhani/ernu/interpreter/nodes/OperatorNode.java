@@ -11,11 +11,28 @@ import fi.imberg.juhani.ernu.parser.TokenType;
  * Represents an operation on two things, such as 3 + 2.
  */
 public class OperatorNode implements Node {
+    /**
+     * The left node in the operation
+     */
     private final Node left;
+    /**
+     * The right node in the operation
+     */
     private final Node right;
+    /**
+     * The type of operation that this operation does
+     */
     private final TokenType operator;
+    /**
+     * How to display the operator when printing
+     */
     private String display;
 
+    /**
+     * @param left     The left node in the operation
+     * @param operator The type of operation that this operation does
+     * @param right    The right node in the operation
+     */
     public OperatorNode(Node left, TokenType operator, Node right) {
         this.right = right;
         this.operator = operator;

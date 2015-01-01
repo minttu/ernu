@@ -6,6 +6,7 @@ package fi.imberg.juhani.ernu.interpreter.interfaces;
 public interface Appendable {
     /**
      * Appends the given node to a copy of this
+     *
      * @param node What to append to a copy of this
      * @return A copy of this with the node appended
      */
@@ -13,6 +14,7 @@ public interface Appendable {
 
     /**
      * Prepends the given node to a copy of this
+     *
      * @param node What to prepend to a copy of this
      * @return A copy of this with the node prepended
      */

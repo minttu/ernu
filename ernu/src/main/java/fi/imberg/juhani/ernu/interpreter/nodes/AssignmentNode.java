@@ -10,11 +10,28 @@ import fi.imberg.juhani.ernu.parser.TokenType;
  * A node that assigns a node to an identifier.
  */
 public class AssignmentNode implements Node {
+    /**
+     * The left node of the assignment, must resolve into an identifier or such
+     */
     private final Node left;
+    /**
+     * The right node of the assignment, it's the value that gets assigned to the left node
+     */
     private final Node right;
+    /**
+     * Since there are other assignments than just =, we need to know which one it is
+     */
     private final TokenType type;
+    /**
+     * How the operator is displayed when printed.
+     */
     private String display;
 
+    /**
+     * @param left  The left node of the assignment, must resolve into an identifier or such
+     * @param type  Since there are other assignments than just =, we need to know which one it is
+     * @param right The right node of the assignment, it's the value that gets assigned to the left node
+     */
     public AssignmentNode(Node left, TokenType type, Node right) {
         this.left = left;
         this.right = right;

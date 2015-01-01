@@ -16,11 +16,27 @@ import java.util.Map;
  * A node that represents an uninitialized class, that can be called upon to create an instance of the class.
  */
 public class ClassNode implements Node, Callable, Object {
+    /**
+     * A map of all the attributes this class has
+     */
     private final Map<String, Node> attributes;
+    /**
+     * The initial contents of the class
+     */
     private final BlockNode initial;
+    /**
+     * The documentation for the class
+     */
     private final String doc;
+    /**
+     * Has the initial BlockNode been turned into attributes
+     */
     private boolean hasInitialized;
 
+    /**
+     * @param doc     The documentation for the class
+     * @param initial The initial contents of the class
+     */
     public ClassNode(StringNode doc, BlockNode initial) {
         this.doc = doc.getStringLiteral();
         this.attributes = new HashMap<>();

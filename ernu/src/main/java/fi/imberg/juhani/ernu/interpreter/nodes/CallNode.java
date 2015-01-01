@@ -12,9 +12,19 @@ import java.util.List;
  * A node that calls a callable with arguments given to it.
  */
 public class CallNode implements Node {
+    /**
+     * What to call, must resolve into a callable.
+     */
     private final Node what;
+    /**
+     * List of arguments that gets given to the callable.
+     */
     private final List<Node> arguments;
 
+    /**
+     * @param what      What to call, must resolve into a callable.
+     * @param arguments ist of arguments that gets given to the callable.
+     */
     public CallNode(Node what, List<Node> arguments) {
         this.what = what;
         this.arguments = arguments;

@@ -9,9 +9,19 @@ import fi.imberg.juhani.ernu.parser.TokenType;
  * Represents an prefix operation on a node.
  */
 public class PrefixNode implements Node {
+    /**
+     * The type of operation that this does
+     */
     private final TokenType type;
+    /**
+     * The node to do the operation on
+     */
     private final Node node;
 
+    /**
+     * @param type The type of operation that this does
+     * @param node The node to do the operation on
+     */
     public PrefixNode(TokenType type, Node node) {
         this.type = type;
         this.node = node;

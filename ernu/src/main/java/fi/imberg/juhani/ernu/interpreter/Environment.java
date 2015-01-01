@@ -1,6 +1,5 @@
 package fi.imberg.juhani.ernu.interpreter;
 
-import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.nodes.BooleanNode;
@@ -13,11 +12,28 @@ import java.util.Map;
  * Describes an environment where nodes are executed.
  */
 public class Environment {
+    /**
+     * This map holds all the symbols in this environment
+     */
     private final HashMap<String, Node> symbols;
+    /**
+     * Which file does this environment originate from
+     */
     private final String fileName;
+    /**
+     * Which environment is this ones parent
+     */
     private Environment parent;
+    /**
+     * Is this environment directly executed
+     */
     private boolean executed;
 
+    /**
+     * @param executed Is this environment directly executed
+     * @param parent   Which environment is this ones parent
+     * @param fileName Which file does this environment originate from
+     */
     public Environment(boolean executed, Environment parent, String fileName) {
         this.symbols = new HashMap<>();
         this.parent = parent;
@@ -28,10 +44,21 @@ public class Environment {
         }
     }
 
+    /**
+     * If parent == null marks this as executed
+     *
+     * @param parent   Which environment is this ones parent
+     * @param fileName Which file does this environment originate from
+     */
     public Environment(Environment parent, String fileName) {
         this(parent == null, parent, fileName);
     }
 
+    /**
+     * The parent is null, and this probably is executed
+     *
+     * @param fileName Which file does this environment originate from
+     */
     public Environment(String fileName) {
         this(null, fileName);
     }
@@ -39,8 +66,8 @@ public class Environment {
     /**
      * Adds a symbol to the environment.
      *
-     * @param string
-     * @param node
+     * @param string The symbols name
+     * @param node   What to add
      */
     public void addSymbol(String string, Node node) {
         this.symbols.put(string, node);
@@ -49,11 +76,11 @@ public class Environment {
     /**
      * Gets a symbol from the environment or it's parent.
      *
-     * @param string
-     * @return
-     * @throws RuntimeException
+     * @param string The symbols name
+     * @return The found node
+     * @throws UnknownAttributeException if we can't find the symbol anywhere
      */
-    public Node getSymbol(String string) throws RuntimeException {
+    public Node getSymbol(String string) throws UnknownAttributeException {
         // These are environment specific so they can't be passed down.
         switch (string) {
             case "__name__":

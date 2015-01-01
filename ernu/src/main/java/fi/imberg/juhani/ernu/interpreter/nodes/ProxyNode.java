@@ -12,9 +12,19 @@ import java.util.List;
  */
 public class ProxyNode implements Node, Callable {
 
+    /**
+     * In which environment the identifier is defined
+     */
     private final Environment env;
+    /**
+     * The identifier this proxies to
+     */
     private final Node identifier;
 
+    /**
+     * @param environment In which environment the identifier is defined
+     * @param identifier  The identifier this proxies to
+     */
     public ProxyNode(Environment environment, Node identifier) {
         this.env = environment;
         this.identifier = identifier;

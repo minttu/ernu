@@ -8,10 +8,24 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
  * A for node represents a for loop.
  */
 public class ForNode implements Node {
+    /**
+     * The node that gets assigned the generators current value each loop
+     */
     private final Node identifier;
+    /**
+     * Something that resolves into a list for iteration
+     */
     private final Node generator;
+    /**
+     * The body that gets executed each loop
+     */
     private final BlockNode body;
 
+    /**
+     * @param identifier The node that gets assigned the generators current value each loop
+     * @param generator  Something that resolves into a list for iteration
+     * @param body       The body that gets executed each loop
+     */
     public ForNode(Node identifier, Node generator, BlockNode body) {
         this.identifier = identifier;
         this.generator = generator;

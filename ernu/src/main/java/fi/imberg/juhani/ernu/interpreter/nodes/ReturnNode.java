@@ -9,8 +9,14 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
  * Return nodes throw ReturnExceptions to return values to functions.
  */
 public class ReturnNode implements Node {
+    /**
+     * The value this return returns
+     */
     private final Node value;
 
+    /**
+     * @param value The value this return returns
+     */
     public ReturnNode(Node value) {
         this.value = value;
     }

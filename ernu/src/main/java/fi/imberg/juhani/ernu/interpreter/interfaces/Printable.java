@@ -5,7 +5,6 @@ package fi.imberg.juhani.ernu.interpreter.interfaces;
  */
 public interface Printable {
     /**
-     *
      * @return A string representation of the node.
      */
     public String toPrintable();

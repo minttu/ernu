@@ -13,12 +13,18 @@ import java.util.List;
  * A node that describes an array, a generic list.
  */
 public class ArrayNode implements Node, Sequence, Appendable {
+    /**
+     * The contents of the array
+     */
     private final List<Node> values;
 
     public ArrayNode() {
         this.values = new ArrayList<>();
     }
 
+    /**
+     * @param values The initial contents of the array
+     */
     public ArrayNode(List<Node> values) {
         this.values = values;
     }

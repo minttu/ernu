@@ -11,10 +11,11 @@ import java.util.List;
 public interface Callable {
     /**
      * Calls the node like a function
+     *
      * @param environment Environment where this execution should happen
-     * @param arguments Arguments to the function
+     * @param arguments   Arguments to the function
      * @return The resulting node
-     * @throws RuntimeException
+     * @throws RuntimeException If anything goes haywire, this gets thrown
      */
     public Node call(Environment environment, List<Node> arguments) throws RuntimeException;
 }

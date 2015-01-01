@@ -13,8 +13,14 @@ import java.util.List;
  * A node that holds an environment, specifically used with importing environments to another one.
  */
 public class EnvironmentNode implements Node, Object {
+    /**
+     * The environment this environment node wraps
+     */
     private final Environment environment;
 
+    /**
+     * @param environment The environment this environment node wraps
+     */
     public EnvironmentNode(Environment environment) {
         this.environment = environment;
         this.environment.addSymbol("__proxy__", new BuiltinFunction("Returns a proxy call node.",
@@ -50,10 +56,9 @@ public class EnvironmentNode implements Node, Object {
     }
 
     /**
-     *
      * @param key Which attribute to get a proxy to
      * @return A new proxy node to the given attribute
-     * @throws RuntimeException
+     * @throws RuntimeException If anything goes haywire, this gets thrown
      */
     public Node getProxyTo(String key) throws RuntimeException {
         return new ProxyNode(environment, getAttribute(key));

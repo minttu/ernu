@@ -9,9 +9,10 @@ import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 public interface Node {
     /**
      * Retuns the value of this node in the context of the given environment
+     *
      * @param environment The context of this request
      * @return Whatever this evaluates to
-     * @throws RuntimeException
+     * @throws RuntimeException If anything goes haywire, this gets thrown
      */
     public Node getValue(Environment environment) throws RuntimeException;
 }

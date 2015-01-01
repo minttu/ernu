@@ -8,8 +8,14 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
  */
 public class BooleanNode implements Node {
 
+    /**
+     * Is this BooleanNode true?
+     */
     private final boolean truth;
 
+    /**
+     * @param truth Is this BooleanNode true?
+     */
     public BooleanNode(boolean truth) {
         this.truth = truth;
     }

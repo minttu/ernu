@@ -34,7 +34,7 @@ public class REPL {
     /**
      * Executes a string directly in the REPL.
      *
-     * @param string
+     * @param string The sourcecode to execute
      */
     public void execute(String string) {
         System.out.println("(^_^) " + string);
@@ -62,7 +62,7 @@ public class REPL {
     /**
      * Reads the next line from stdin.
      *
-     * @return
+     * @return the string that was red
      */
     private String read() {
         if (lastOk) {

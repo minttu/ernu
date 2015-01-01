@@ -10,9 +10,19 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
  * Accesses an object and either brings results or assigns nodes to the object.
  */
 public class ObjectAccessNode implements Node, Identifier {
+    /**
+     * The node that must resolve into an object to be accessed
+     */
     private final Node object;
+    /**
+     * The thing thats accessed in the object
+     */
     private final Node thing;
 
+    /**
+     * @param obj   The node that must resolve into an object to be accessed
+     * @param thing The thing thats accessed in the object
+     */
     public ObjectAccessNode(Node obj, Node thing) {
         this.object = obj;
         this.thing = thing;

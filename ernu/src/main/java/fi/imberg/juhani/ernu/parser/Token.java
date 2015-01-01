@@ -4,10 +4,25 @@ package fi.imberg.juhani.ernu.parser;
  * Describes a token, a piece of text that can be grouped.
  */
 public class Token {
+    /**
+     * The line number the token starts appearing on
+     */
     private int line;
+    /**
+     * The column that the token starts appearing on
+     */
     private int column;
+    /**
+     * The length of the token
+     */
     private int length;
+    /**
+     * The content of the token
+     */
     private String content;
+    /**
+     * Which type the token is
+     */
     private TokenType type;
 
     /**
@@ -68,6 +83,9 @@ public class Token {
         }
     }
 
+    /**
+     * Moves the column forward by one
+     */
     public void moveColumn() {
         column++;
     }

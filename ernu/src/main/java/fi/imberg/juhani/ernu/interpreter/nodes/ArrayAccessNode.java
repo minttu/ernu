@@ -13,9 +13,19 @@ import java.util.List;
  * Accesses an array and either brings results or assigns nodes to the array.
  */
 public class ArrayAccessNode implements Node, Identifier {
+    /**
+     * A node that resolves to a Sequence.
+     */
     private final Node identifier;
+    /**
+     * The arguments for the access, since array slicing is a real thing.
+     */
     private final List<Node> args;
 
+    /**
+     * @param identifier A node that resolves to a Sequence.
+     * @param args       The arguments for the access, since array slicing is a real thing.
+     */
     public ArrayAccessNode(Node identifier, List<Node> args) {
         this.identifier = identifier;
         this.args = args;

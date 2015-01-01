@@ -11,13 +11,25 @@ import java.math.BigInteger;
  * Number nodes represent an infinite precision rational number.
  */
 public class NumberNode implements Node, Comparable<NumberNode>, Mathable<NumberNode> {
+    /**
+     * Top part of the rational number
+     */
     private BigInteger numerator;
+    /**
+     * Bottom part of the rational number
+     */
     private BigInteger denominator;
 
+    /**
+     * @param value Integer to be converted into a number node
+     */
     public NumberNode(int value) {
         this("" + value);
     }
 
+    /**
+     * @param value Gets converted to a rational number
+     */
     public NumberNode(String value) {
         if (value.contains(".")) {
             int len = value.length() - value.indexOf('.');
@@ -35,6 +47,10 @@ public class NumberNode implements Node, Comparable<NumberNode>, Mathable<Number
         reduce();
     }
 
+    /**
+     * @param numerator   Top part of the rational number
+     * @param denominator Bottom part of the rational number
+     */
     public NumberNode(BigInteger numerator, BigInteger denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
@@ -65,6 +81,9 @@ public class NumberNode implements Node, Comparable<NumberNode>, Mathable<Number
         return this.numerator.divide(this.denominator);
     }
 
+    /**
+     * @return A big decimal, with a precision of 30 decimals.
+     */
     public BigDecimal getBigDecimal() {
         return new BigDecimal(numerator).divide(new BigDecimal(denominator), 30, BigDecimal.ROUND_HALF_UP);
     }

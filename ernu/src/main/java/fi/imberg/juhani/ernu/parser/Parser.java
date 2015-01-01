@@ -61,6 +61,12 @@ public class Parser {
         return left;
     }
 
+    /**
+     * parseNode with the precedence of 0
+     *
+     * @return A node which probably has some children, a small tree basically.
+     * @throws LangException If an unexpected token is encountered
+     */
     public Node parseNode() throws LangException {
         return parseNode(0);
     }

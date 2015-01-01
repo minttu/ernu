@@ -11,8 +11,14 @@ import java.util.List;
  * Internal node for getting a singular value out of several statements.
  */
 public class BlockNode implements Node {
+    /**
+     * List of the nodes inside of this
+     */
     private final List<Node> nodes;
 
+    /**
+     * @param nodes List of the nodes inside of this
+     */
     public BlockNode(List<Node> nodes) {
         while (nodes.contains(null)) {
             nodes.remove(null);
