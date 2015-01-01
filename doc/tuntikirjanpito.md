@@ -10,6 +10,6 @@
 | 22.12 | 1h   | Array slice
 | 26.12 | 4h   | Objekteja ja luokkien alkua, refaktorointia
 | 27.12 | 6h   | Uusi import/import as/from import systeemi, testejä
-| 28.12 | 3h   | Testejä, Javadoccia
-| 29.12 | 1h   | Javadoccia
+| 28.12 | 3h   | Testejä, Javadoccia
+| 29.12 | 1h   | Javadoccia
 | 01.01 | 3h   | Sekvenssikaavioita, dokumentaatiota
