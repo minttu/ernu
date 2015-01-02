@@ -1,0 +1,1413 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>ErnuParser.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.imberg.juhani.ernu.parser;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import fi.imberg.juhani.ernu.parser.parsers.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * The actual parser, with all of the sub parsers added.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class ErnuParser extends Parser {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public ErnuParser(Tokenizer tokenizer) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_10'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(tokenizer);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_11'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_12'/>
+12
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_12'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.IDENTIFIER, new IdentifierParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_13'/>
+13
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_13'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.NUMBER, new NumberParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_14'/>
+14
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_14'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.LPAREN, new GroupingParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_15'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.FUNCTION, new FunctionParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_16'/>
+16
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_16'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.STRING, new StringParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_17'/>
+17
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_17'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.IF, new IfParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_18'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.WHILE, new WhileParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_19'/>
+19
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_19'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.FOR, new ForParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_20'/>
+20
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_20'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.MATCH, new MatchParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_21'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.CLASS, new ClassParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_22'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.RETURN, new ReturnParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_23'/>
+23
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_23'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.LBRACKET, new ArrayParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_24'/>
+24
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_24'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.TRUE, new BooleanParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_25'/>
+25
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_25'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.FALSE, new BooleanParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_26'/>
+26
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_26'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.IMPORT, new ImportParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_27'/>
+27
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_27'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.FROM, new ImportParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_28'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_29'/>
+29
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_29'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.NOT, new PrefixOperatorParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_30'/>
+30
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_30'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addPrefixParser(TokenType.SUB, new PrefixOperatorParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_31'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_32'/>
+32
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_32'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.LPAREN, new CallParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_33'/>
+33
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_33'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.LBRACKET, new ArrayAccessParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_34'/>
+34
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_34'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.OBJECT_ACCESS, new ObjectAccessParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_35'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_36'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.SET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_37'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.ADDSET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_38'/>
+38
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_38'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.SUBSET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_39'/>
+39
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_39'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.MULSET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_40'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.DIVSET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_41'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.MODSET, new AssignmentParser());</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_42'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_43'/>
+43
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_43'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.OR, new OperatorParser(Precedence.OR, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_44'/>
+44
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_44'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.AND, new OperatorParser(Precedence.AND, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_45'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_46'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.EQ, new OperatorParser(Precedence.EQUALITY, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_47'/>
+47
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_47'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        addInfixParser(TokenType.NOTEQ, new OperatorParser(Precedence.EQUALITY, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_48'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_49'/>
+49
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_49'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.GT, new OperatorParser(Precedence.COMPARISON, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_50'/>
+50
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_50'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.LT, new OperatorParser(Precedence.COMPARISON, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_51'/>
+51
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_51'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.GTOE, new OperatorParser(Precedence.COMPARISON, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_52'/>
+52
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_52'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; SURVIVED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        addInfixParser(TokenType.LTOE, new OperatorParser(Precedence.COMPARISON, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_53'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_54'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.ADD, new OperatorParser(Precedence.SUM, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_55'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.SUB, new OperatorParser(Precedence.SUM, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_56'/>
+56
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_56'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.DIV, new OperatorParser(Precedence.PRODUCT, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_57'/>
+57
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_57'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.MUL, new OperatorParser(Precedence.PRODUCT, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_58'/>
+58
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_58'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addInfixParser(TokenType.MOD, new OperatorParser(Precedence.PRODUCT, false));</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_59'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@37630101_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@37630101_60'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_12'>12</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_12'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.objectAccessWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_13'>13</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_13'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.returnWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_14'>14</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_14'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.groupingWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.returnWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_16'>16</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_16'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.classWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.ifWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.whileWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_19'>19</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_19'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.forWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.matchWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.classWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.returnWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_23'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.arrayWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_24'>24</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_24'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.booleansWork(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_25'>25</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_25'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.booleansWork(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_26'>26</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_26'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.importWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_27'>27</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_27'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.importWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_29'>29</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_29'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.prefixOperatorsWork(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_30'>30</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_30'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.prefixOperatorsWork(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addPrefixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_32'>32</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_32'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.whileWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_33'>33</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_33'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.arrayWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_34'>34</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_34'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.objectAccessWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.cantAssignToNonIdentifier(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_38'>38</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_38'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_39'>39</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_39'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_43'>43</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_43'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.combinedTruthWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_44'>44</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_44'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.combinedTruthWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.matchWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_47'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_49'>49</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_49'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimpleAs(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_50'>50</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_50'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.whileWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_51'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimpleAs(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_52'>52</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_52'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.groupingWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.operatorPrecedenceWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_56'>56</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_56'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.operatorPrecedenceWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_57'>57</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_57'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.operatorPrecedenceWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@37630101_58'>58</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@37630101_58'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.ErnuParserTest.groupingWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/ErnuParser::addInfixParser &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.imberg.juhani.ernu.parser.ErnuParserTest.groupingWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.consumeTypeReturnsToken(fi.imberg.juhani.ernu.parser.ErnuParserTest) (18 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.callWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.ifWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.forWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (4 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.objectAccessWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleAttribute(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.whileWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.operatorPrecedenceWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.cantAssignToNonIdentifier(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.prefixOperatorsWork(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.importWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.booleansWork(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.advancedInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (28 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimpleAs(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimple(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (93 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testWrongNumberOfArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.functionWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.arrayWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testNonIdentifierInArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.throwsParsingExceptions2(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testDoc(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.methodTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (12 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSub(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.returnWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.throwsParsingExceptions1(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testSimpleReturn(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (7 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.combinedTruthWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.classWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.matchWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.2
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>TokenType xref</title>
+<link type="text/css" rel="stylesheet" href="../../../../../stylesheet.css" />
+</head>
+<body>
+<div id="overview"><a href="../../../../../../apidocs/fi/imberg/juhani/ernu/parser/TokenType.html">View Javadoc</a></div><pre>
+<a class="jxr_linenumber" name="L1" href="#L1">1</a>   <strong class="jxr_keyword">package</strong> fi.imberg.juhani.ernu.parser;
+<a class="jxr_linenumber" name="L2" href="#L2">2</a>   
+<a class="jxr_linenumber" name="L3" href="#L3">3</a>   <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L4" href="#L4">4</a>   <em class="jxr_javadoccomment"> * Enum of all of the possible token types.</em>
+<a class="jxr_linenumber" name="L5" href="#L5">5</a>   <em class="jxr_javadoccomment"> */</em>
+<a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">public</strong> enum <a href="../../../../../fi/imberg/juhani/ernu/parser/TokenType.html">TokenType</a> {
+<a class="jxr_linenumber" name="L7" href="#L7">7</a>       LPAREN(<span class="jxr_string">"&#92;&#92;("</span>),
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>       RPAREN(<span class="jxr_string">"&#92;&#92;)"</span>),
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>       LBRACKET(<span class="jxr_string">"&#92;&#92;["</span>),
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>      RBRACKET(<span class="jxr_string">"&#92;&#92;]"</span>),
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>      NUMBER(<span class="jxr_string">"&#92;&#92;-?[0-9]+&#92;&#92;.?[0-9]*"</span>),
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      FUNCTION(<span class="jxr_string">"function"</span>),
+<a class="jxr_linenumber" name="L13" href="#L13">13</a>      IF(<span class="jxr_string">"if"</span>),
+<a class="jxr_linenumber" name="L14" href="#L14">14</a>      DO(<span class="jxr_string">"do"</span>),
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>      ELSE(<span class="jxr_string">"else"</span>),
+<a class="jxr_linenumber" name="L16" href="#L16">16</a>      END(<span class="jxr_string">"end"</span>),
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      RETURN(<span class="jxr_string">"return"</span>),
+<a class="jxr_linenumber" name="L18" href="#L18">18</a>      ELSEIF(<span class="jxr_string">"elseif"</span>),
+<a class="jxr_linenumber" name="L19" href="#L19">19</a>      MATCH(<span class="jxr_string">"match"</span>),
+<a class="jxr_linenumber" name="L20" href="#L20">20</a>      WHILE(<span class="jxr_string">"while"</span>),
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      BREAK(<span class="jxr_string">"break"</span>),
+<a class="jxr_linenumber" name="L22" href="#L22">22</a>      CASE(<span class="jxr_string">"case"</span>),
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>      FOR(<span class="jxr_string">"for"</span>),
+<a class="jxr_linenumber" name="L24" href="#L24">24</a>      IN(<span class="jxr_string">"in"</span>),
+<a class="jxr_linenumber" name="L25" href="#L25">25</a>      CLASS(<span class="jxr_string">"class"</span>),
+<a class="jxr_linenumber" name="L26" href="#L26">26</a>      IMPORT(<span class="jxr_string">"import"</span>),
+<a class="jxr_linenumber" name="L27" href="#L27">27</a>      FROM(<span class="jxr_string">"from"</span>),
+<a class="jxr_linenumber" name="L28" href="#L28">28</a>      AS(<span class="jxr_string">"as"</span>),
+<a class="jxr_linenumber" name="L29" href="#L29">29</a>      TRUE(<span class="jxr_string">"true"</span>),
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>      FALSE(<span class="jxr_string">"false"</span>),
+<a class="jxr_linenumber" name="L31" href="#L31">31</a>      AND(<span class="jxr_string">"and|&#92;&#92;&amp;&#92;&#92;&amp;"</span>),
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>      OR(<span class="jxr_string">"or|&#92;&#92;|&#92;&#92;|"</span>),
+<a class="jxr_linenumber" name="L33" href="#L33">33</a>      NOT(<span class="jxr_string">"not|&#92;&#92;!"</span>),
+<a class="jxr_linenumber" name="L34" href="#L34">34</a>      IDENTIFIER(<span class="jxr_string">"[A-Za-z_]+[A-Za-z0-9_&#92;&#92;.]*[?&#92;&#92;']{0,1}"</span>),
+<a class="jxr_linenumber" name="L35" href="#L35">35</a>      STRING(<span class="jxr_string">"\&quot;.+\&quot;"</span>),
+<a class="jxr_linenumber" name="L36" href="#L36">36</a>      EOL(<span class="jxr_string">"\n|&#92;&#92;;"</span>),
+<a class="jxr_linenumber" name="L37" href="#L37">37</a>      EQ(<span class="jxr_string">"=="</span>),
+<a class="jxr_linenumber" name="L38" href="#L38">38</a>      SET(<span class="jxr_string">"="</span>),
+<a class="jxr_linenumber" name="L39" href="#L39">39</a>      GT(<span class="jxr_string">"&#92;&#92;&gt;"</span>),
+<a class="jxr_linenumber" name="L40" href="#L40">40</a>      LT(<span class="jxr_string">"&#92;&#92;&lt;"</span>),
+<a class="jxr_linenumber" name="L41" href="#L41">41</a>      GTOE(<span class="jxr_string">"&#92;&#92;&gt;="</span>),
+<a class="jxr_linenumber" name="L42" href="#L42">42</a>      LTOE(<span class="jxr_string">"&#92;&#92;&lt;="</span>),
+<a class="jxr_linenumber" name="L43" href="#L43">43</a>      NOTEQ(<span class="jxr_string">"&#92;&#92;!="</span>),
+<a class="jxr_linenumber" name="L44" href="#L44">44</a>      MOD(<span class="jxr_string">"%"</span>),
+<a class="jxr_linenumber" name="L45" href="#L45">45</a>      ADD(<span class="jxr_string">"&#92;&#92;+"</span>),
+<a class="jxr_linenumber" name="L46" href="#L46">46</a>      SUB(<span class="jxr_string">"&#92;&#92;-"</span>),
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>      DIV(<span class="jxr_string">"&#92;&#92;/"</span>),
+<a class="jxr_linenumber" name="L48" href="#L48">48</a>      MUL(<span class="jxr_string">"&#92;&#92;*"</span>),
+<a class="jxr_linenumber" name="L49" href="#L49">49</a>      MODSET(<span class="jxr_string">"%="</span>),
+<a class="jxr_linenumber" name="L50" href="#L50">50</a>      ADDSET(<span class="jxr_string">"&#92;&#92;+="</span>),
+<a class="jxr_linenumber" name="L51" href="#L51">51</a>      SUBSET(<span class="jxr_string">"&#92;&#92;-="</span>),
+<a class="jxr_linenumber" name="L52" href="#L52">52</a>      DIVSET(<span class="jxr_string">"&#92;&#92;/="</span>),
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>      MULSET(<span class="jxr_string">"&#92;&#92;*="</span>),
+<a class="jxr_linenumber" name="L54" href="#L54">54</a>      COMMA(<span class="jxr_string">","</span>),
+<a class="jxr_linenumber" name="L55" href="#L55">55</a>      OBJECT_ACCESS(<span class="jxr_string">"&#92;&#92;."</span>),
+<a class="jxr_linenumber" name="L56" href="#L56">56</a>      SLICE_SEPARATOR(<span class="jxr_string">"&#92;&#92;:"</span>),
+<a class="jxr_linenumber" name="L57" href="#L57">57</a>      NONE(<span class="jxr_string">""</span>),
+<a class="jxr_linenumber" name="L58" href="#L58">58</a>      EOF(<span class="jxr_string">""</span>);
+<a class="jxr_linenumber" name="L59" href="#L59">59</a>  
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L61" href="#L61">61</a>  <em class="jxr_javadoccomment">     * A regex that a matching tokens content should match</em>
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>      <strong class="jxr_keyword">private</strong> String match;
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>  
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>      <a href="../../../../../fi/imberg/juhani/ernu/parser/TokenType.html">TokenType</a>(String match) {
+<a class="jxr_linenumber" name="L66" href="#L66">66</a>          <strong class="jxr_keyword">this</strong>.match = match;
+<a class="jxr_linenumber" name="L67" href="#L67">67</a>      }
+<a class="jxr_linenumber" name="L68" href="#L68">68</a>  
+<a class="jxr_linenumber" name="L69" href="#L69">69</a>      <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L70" href="#L70">70</a>  <em class="jxr_javadoccomment">     * Finds the first suitable type for the token, and marks the token as being of the found type.</em>
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  <em class="jxr_javadoccomment">     *</em>
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  <em class="jxr_javadoccomment">     * @param token The token to be matched against.</em>
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">void</strong> matchType(<a href="../../../../../fi/imberg/juhani/ernu/parser/Token.html">Token</a> token) {
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>          <strong class="jxr_keyword">if</strong> (token.getType() != TokenType.NONE) {
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>              <strong class="jxr_keyword">return</strong>;
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>          }
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>          String content = token.getContent();
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>          <strong class="jxr_keyword">for</strong> (TokenType ttype : values()) {
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>              <strong class="jxr_keyword">if</strong> (content.matches(ttype.getMatch())) {
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>                  token.setType(ttype);
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>                  <strong class="jxr_keyword">return</strong>;
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>              }
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>          }
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>      }
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>      <strong class="jxr_keyword">public</strong> String getMatch() {
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>          <strong class="jxr_keyword">return</strong> match;
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>      }
+<a class="jxr_linenumber" name="L90" href="#L90">90</a>  }
+</pre>
+<hr/>
+<div id="footer">Copyright &#169; 2015. All rights reserved.</div>
+</body>
+</html>

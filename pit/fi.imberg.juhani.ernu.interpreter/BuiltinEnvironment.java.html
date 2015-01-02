@@ -1,0 +1,495 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>BuiltinEnvironment.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.imberg.juhani.ernu.interpreter;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import fi.imberg.juhani.ernu.interpreter.builtin.*;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_6'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Describes an environment with the builtin functions already in.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_7'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_8'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class BuiltinEnvironment extends Environment {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_9'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public BuiltinEnvironment() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_10'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        super(null, &#34;builtin&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_11'/>
+11
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_11'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;print&#34;, new PrintFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_12'/>
+12
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_12'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;range&#34;, new RangeFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_13'/>
+13
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_13'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;len&#34;, new LenFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_14'/>
+14
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_14'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;help&#34;, new HelpFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_15'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;type&#34;, new TypeFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_16'/>
+16
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_16'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;defined&#34;, new DefinedFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_17'/>
+17
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_17'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;apply&#34;, new ApplyFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_18'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;str&#34;, new StrFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_19'/>
+19
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_19'>1</a>
+<span>
+1. <init> : removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        addSymbol(&#34;num&#34;, new NumFunction());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_20'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@7d9c448f_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_21'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_11'>11</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_11'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_12'>12</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_12'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_13'>13</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_13'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_14'>14</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_14'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_16'>16</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_16'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_17'>17</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_17'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@7d9c448f_19'>19</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@7d9c448f_19'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest)</span></span> removed call to fi/imberg/juhani/ernu/interpreter/BuiltinEnvironment::addSymbol &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNodeTest.canGetAndSet(fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest.appendAndPrependArrayWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testSubEnvironment(fi.imberg.juhani.ernu.interpreter.EnvironmentTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest.appendAndPrependSingleWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.StrFunctionTest.simpleTests(fi.imberg.juhani.ernu.interpreter.builtin.StrFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest) (3 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getRangeWithStepsWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.PrintFunctionTest.simpleTest(fi.imberg.juhani.ernu.interpreter.builtin.PrintFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest.cantBeMoreThan3Arguments(fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest.simpleRangesWork(fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testCombinedBooleanValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest.requiresAObject(fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.advancedInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (28 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimpleAs(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest.mustGetTwoArguments(fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testShortConstructors(fi.imberg.juhani.ernu.interpreter.EnvironmentTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.TypeFunctionTest.mustBeOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.TypeFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoKnowCompare(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest.setAndGetWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayNodeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest.argumentNeedsToBeString(fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getNegativeStartWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testDoc(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.throwsNoSuchFile(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest.firstArgumentMustBeAFunction(fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest) (12 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest.needsOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.NumFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getValueSimpleWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest.secondArgumentMustBeAList(fi.imberg.juhani.ernu.interpreter.builtin.ApplyFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest.argumentMustBeAAstring(fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getNegativeEndWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.NumberNodeTest.mathWorks(fi.imberg.juhani.ernu.interpreter.nodes.NumberNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testAppend(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest.takesExactlyOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest.argumentsNeedToBeNumbers(fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.StrFunctionTest.mustBeOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.StrFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.TypeFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.TypeFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getReverseWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getCopyWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (6 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testMathValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest.requiresOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.HelpFunctionTest) (14 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleAttribute(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNodeTest.throwsRuntimeException(fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest.requiresAObject(fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest.mustBeOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.RangeFunctionTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest.works(fi.imberg.juhani.ernu.interpreter.builtin.LenFunctionTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimple(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (93 ms)</li><li>fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest.mustGetOneArgument(fi.imberg.juhani.ernu.interpreter.builtin.DefinedFunctionTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testWrongNumberOfArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoKnowMath(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testNonIdentifierInArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testCompareValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.methodTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (12 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSub(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoSameClass(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testBuiltinSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest) (21 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest.getSimpleRangeWorks(fi.imberg.juhani.ernu.interpreter.nodes.ArrayAccessNodeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testSimpleReturn(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (7 ms)</li><li>fi.imberg.juhani.ernu.interpreter.EnvironmentTest.testEnvironmentSpecificSymbols(fi.imberg.juhani.ernu.interpreter.EnvironmentTest) (12 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.2
+
+</body>
+</html>

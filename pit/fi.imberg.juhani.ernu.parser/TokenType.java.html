@@ -1,0 +1,1415 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+border: 1px solid #dddddd;
+padding-top: 10px;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>TokenType.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_1'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package fi.imberg.juhani.ernu.parser;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_2'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_3'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_4'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Enum of all of the possible token types.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_5'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_6'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public enum TokenType {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_7'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    LPAREN(&#34;\\(&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_8'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    RPAREN(&#34;\\)&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_9'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    LBRACKET(&#34;\\[&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_10'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    RBRACKET(&#34;\\]&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_11'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    NUMBER(&#34;\\-?[0-9]+\\.?[0-9]*&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_12'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    FUNCTION(&#34;function&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_13'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    IF(&#34;if&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_14'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    DO(&#34;do&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_15'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    ELSE(&#34;else&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_16'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    END(&#34;end&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_17'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    RETURN(&#34;return&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_18'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    ELSEIF(&#34;elseif&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_19'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    MATCH(&#34;match&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_20'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    WHILE(&#34;while&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_21'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    BREAK(&#34;break&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_22'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    CASE(&#34;case&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_23'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    FOR(&#34;for&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_24'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    IN(&#34;in&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_25'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    CLASS(&#34;class&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_26'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    IMPORT(&#34;import&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_27'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    FROM(&#34;from&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_28'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    AS(&#34;as&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_29'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    TRUE(&#34;true&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_30'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    FALSE(&#34;false&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_31'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    AND(&#34;and|\\&#38;\\&#38;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_32'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    OR(&#34;or|\\|\\|&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_33'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    NOT(&#34;not|\\!&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_34'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    IDENTIFIER(&#34;[A-Za-z_]+[A-Za-z0-9_\\.]*[?\\&#39;]{0,1}&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_35'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    STRING(&#34;\&#34;.+\&#34;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_36'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    EOL(&#34;\n|\\;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_37'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    EQ(&#34;==&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_38'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    SET(&#34;=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_39'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    GT(&#34;\\&#62;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_40'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    LT(&#34;\\&#60;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_41'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    GTOE(&#34;\\&#62;=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_42'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    LTOE(&#34;\\&#60;=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_43'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    NOTEQ(&#34;\\!=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_44'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    MOD(&#34;%&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_45'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    ADD(&#34;\\+&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_46'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    SUB(&#34;\\-&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_47'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    DIV(&#34;\\/&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_48'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    MUL(&#34;\\*&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_49'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    MODSET(&#34;%=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_50'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    ADDSET(&#34;\\+=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_51'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    SUBSET(&#34;\\-=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_52'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    DIVSET(&#34;\\/=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_53'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    MULSET(&#34;\\*=&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_54'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    COMMA(&#34;,&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_55'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    OBJECT_ACCESS(&#34;\\.&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_56'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    SLICE_SEPARATOR(&#34;\\:&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_57'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    NONE(&#34;&#34;),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_58'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    EOF(&#34;&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_59'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_60'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_61'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * A regex that a matching tokens content should match</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_62'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_63'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private String match;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_64'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_65'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    TokenType(String match) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_66'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this.match = match;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_67'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_68'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_69'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_70'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Finds the first suitable type for the token, and marks the token as being of the found type.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_71'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_72'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param token The token to be matched against.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_73'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_74'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static void matchType(Token token) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_75'/>
+75
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_75'>1</a>
+<span>
+1. matchType : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (token.getType() != TokenType.NONE) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_76'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            return;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_77'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_78'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        String content = token.getContent();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_79'/>
+79
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_79'>3</a>
+<span>
+1. matchType : changed conditional boundary &rarr; SURVIVED<br/>
+2. matchType : Changed increment from 1 to -1 &rarr; KILLED<br/>
+3. matchType : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (TokenType ttype : values()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_80'/>
+80
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_80'>1</a>
+<span>
+1. matchType : negated conditional &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (content.matches(ttype.getMatch())) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_81'/>
+81
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_81'>1</a>
+<span>
+1. matchType : removed call to fi/imberg/juhani/ernu/parser/Token::setType &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                token.setType(ttype);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_82'></a>
+<span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                return;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_83'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_84'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_85'></a>
+<span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_86'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_87'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getMatch() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_88'>1</a>
+<span>
+1. getMatch : mutated return of Object value for fi/imberg/juhani/ernu/parser/TokenType::getMatch to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return match;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_89'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63ed5580_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_90'></a>
+<span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63ed5580_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_75'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.typeWontBeReassigned(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63ed5580_79'>79</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_79'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.testEmpty(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> Changed increment from 1 to -1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.testNumbers(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63ed5580_80'>80</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_80'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.testEmpty(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63ed5580_81'>81</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_81'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>matchType<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.testNumbers(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> removed call to fi/imberg/juhani/ernu/parser/Token::setType &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63ed5580_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63ed5580_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMatch<br/><b>Killed by : </b>fi.imberg.juhani.ernu.parser.TokenTypeTest.testEmpty(fi.imberg.juhani.ernu.parser.TokenTypeTest)</span></span> mutated return of Object value for fi/imberg/juhani/ernu/parser/TokenType::getMatch to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>fi.imberg.juhani.ernu.parser.TokenTypeTest.testSymbols(fi.imberg.juhani.ernu.parser.TokenTypeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.numbersWithOperatorsParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.callWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.ifWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenTypeTest.typeWontBeReassigned(fi.imberg.juhani.ernu.parser.TokenTypeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.forWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (4 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.whileWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testCombinedBooleanValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.areNumbersParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.booleansWork(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.advancedInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (28 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenTypeTest.testKeywords(fi.imberg.juhani.ernu.parser.TokenTypeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimpleAs(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.functionWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoKnowCompare(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testDoc(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.returnWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenTypeTest.testEmpty(fi.imberg.juhani.ernu.parser.TokenTypeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.NumberNodeTest.mathWorks(fi.imberg.juhani.ernu.interpreter.nodes.NumberNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.whitespaceParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (0 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testAppend(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.literalStringsParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (0 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.groupingWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.namesParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.consumeTypeReturnsToken(fi.imberg.juhani.ernu.parser.ErnuParserTest) (18 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testMathValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.operatorsParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.objectAccessWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleAttribute(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.commentsParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (0 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.operatorPrecedenceWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.cantAssignToNonIdentifier(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.prefixOperatorsWork(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.importWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSimple(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (93 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testWrongNumberOfArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoKnowMath(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.arrayWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (3 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.assignmentWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testNonIdentifierInArguments(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testCompareValue(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.throwsParsingExceptions2(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.methodTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (12 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest.simpleInitTest(fi.imberg.juhani.ernu.interpreter.nodes.ClassNodeTest) (2 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest.testImportSub(fi.imberg.juhani.ernu.interpreter.nodes.ImportNodeTest) (10 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest.testNoSameClass(fi.imberg.juhani.ernu.interpreter.nodes.OperatorNodeTest) (1 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenTypeTest.testNumbers(fi.imberg.juhani.ernu.parser.TokenTypeTest) (0 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.throwsParsingExceptions1(fi.imberg.juhani.ernu.parser.ErnuParserTest) (1 ms)</li><li>fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest.testSimpleReturn(fi.imberg.juhani.ernu.interpreter.nodes.FunctionNodeTest) (7 ms)</li><li>fi.imberg.juhani.ernu.parser.TokenizerTest.parenthesisParsed(fi.imberg.juhani.ernu.parser.TokenizerTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.combinedTruthWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.classWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (2 ms)</li><li>fi.imberg.juhani.ernu.parser.ErnuParserTest.matchWorks(fi.imberg.juhani.ernu.parser.ErnuParserTest) (4 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.1.2
+
+</body>
+</html>

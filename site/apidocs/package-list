@@ -1,0 +1,13 @@
+fi.imberg.juhani.ernu
+fi.imberg.juhani.ernu.cli
+fi.imberg.juhani.ernu.cli.command
+fi.imberg.juhani.ernu.cli.exceptions
+fi.imberg.juhani.ernu.interpreter
+fi.imberg.juhani.ernu.interpreter.builtin
+fi.imberg.juhani.ernu.interpreter.exceptions
+fi.imberg.juhani.ernu.interpreter.interfaces
+fi.imberg.juhani.ernu.interpreter.nodes
+fi.imberg.juhani.ernu.parser
+fi.imberg.juhani.ernu.parser.exceptions
+fi.imberg.juhani.ernu.parser.parsers
+fi.imberg.juhani.ernu.util
