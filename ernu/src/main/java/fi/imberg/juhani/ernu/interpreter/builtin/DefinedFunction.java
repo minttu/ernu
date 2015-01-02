@@ -22,9 +22,9 @@ public class DefinedFunction extends BuiltinFunction {
             throw new RuntimeException("defined takes one argument only");
         }
         Node node = arguments.get(0).getValue(environment);
-        ;
+
         if (!(node instanceof StringNode)) {
-            throw new RuntimeException("defineds argument must be a string nodes");
+            throw new RuntimeException("defineds argument must be a string node");
         }
         try {
             environment.getSymbol(((StringNode) node).getStringLiteral());

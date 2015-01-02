@@ -17,6 +17,7 @@ public class PrefixNode implements Node {
      * The node to do the operation on
      */
     private final Node node;
+    private final String representation;
 
     /**
      * @param type The type of operation that this does
@@ -25,6 +26,11 @@ public class PrefixNode implements Node {
     public PrefixNode(TokenType type, Node node) {
         this.type = type;
         this.node = node;
+        if (type == TokenType.NOT) {
+            representation = "!";
+        } else {
+            representation = "-";
+        }
     }
 
     @Override
@@ -47,6 +53,6 @@ public class PrefixNode implements Node {
 
     @Override
     public String toString() {
-        return "(! " + node + ")";
+        return "(" + representation + " " + node + ")";
     }
 }

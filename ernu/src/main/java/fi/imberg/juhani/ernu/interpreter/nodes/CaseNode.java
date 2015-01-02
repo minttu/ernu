@@ -49,7 +49,7 @@ public class CaseNode implements Node {
 
     @Override
     public String toString() {
-        return "(" + conditional + " " + body + ")";
+        return "(case " + conditional + " " + body + ")";
     }
 
 }

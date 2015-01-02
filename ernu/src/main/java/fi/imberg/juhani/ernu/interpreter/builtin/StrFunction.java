@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class StrFunction extends BuiltinFunction {
     public StrFunction() {
-        super("Returns a formatted representation.");
+        super("Makes a string out of the value.");
     }
 
     @Override

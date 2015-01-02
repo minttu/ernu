@@ -4,12 +4,12 @@ import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.parser.exceptions.LangException;
 import fi.imberg.juhani.ernu.parser.exceptions.ParsingException;
 import fi.imberg.juhani.ernu.parser.exceptions.UnexpectedTokenException;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
+import org.junit.rules.ExpectedException;
 
 public class ErnuParserTest {
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
     Tokenizer tokenizer;
     ErnuParser parser;
 
@@ -25,80 +25,62 @@ public class ErnuParserTest {
         parser = null;
     }
 
-    public void doTest(String source, String tree) {
+    public void doTest(String source, String tree) throws LangException {
         tokenizer.tokenize(source + "\n");
-        try {
-            Node node = parser.parseNode();
-            while (node == null) {
-                node = parser.parseNode();
-            }
-            Assert.assertEquals(tree, node.toString());
-        } catch (LangException e) {
-            e.printStackTrace();
+        Node node = parser.parseNode();
+        while (node == null) {
+            node = parser.parseNode();
         }
-    }
-
-    public void doExceptionTest(String source, Class exception) {
-        tokenizer.tokenize(source + "\n");
-        try {
-            Node node = parser.parseNode();
-            while (node == null) {
-                node = parser.parseNode();
-            }
-            Assert.fail("Should have thrown an exception.");
-        } catch (Exception e) {
-            Assert.assertTrue(e.getClass().isAssignableFrom(exception));
-        }
+        Assert.assertEquals(tree, node.toString());
     }
 
     @Test
-    public void throwsParsingExceptions() {
-        tokenizer.tokenize("+");
-        try {
-            parser.parseNode();
-            Assert.assertTrue(false);
-        } catch (LangException ignored) {
-        }
+    public void throwsParsingExceptions1() throws LangException {
+        thrown.expect(LangException.class);
 
         tokenizer.tokenize("+");
-        try {
-            parser.consume(TokenType.IDENTIFIER);
-            Assert.assertTrue(false);
-        } catch (UnexpectedTokenException ignored) {
-        }
+        parser.parseNode();
     }
 
     @Test
-    public void consumeTypeReturnsToken() {
+    public void throwsParsingExceptions2() throws LangException {
+        thrown.expect(LangException.class);
+
+        tokenizer.tokenize("+");
+        parser.consume(TokenType.IDENTIFIER);
+    }
+
+    @Test
+    public void consumeTypeReturnsToken() throws UnexpectedTokenException {
         tokenizer.tokenize("3");
         Token token = new Token(0, 0, "3");
         TokenType.matchType(token);
-        try {
-            Assert.assertEquals(token, parser.consume(TokenType.NUMBER));
-        } catch (LangException e) {
-            e.printStackTrace();
-        }
+        Assert.assertEquals(token, parser.consume(TokenType.NUMBER));
     }
 
     @Test
-    public void groupingWorks() {
+    public void groupingWorks() throws LangException {
         doTest("a % (b + c)", "(% a (+ b c))");
     }
 
     @Test
-    public void assignmentWorks() {
+    public void assignmentWorks() throws LangException {
         doTest("a = b", "(= a b)");
         doTest("a += b", "(+= a b)");
+        doTest("a -= b", "(-= a b)");
+        doTest("a *= b", "(*= a b)");
+        doTest("a /= b", "(/= a b)");
+        doTest("a %= b", "(%= a b)");
     }
 
     @Test
-    public void operatorPrecedenceWorks() {
+    public void operatorPrecedenceWorks() throws LangException {
         doTest("a = b + c * d % e - f / g",
                 "(= a (- (+ b (% (* c d) e)) (/ f g)))");
     }
 
     @Test
-    public void functionWorks() {
+    public void functionWorks() throws LangException {
         doTest("a = function()\nend",
                 "(= a (fn [] []))");
         doTest("a = function()\n\"Doc\"\nend",
@@ -108,7 +90,7 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void ifWorks() {
+    public void ifWorks() throws LangException {
         doTest("a = function()\nif c == 0 do\nend\nend",
                 "(= a (fn [] [(if (== c 0) [] [])]))");
         doTest("a = function()\nif c == 0 do\nelse\nc += 1\nend\nend",
@@ -122,7 +104,7 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void forWorks() {
+    public void forWorks() throws LangException {
         doTest("a = function()\nfor i in range(100) do\nend\nend",
                 "(= a (fn [] [(for i -> (range [100]) [])]))");
         doTest("for i in range(100) do print(i); print(i * 2) end",
@@ -130,7 +112,7 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void whileWorks() {
+    public void whileWorks() throws LangException {
         doTest("while i < 100 do i += 1; print(i) end",
                 "(while (< i 100) [(+= i 1), (print [i])])");
         doTest("while i < 100 do end",
@@ -138,19 +120,19 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void matchWorks() {
+    public void matchWorks() throws LangException {
         doTest("match case i == 0 do a() case i == 1 do b() end",
-                "(match [((== i 0) [(a [])]), ((== i 1) [(b [])])])");
+                "(match [(case (== i 0) [(a [])]), (case (== i 1) [(b [])])])");
     }
 
     @Test
-    public void returnWorks() {
+    public void returnWorks() throws LangException {
         doTest("a = function()\nreturn 3\nend",
                 "(= a (fn [] [(return 3)]))");
     }
 
     @Test
-    public void callWorks() {
+    public void callWorks() throws LangException {
         doTest("a = function()\ncall()\nend",
                 "(= a (fn [] [(call [])]))");
         doTest("a = function()\nfoo(0, \"bar\")\nend",
@@ -158,7 +140,7 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void arrayWorks() {
+    public void arrayWorks() throws LangException {
         doTest("a = function()\nb = [0, 1, 2]\nb[0] = 3\nend",
                 "(= a (fn [] [(= b [0, 1, 2]), (= b[[0]] 3)]))");
         doTest("a = []", "(= a [])");
@@ -168,22 +150,14 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void cantAssignToNonIdentifier() {
-        doExceptionTest("3 = 2", ParsingException.class);
+    public void cantAssignToNonIdentifier() throws LangException {
+        thrown.expect(ParsingException.class);
+
+        doTest("3 = 2", "(= 3 2)");
     }
 
     @Test
-    public void booleansWork() {
-        doTest("a = true", "(= a true)");
-    }
-
-    @Test
-    public void prefixesWork() {
-        doTest("!true", "(! true)");
-    }
-
-    @Test
-    public void classWorks() {
+    public void classWorks() throws LangException {
         // Classes aren't evaluated here yet
         doTest("class \"hello doc\"; v = 3 end",
                 "(class [])");
@@ -192,7 +166,7 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void importWorks() {
+    public void importWorks() throws LangException {
         doTest("import a",
                 "(import a)");
         doTest("import asd.asd",
@@ -206,9 +180,30 @@ public class ErnuParserTest {
     }
 
     @Test
-    public void objectAccessWorks() {
+    public void objectAccessWorks() throws LangException {
         doTest("a.b",
                 "a.b");
+    }
+
+    @Test
+    public void booleansWork() throws LangException {
+        doTest("true", "true");
+        doTest("false", "false");
+    }
+
+    @Test
+    public void prefixOperatorsWork() throws LangException {
+        doTest("-a", "(- a)");
+        doTest("!a", "(! a)");
+        doTest("not true", "(! true)");
+    }
+
+    @Test
+    public void combinedTruthWorks() throws LangException {
+        doTest("true and false", "(&& true false)");
+        doTest("true && false", "(&& true false)");
+        doTest("true or false", "(|| true false)");
+        doTest("true || false", "(|| true false)");
     }
 
 }

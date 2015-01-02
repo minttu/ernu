@@ -60,7 +60,8 @@ public class TokenTest {
         Assert.assertNotEquals(new Token(1, 0, "a"), new Token(0, 0, "a"));
         Assert.assertNotEquals(new Token(0, 0, "a"), null);
         Assert.assertEquals(token, token);
-        Assert.assertNotEquals(token, new Integer(0));
+        Assert.assertEquals(token.hashCode(), token.hashCode());
+        Assert.assertNotEquals(token, 0);
         token.setType(TokenType.IDENTIFIER);
         Assert.assertNotEquals(token, new Token(0, 0, ""));
     }

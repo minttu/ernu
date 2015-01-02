@@ -24,7 +24,7 @@ public class LenFunction extends BuiltinFunction {
         Node arg = arguments.get(0).getValue(environment);
 
         if (!(arg instanceof Sequence)) {
-            throw new RuntimeException("len argument should implement len");
+            throw new RuntimeException("lens argument should be a sequence");
         }
         return new NumberNode(((Sequence) arg).length());
     }

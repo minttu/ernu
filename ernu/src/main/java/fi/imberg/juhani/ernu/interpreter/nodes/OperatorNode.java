@@ -38,9 +38,10 @@ public class OperatorNode implements Node {
         this.operator = operator;
         this.left = left;
         display = operator.getMatch();
-        if (display.charAt(0) == '\\') {
-            display = display.substring(1);
+        if (display.contains("|")) {
+            display = display.split("\\|", 2)[1];
         }
+        display = display.replaceAll("\\\\", "");
     }
 
     @Override

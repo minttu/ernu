@@ -12,4 +12,5 @@
 | 27.12 | 6h   | Uusi import/import as/from import systeemi, testejä
 | 28.12 | 3h   | Testejä, Javadoccia
 | 29.12 | 1h   | Javadoccia
-| 01.01 | 6h   | Sekvenssikaavioita, dokumentaatiota, javadoc
+| 01.01 | 7h   | Sekvenssikaavioita, dokumentaatiota, javadoc, testejä
+| 02.01 | 2h   | testejä
