@@ -4,6 +4,7 @@ import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.builtin.BuiltinFunction;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException;
+import fi.imberg.juhani.ernu.interpreter.interfaces.Callable;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Object;
 
@@ -46,6 +47,9 @@ public class EnvironmentNode implements Node, Object {
         Node node = environment.getSymbols().get(key);
         if (node == null) {
             throw new UnknownAttributeException(key);
+        }
+        if(node instanceof Callable) {
+            return new ProxyNode(environment, node);
         }
         return node;
     }

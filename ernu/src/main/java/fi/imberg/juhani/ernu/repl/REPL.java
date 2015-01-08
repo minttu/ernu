@@ -33,6 +33,7 @@ public class REPL extends Thread {
         this.environment = new Environment(true, null, "repl");
         greet();
         execute("import math");
+        execute("import functional");
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         System.setOut(new PrintStream(new OutputStream() {
             @Override

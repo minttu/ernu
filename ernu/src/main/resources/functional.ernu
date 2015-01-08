@@ -1,6 +1,7 @@
-__doc__ = "Functional stuff here!"
+__doc__ = "Functional functions live here"
 
 map = function (fun, arr)
+  "Maps a function over an array"
   res = []
   for val in arr do
     res += fun(val)
@@ -9,6 +10,7 @@ map = function (fun, arr)
 end
 
 reduce = function (fun, arr)
+  "Reduces an array to a single value with function"
   if len(arr) == 1 do
     return arr[0]
   end
