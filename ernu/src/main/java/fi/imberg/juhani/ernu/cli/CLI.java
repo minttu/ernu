@@ -23,6 +23,7 @@ public class CLI {
         addCommand(new TokenCommand());
         addCommand(new RunCommand());
         addCommand(new REPLCommand());
+        addCommand(new GREPLCommand());
     }
 
     private void addCommand(Command command) {

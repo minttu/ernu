@@ -2,26 +2,38 @@
 
 ## Käynnistäminen
 
-Interaktiivisen komentorivin käynnistäminen.
+Interaktiivisen terminaali komentorivin käynnistäminen
 
     java -jar ernu-1.0-SNAPSHOT.jar repl
+
+Interaktiivisen graaffisen komentorivin käynnistäminen
+
+    java -jar ernu-1.0-SNAPSHOT.jar grepl
 
 Tiedoston ajaminen
 
     java -jar ernu-1.0-SNAPSHOT.jar run TIEDOSTO
 
-## Interaktiivinen komentorivi
+## Interaktiivinen terminaali komentorivi
 
 Kirjoittamalla näppäimmistölläsi saat merkkejä ilmestymään ruudulle. Kun painat
-rivinvaihtoa kirjoittamasi syöte ajetaan. Tästä komentorivistä pääset pois joko
-painamalla `Ctrl-C` (SIGINT) tai `Ctrl-D` (EOF). Komentorivi saattaa näyttää
-virheitä kun kirjoitat jotain epävalidia tai muutenvaan asiat menee kurjasti.
+rivinvaihtoa kirjoittamasi syöte ajetaan. Tästä komentorivistä pääset pois
+painamalla `Ctrl-C`. Komentorivi saattaa näyttää virheitä kun kirjoitat jotain
+epävalidia tai muutenvaan asiat menee kurjasti.
 
 Huomaa että interaktiivisessa komentorivissä `math` paketti tuodaan ympäristöön
 automaattisesti toisin kuin tiedostoja ajettaessa.
 
 Komentorivi alkaa `(^_^)` jos edellinen komento suoritettiin onnistuneesti,
 ja `(>_<)` jos edellinen komento ei ollut onnistunut.
+
+## Interaktiivinen graaffinen komentorivi
+
+Koostuu kahdesta tekstilaatikosta, alempaan kirjoitetaan koodia ja tulokset
+tulevat ylempää. Voit liikkua komento historiassa `Ctrl-Up` ja `Ctrl-Down`,
+lisätä uuden rivin ilman että komento syötetään `Alt-Enter` ja pakottaa
+syötteen lähettämisen `Ctrl-Enter`. Alempi tekstilaatikko on hieman punainen
+jos edellistä komentoa ei suoritettu onnistuneesti.
 
 ## Ernu-kieli
 

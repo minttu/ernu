@@ -1,5 +1,6 @@
-package fi.imberg.juhani.ernu;
+package fi.imberg.juhani.ernu.repl;
 
+import fi.imberg.juhani.ernu.ErnuException;
 import fi.imberg.juhani.ernu.interpreter.Environment;
 import fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException;
 import fi.imberg.juhani.ernu.interpreter.interfaces.Node;
@@ -7,28 +8,38 @@ import fi.imberg.juhani.ernu.interpreter.nodes.NullNode;
 import fi.imberg.juhani.ernu.parser.ErnuParser;
 import fi.imberg.juhani.ernu.parser.Tokenizer;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Properties;
 import java.util.Scanner;
 
 /**
  * Read-Evaluate-Print loop. An interactive interface to Ernu.
  */
-public class REPL {
+public class REPL extends Thread {
     private final Scanner scanner;
     private final Tokenizer tokenizer;
     private final ErnuParser parser;
     private final Environment environment;
-    private boolean lastOk;
+    private final REPLUI ui;
 
-    public REPL() {
+    public REPL(REPLUI ui) {
+        this.ui = ui;
         this.scanner = new Scanner(System.in);
         this.tokenizer = new Tokenizer();
         this.parser = new ErnuParser(tokenizer);
         this.environment = new Environment(true, null, "repl");
-        this.lastOk = true;
         greet();
         execute("import math");
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(new OutputStream() {
+            @Override
+            public void write(int b) throws IOException {
+                ui.raw(b);
+            }
+        }));
     }
 
     /**
@@ -37,11 +48,11 @@ public class REPL {
      * @param string The sourcecode to execute
      */
     public void execute(String string) {
-        System.out.println("(^_^) " + string);
+        ui.comment(string);
         try {
             print(eval(string + "\n\n"));
         } catch (ErnuException e) {
-            e.printStackTrace();
+            ui.error(e.getMessage());
         }
     }
 
@@ -53,10 +64,10 @@ public class REPL {
         try {
             properties.load(this.getClass().getResourceAsStream("/git.properties"));
         } catch (IOException e) {
-            e.printStackTrace();
+            ui.error(e.getMessage());
         }
-        System.out.println("(   ) ernu lang");
-        System.out.println("(   ) git rev: " + properties.getProperty("git.commit.id.abbrev"));
+        ui.comment("ernu lang");
+        ui.comment("git rev: " + properties.getProperty("git.commit.id.abbrev"));
     }
 
     /**
@@ -65,12 +76,7 @@ public class REPL {
      * @return the string that was red
      */
     private String read() {
-        if (lastOk) {
-            System.out.print("(^_^) ");
-        } else {
-            System.out.print("(>_<) ");
-        }
-        return scanner.nextLine() + "\n\n";
+        return ui.read() + "\n\n";
     }
 
     /**
@@ -102,21 +108,30 @@ public class REPL {
     private void print(Node node) throws RuntimeException {
         Node value = node.getValue(this.environment);
         if (!(value instanceof NullNode)) {
-            System.out.println(value);
+            ui.display(value.toString());
         }
     }
 
     /**
      * The main loop. Prints the evaluated value of whatever has been typed.
      */
-    public void loop() {
+    @Override
+    public void run() {
         while (true) {
+            if (!ui.ready()) {
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    return;
+                }
+                continue;
+            }
             try {
                 print(eval(read()));
-                lastOk = true;
-            } catch (ErnuException e) {
-                System.err.println("\033[31m" + e.getMessage() + "\033[0m");
-                lastOk = false;
+                ui.ok(true);
+            } catch (Exception e) {
+                ui.error(e.getMessage());
+                ui.ok(false);
                 while (!tokenizer.isEmpty()) {
                     tokenizer.nextToken();
                 }
