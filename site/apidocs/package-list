@@ -10,4 +10,7 @@ fi.imberg.juhani.ernu.interpreter.nodes
 fi.imberg.juhani.ernu.parser
 fi.imberg.juhani.ernu.parser.exceptions
 fi.imberg.juhani.ernu.parser.parsers
+fi.imberg.juhani.ernu.repl
+fi.imberg.juhani.ernu.repl.swing
+fi.imberg.juhani.ernu.repl.terminal
 fi.imberg.juhani.ernu.util

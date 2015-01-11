@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2015</copyright>
     <item>
-      <title>File: 96,
-             Errors: 0,
+      <title>File: 103,
+             Errors: 10,
              Warnings: 0,
              Infos: 0
       </title>
@@ -74,7 +74,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.FileCommand.java">fi/imberg/juhani/ernu/cli/command/FileCommand.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.swing.SwingREPL.java">fi/imberg/juhani/ernu/repl/swing/SwingREPL.java</a>
                 </td>
                 <td>
                   0
@@ -83,49 +83,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.EnvironmentNode.java">fi/imberg/juhani/ernu/interpreter/nodes/EnvironmentNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ArrayNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ArrayNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.OperatorNode.java">fi/imberg/juhani/ernu/interpreter/nodes/OperatorNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
+                  10
                 </td>
               </tr>
                           <tr>
@@ -173,20 +131,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Sequence.java">fi/imberg/juhani/ernu/interpreter/interfaces/Sequence.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#git.properties">git.properties</a>
                 </td>
                 <td>
                   0
@@ -270,49 +214,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.TypeFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/TypeFunction.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.CaseNode.java">fi/imberg/juhani/ernu/interpreter/nodes/CaseNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.TokenCommand.java">fi/imberg/juhani/ernu/cli/command/TokenCommand.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.TokenType.java">fi/imberg/juhani/ernu/parser/TokenType.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.REPLUI.java">fi/imberg/juhani/ernu/repl/REPLUI.java</a>
                 </td>
                 <td>
                   0
@@ -327,34 +229,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.Tokenizer.java">fi/imberg/juhani/ernu/parser/Tokenizer.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.Environment.java">fi/imberg/juhani/ernu/interpreter/Environment.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.AssignmentNode.java">fi/imberg/juhani/ernu/interpreter/nodes/AssignmentNode.java</a>
                 </td>
                 <td>
                   0
@@ -396,34 +270,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Mathable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Mathable.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.PrefixNode.java">fi/imberg/juhani/ernu/interpreter/nodes/PrefixNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.IfNode.java">fi/imberg/juhani/ernu/interpreter/nodes/IfNode.java</a>
                 </td>
                 <td>
@@ -452,77 +298,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.OperatorParser.java">fi/imberg/juhani/ernu/parser/parsers/OperatorParser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.CallNode.java">fi/imberg/juhani/ernu/interpreter/nodes/CallNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.NumFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/NumFunction.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.IdentifierParser.java">fi/imberg/juhani/ernu/parser/parsers/IdentifierParser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.RangeFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/RangeFunction.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.PrefixParser.java">fi/imberg/juhani/ernu/parser/parsers/PrefixParser.java</a>
                 </td>
                 <td>
                   0
@@ -564,34 +340,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Printable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Printable.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ProxyNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ProxyNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.StringNode.java">fi/imberg/juhani/ernu/interpreter/nodes/StringNode.java</a>
                 </td>
                 <td>
@@ -620,49 +368,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.REPL.java">fi/imberg/juhani/ernu/REPL.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.Command.java">fi/imberg/juhani/ernu/cli/command/Command.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.util.Range.java">fi/imberg/juhani/ernu/util/Range.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ObjectAccessParser.java">fi/imberg/juhani/ernu/parser/parsers/ObjectAccessParser.java</a>
                 </td>
                 <td>
                   0
@@ -718,20 +424,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.MatchNode.java">fi/imberg/juhani/ernu/interpreter/nodes/MatchNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.exceptions.RuntimeException.java">fi/imberg/juhani/ernu/interpreter/exceptions/RuntimeException.java</a>
                 </td>
                 <td>
@@ -760,34 +452,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ArrayAccessParser.java">fi/imberg/juhani/ernu/parser/parsers/ArrayAccessParser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNode.java">fi/imberg/juhani/ernu/interpreter/nodes/IdentifierNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.HelpFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/HelpFunction.java</a>
                 </td>
                 <td>
@@ -803,20 +467,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.GroupingParser.java">fi/imberg/juhani/ernu/parser/parsers/GroupingParser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ForParser.java">fi/imberg/juhani/ernu/parser/parsers/ForParser.java</a>
                 </td>
                 <td>
                   0
@@ -872,21 +522,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.CLIException.java">fi/imberg/juhani/ernu/cli/exceptions/CLIException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ImportNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ImportNode.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.terminal.TerminalREPL.java">fi/imberg/juhani/ernu/repl/terminal/TerminalREPL.java</a>
                 </td>
                 <td>
                   0
@@ -915,20 +551,6 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Appendable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Appendable.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ReturnNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ReturnNode.java</a>
                 </td>
                 <td>
                   0
@@ -984,35 +606,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.exceptions.ParsingException.java">fi/imberg/juhani/ernu/parser/exceptions/ParsingException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.NumberNode.java">fi/imberg/juhani/ernu/interpreter/nodes/NumberNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.FunctionNode.java">fi/imberg/juhani/ernu/interpreter/nodes/FunctionNode.java</a>
                 </td>
                 <td>
                   0
@@ -1040,20 +634,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ObjectNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ObjectNode.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.exceptions.UnknownAttributeException.java">fi/imberg/juhani/ernu/interpreter/exceptions/UnknownAttributeException.java</a>
                 </td>
                 <td>
@@ -1068,7 +648,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.FileNotFoundException.java">fi/imberg/juhani/ernu/cli/exceptions/FileNotFoundException.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.swing.InputKeyListener.java">fi/imberg/juhani/ernu/repl/swing/InputKeyListener.java</a>
                 </td>
                 <td>
                   0
@@ -1096,7 +676,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.IfParser.java">fi/imberg/juhani/ernu/parser/parsers/IfParser.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.swing.InputArea.java">fi/imberg/juhani/ernu/repl/swing/InputArea.java</a>
                 </td>
                 <td>
                   0
@@ -1110,7 +690,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.LenFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/LenFunction.java</a>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.IfParser.java">fi/imberg/juhani/ernu/parser/parsers/IfParser.java</a>
                 </td>
                 <td>
                   0
@@ -1138,48 +718,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException.java">fi/imberg/juhani/ernu/interpreter/exceptions/ReturnException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.NotEnoughArgumentsException.java">fi/imberg/juhani/ernu/cli/exceptions/NotEnoughArgumentsException.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ClassParser.java">fi/imberg/juhani/ernu/parser/parsers/ClassParser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.Precedence.java">fi/imberg/juhani/ernu/parser/Precedence.java</a>
                 </td>
                 <td>
@@ -1194,35 +732,7 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.Parser.java">fi/imberg/juhani/ernu/parser/Parser.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Callable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Callable.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.REPLCommand.java">fi/imberg/juhani/ernu/cli/command/REPLCommand.java</a>
                 </td>
                 <td>
                   0
@@ -1320,34 +830,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Node.java">fi/imberg/juhani/ernu/interpreter/interfaces/Node.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.ParseCommand.java">fi/imberg/juhani/ernu/cli/command/ParseCommand.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.StringParser.java">fi/imberg/juhani/ernu/parser/parsers/StringParser.java</a>
                 </td>
                 <td>
@@ -1363,6 +845,622 @@ under the License.
                           <tr>
                 <td>
                   <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.AssignmentParser.java">fi/imberg/juhani/ernu/parser/parsers/AssignmentParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.FileCommand.java">fi/imberg/juhani/ernu/cli/command/FileCommand.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.EnvironmentNode.java">fi/imberg/juhani/ernu/interpreter/nodes/EnvironmentNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ArrayNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ArrayNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.OperatorNode.java">fi/imberg/juhani/ernu/interpreter/nodes/OperatorNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#git.properties">git.properties</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.TypeFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/TypeFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.CaseNode.java">fi/imberg/juhani/ernu/interpreter/nodes/CaseNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.TokenCommand.java">fi/imberg/juhani/ernu/cli/command/TokenCommand.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.TokenType.java">fi/imberg/juhani/ernu/parser/TokenType.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.Environment.java">fi/imberg/juhani/ernu/interpreter/Environment.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.AssignmentNode.java">fi/imberg/juhani/ernu/interpreter/nodes/AssignmentNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Mathable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Mathable.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.PrefixNode.java">fi/imberg/juhani/ernu/interpreter/nodes/PrefixNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.OperatorParser.java">fi/imberg/juhani/ernu/parser/parsers/OperatorParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.CallNode.java">fi/imberg/juhani/ernu/interpreter/nodes/CallNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.NumFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/NumFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.RangeFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/RangeFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.PrefixParser.java">fi/imberg/juhani/ernu/parser/parsers/PrefixParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Printable.java">fi/imberg/juhani/ernu/interpreter/interfaces/Printable.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ProxyNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ProxyNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.REPL.java">fi/imberg/juhani/ernu/repl/REPL.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.Command.java">fi/imberg/juhani/ernu/cli/command/Command.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ObjectAccessParser.java">fi/imberg/juhani/ernu/parser/parsers/ObjectAccessParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.MatchNode.java">fi/imberg/juhani/ernu/interpreter/nodes/MatchNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ArrayAccessParser.java">fi/imberg/juhani/ernu/parser/parsers/ArrayAccessParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.IdentifierNode.java">fi/imberg/juhani/ernu/interpreter/nodes/IdentifierNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ForParser.java">fi/imberg/juhani/ernu/parser/parsers/ForParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.GREPLCommand.java">fi/imberg/juhani/ernu/cli/command/GREPLCommand.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.CLIException.java">fi/imberg/juhani/ernu/cli/exceptions/CLIException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ImportNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ImportNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ReturnNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ReturnNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.repl.swing.LogArea.java">fi/imberg/juhani/ernu/repl/swing/LogArea.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.exceptions.ParsingException.java">fi/imberg/juhani/ernu/parser/exceptions/ParsingException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.FunctionNode.java">fi/imberg/juhani/ernu/interpreter/nodes/FunctionNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.nodes.ObjectNode.java">fi/imberg/juhani/ernu/interpreter/nodes/ObjectNode.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.FileNotFoundException.java">fi/imberg/juhani/ernu/cli/exceptions/FileNotFoundException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.builtin.LenFunction.java">fi/imberg/juhani/ernu/interpreter/builtin/LenFunction.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.exceptions.ReturnException.java">fi/imberg/juhani/ernu/interpreter/exceptions/ReturnException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.exceptions.NotEnoughArgumentsException.java">fi/imberg/juhani/ernu/cli/exceptions/NotEnoughArgumentsException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.parsers.ClassParser.java">fi/imberg/juhani/ernu/parser/parsers/ClassParser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.parser.Parser.java">fi/imberg/juhani/ernu/parser/Parser.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.REPLCommand.java">fi/imberg/juhani/ernu/cli/command/REPLCommand.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.interpreter.interfaces.Node.java">fi/imberg/juhani/ernu/interpreter/interfaces/Node.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#fi.imberg.juhani.ernu.cli.command.ParseCommand.java">fi/imberg/juhani/ernu/cli/command/ParseCommand.java</a>
                 </td>
                 <td>
                   0
