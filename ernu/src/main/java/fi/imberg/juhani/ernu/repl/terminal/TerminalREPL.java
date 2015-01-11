@@ -7,6 +7,9 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+/**
+ * A terminal version of the REPL
+ */
 public class TerminalREPL implements REPLUI {
     private final Scanner scanner;
     private final PrintStream printStream;

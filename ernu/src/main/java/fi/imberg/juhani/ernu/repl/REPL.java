@@ -72,7 +72,7 @@ public class REPL extends Thread {
     }
 
     /**
-     * Reads the next line from stdin.
+     * Reads the next line from the UI.
      *
      * @return the string that was red
      */

@@ -48,7 +48,7 @@ public class EnvironmentNode implements Node, Object {
         if (node == null) {
             throw new UnknownAttributeException(key);
         }
-        if(node instanceof Callable) {
+        if (node instanceof Callable) {
             return new ProxyNode(environment, node);
         }
         return node;

@@ -4,6 +4,9 @@ import javax.swing.*;
 import javax.swing.text.DefaultCaret;
 import java.awt.*;
 
+/**
+ * Log component of the SwingREPL
+ */
 public class LogArea extends JTextArea {
     public LogArea() {
         super(10, 80);
@@ -17,10 +20,16 @@ public class LogArea extends JTextArea {
         ((DefaultCaret) getCaret()).setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
     }
 
+    /**
+     * Zooms the log in
+     */
     public void zoomIn() {
         setFont(new Font(Font.MONOSPACED, Font.PLAIN, getFont().getSize() + 6));
     }
 
+    /**
+     * Zooms out of the log
+     */
     public void zoomOut() {
         setFont(new Font(Font.MONOSPACED, Font.PLAIN, getFont().getSize() - 6));
     }
@@ -37,18 +46,34 @@ public class LogArea extends JTextArea {
         super.append(string);
     }
 
+    /**
+     * Displays a comment
+     * @param string
+     */
     public void comment(String string) {
         append("# " + string + "\n");
     }
 
+    /**
+     * Displays a normal line
+     * @param string
+     */
     public void display(String string) {
         append(string + "\n");
     }
 
+    /**
+     * Displays an error
+     * @param string
+     */
     public void error(String string) {
         append("! " + string + "\n");
     }
 
+    /**
+     * Displays a string that was recieved as input from InputArea
+     * @param str
+     */
     public void input(String str) {
         String[] strs = str.split("\n");
         for (String st : strs) {
@@ -58,6 +83,9 @@ public class LogArea extends JTextArea {
         }
     }
 
+    /**
+     * Clears the log
+     */
     public void clear() {
         setText("");
     }

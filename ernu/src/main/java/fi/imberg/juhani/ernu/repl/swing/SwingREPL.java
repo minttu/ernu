@@ -5,6 +5,9 @@ import fi.imberg.juhani.ernu.repl.REPLUI;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * A REPL UI with Swing
+ */
 public class SwingREPL extends JFrame implements REPLUI {
     private LogArea log;
     private InputArea input;
@@ -41,7 +44,6 @@ public class SwingREPL extends JFrame implements REPLUI {
         menuBar.add(ernuMenu);
         menuBar.add(displayMenu);
         getContentPane().add(menuBar, BorderLayout.PAGE_START);
-
 
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();

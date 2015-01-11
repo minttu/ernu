@@ -5,6 +5,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Input component of the SwingREPL
+ */
 public class InputArea extends JTextArea {
     private boolean ready;
     private List<String> history;
@@ -20,22 +23,39 @@ public class InputArea extends JTextArea {
         ready = false;
     }
 
+    /**
+     * Zooms the input area in
+     */
     public void zoomIn() {
         setFont(new Font(Font.MONOSPACED, Font.PLAIN, getFont().getSize() + 6));
     }
 
+    /**
+     * Zooms the input area out
+     */
     public void zoomOut() {
         setFont(new Font(Font.MONOSPACED, Font.PLAIN, getFont().getSize() - 6));
     }
 
+    /**
+     * Is the caret at the end of the input
+     * @return true if caret is at the end of the input
+     */
     public boolean isCaretAtEnd() {
         return getText().length() == getCaretPosition();
     }
 
+    /**
+     * Do we have some input to give
+     * @return true if there is some input
+     */
     public boolean ready() {
         return ready;
     }
 
+    /**
+     * Goes to the previous input line in the history
+     */
     public void historyPrev() {
         if (historyPos == -1) {
             historyPos = history.size() - 1;
@@ -48,6 +68,9 @@ public class InputArea extends JTextArea {
         }
     }
 
+    /**
+     * Goes to the next input line in the history
+     */
     public void historyNext() {
         if (history.size() == 0) {
             return;
@@ -62,6 +85,10 @@ public class InputArea extends JTextArea {
 
     }
 
+    /**
+     * Adds a string to the history
+     * @param str The string to add
+     */
     private void historyAdd(String str) {
         str = str.trim();
         if (history.size() == 0 || !history.get(history.size() - 1).equals(str)) {
@@ -70,6 +97,10 @@ public class InputArea extends JTextArea {
         }
     }
 
+    /**
+     * Reads the current input and resets the current input
+     * @return the current input
+     */
     public String read() {
         String text = getText();
         setText("");
@@ -82,6 +113,10 @@ public class InputArea extends JTextArea {
         ready = true;
     }
 
+    /**
+     * Sets the background color according to if the last execute was successful
+     * @param bool was the last execute successful
+     */
     public void ok(boolean bool) {
         if (!bool) {
             setBackground(new Color(255, 220, 220));

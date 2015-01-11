@@ -3,9 +3,16 @@ package fi.imberg.juhani.ernu.repl.swing;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+/**
+ * Listens to the InputAreas keys
+ */
 public class InputKeyListener implements KeyListener {
     private final InputArea inputArea;
 
+    /**
+     *
+     * @param inputArea The InputArea to listen to
+     */
     public InputKeyListener(InputArea inputArea) {
         this.inputArea = inputArea;
     }
